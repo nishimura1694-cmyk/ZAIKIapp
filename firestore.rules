@@ -14,6 +14,11 @@ service cloud.firestore {
         v.size() <= 30;
     }
 
+    function hasSafePdfUrls(v) {
+      return (v is list) &&
+        v.size() <= 30;
+    }
+
     function isMasterPayload() {
       return request.resource.data.keys().hasOnly(['name']) &&
         request.resource.data.name is string &&
@@ -63,6 +68,7 @@ service cloud.firestore {
         'venueId',
         'venueName',
         'imageUrls',
+        'pdfUrls',
         'updatedAt',
         'createdAt'
       ]) &&
@@ -79,6 +85,7 @@ service cloud.firestore {
       isStringOrEmpty(request.resource.data.venueId) &&
       isStringOrEmpty(request.resource.data.venueName) &&
       hasSafeImageUrls(request.resource.data.imageUrls) &&
+      hasSafePdfUrls(request.resource.data.pdfUrls) &&
       isTimestampOrNull(request.resource.data.updatedAt) &&
       isTimestampOrNull(request.resource.data.createdAt);
     }

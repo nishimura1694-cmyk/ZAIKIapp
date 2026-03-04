@@ -34,4 +34,24 @@ If you deploy Hosting too, use:
 ```bash
 firebase deploy
 ```
+
+## Server-side PDF optimization (Cloud Functions)
+
+PDF files uploaded under `bookings/*.pdf` are optimized on the server.
+
+Setup and deploy:
+
+```bash
+cd functions
+npm install
+cd ..
+firebase deploy --only functions
+```
+
+Then deploy rules as needed:
+
+```bash
+firebase deploy --only firestore:rules,storage
+```
+
 　

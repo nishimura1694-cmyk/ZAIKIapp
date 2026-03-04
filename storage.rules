@@ -5,8 +5,12 @@ service firebase.storage {
       allow read: if true;
       allow write: if request.resource != null &&
         request.resource.size < 5 * 1024 * 1024 &&
-        request.resource.contentType.matches('^image/(jpeg|jpg|png)$') &&
-        fileName.matches('^[0-9]{10,}_[0-9]+\\.jpg$');
+        (
+          (request.resource.contentType.matches('^image/(jpeg|jpg|png)$') &&
+            fileName.matches('^[0-9]{10,}_[0-9]+\\.jpg$')) ||
+          (request.resource.contentType.matches('^application/pdf$') &&
+            fileName.matches('^[0-9]{10,}_[0-9]+\\.pdf$'))
+        );
     }
 
     match /{allPaths=**} {

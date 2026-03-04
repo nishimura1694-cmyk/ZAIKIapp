@@ -823,6 +823,7 @@ class BookingDetailSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List urls = data['imageUrls'] ?? [];
+    final List pdfUrls = data['pdfUrls'] ?? [];
     return DraggableScrollableSheet(
       initialChildSize: 0.8,
       minChildSize: 0.5,
@@ -934,6 +935,54 @@ class BookingDetailSheet extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: Image.network(urls[i], fit: BoxFit.cover),
+                        ),
+                      ),
+                    ),
+                  const SizedBox(height: 24),
+                  const Text(
+                    'PDF',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  if (pdfUrls.isEmpty)
+                    const Text('なし')
+                  else
+                    ...pdfUrls.asMap().entries.map(
+                      (entry) => Padding(
+                        padding: const EdgeInsets.only(bottom: 8),
+                        child: InkWell(
+                          onTap: () =>
+                              _launchURL(context, entry.value.toString()),
+                          borderRadius: BorderRadius.circular(8),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 12,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.grey[100],
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Row(
+                              children: [
+                                const Icon(
+                                  Icons.picture_as_pdf,
+                                  color: Colors.redAccent,
+                                ),
+                                const SizedBox(width: 12),
+                                Expanded(child: Text('PDF ${entry.key + 1}')),
+                                const Icon(
+                                  Icons.open_in_new,
+                                  color: Colors.grey,
+                                  size: 18,
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -1787,6 +1836,7 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
   String? _selectedVenueId, _selectedVenueName;
   final List<_PendingImage> _newImages = []; // 新しく選択された画像
   List<String> _existingUrls = []; // すでにFirestoreにある画像
+  List<String> _existingPdfUrls = []; // すでにFirestoreにあるPDF
   bool _isUploading = false;
   bool _showVenueList = false;
 
@@ -1805,6 +1855,7 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
       _selectedVenueName = d['venueName'];
       _venueSearchController.text = d['venueName'] ?? '';
       _existingUrls = List<String>.from(d['imageUrls'] ?? []);
+      _existingPdfUrls = List<String>.from(d['pdfUrls'] ?? []);
     }
   }
 
@@ -1932,6 +1983,10 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
     var venueName = (_selectedVenueName ?? venueNameFromInput).trim();
     final dropboxUrl = _dropboxController.text.trim();
 
+    if (dropboxUrl.isNotEmpty && !dropboxUrl.startsWith('https://')) {
+      throw FormatException('Dropboxリンクは https:// で始まるURLを入力してください');
+    }
+
     if (venueName.isEmpty && _selectedVenueId != null) {
       final venueDoc = await FirebaseFirestore.instance
           .collection('venues')
@@ -1950,6 +2005,7 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
       'venueId': _selectedVenueId,
       'venueName': venueName,
       'imageUrls': [..._existingUrls, ...newUrls],
+      'pdfUrls': _existingPdfUrls,
       'updatedAt': FieldValue.serverTimestamp(),
     };
 
@@ -1959,10 +2015,16 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
         'createdAt': FieldValue.serverTimestamp(),
       });
     } else {
+      final existingCreatedAt = widget.initialData?['createdAt'];
       await FirebaseFirestore.instance
           .collection('bookings')
           .doc(widget.docId)
-          .update(data);
+          .set({
+            ...data,
+            'createdAt': existingCreatedAt is Timestamp
+                ? existingCreatedAt
+                : null,
+          });
     }
   }
 
