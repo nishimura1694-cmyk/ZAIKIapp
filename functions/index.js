@@ -2,9 +2,120 @@ const functions = require("firebase-functions/v1");
 const logger = require("firebase-functions/logger");
 const { initializeApp } = require("firebase-admin/app");
 const { getStorage } = require("firebase-admin/storage");
+const { getFirestore, FieldValue } = require("firebase-admin/firestore");
+const { getMessaging } = require("firebase-admin/messaging");
 const { PDFDocument } = require("pdf-lib");
 
 initializeApp();
+const db = getFirestore();
+
+exports.notifyBookingCreated = functions.firestore
+  .document("bookings/{bookingId}")
+  .onCreate(async (snapshot, context) => {
+    const bookingId = context.params.bookingId;
+    const data = snapshot.data() || {};
+
+    const customerName = (data.customerName || "").toString().trim();
+    const venueName = (data.venueName || "").toString().trim();
+    const bookingDate = (data.bookingDate || "").toString().trim();
+
+    const title = "予約履歴が追加されました";
+    const bodyParts = [customerName, venueName, bookingDate].filter(Boolean);
+    const body = bodyParts.length > 0
+      ? bodyParts.join(" / ")
+      : "新しい予約が登録されています。";
+
+    try {
+      const tokenSnapshot = await db
+        .collection("notificationTokens")
+        .where("enabled", "==", true)
+        .limit(500)
+        .get();
+
+      const tokens = tokenSnapshot.docs
+        .map((doc) => (doc.data().token || "").toString().trim())
+        .filter(Boolean);
+
+      if (tokens.length === 0) {
+        logger.info("Skipped booking notification (no target tokens)", {
+          bookingId,
+        });
+        return;
+      }
+
+      const multicastMessage = {
+        tokens,
+        notification: { title, body },
+        data: {
+          type: "booking_created",
+          bookingId: bookingId,
+          title: title,
+          body: body,
+        },
+        android: {
+          priority: "high",
+          notification: {
+            sound: "default",
+          },
+        },
+        apns: {
+          headers: {
+            "apns-priority": "10",
+          },
+          payload: {
+            aps: {
+              sound: "default",
+            },
+          },
+        },
+      };
+
+      const response = await getMessaging().sendEachForMulticast(
+        multicastMessage,
+      );
+
+      const invalidDocRefs = [];
+      response.responses.forEach((sendResult, index) => {
+        if (sendResult.success) return;
+        const code = sendResult.error?.code || "";
+        if (
+          code === "messaging/registration-token-not-registered" ||
+          code === "messaging/invalid-registration-token"
+        ) {
+          const rawToken = tokens[index];
+          const docId = rawToken.replaceAll("/", "_");
+          invalidDocRefs.push(db.collection("notificationTokens").doc(docId));
+        }
+      });
+
+      if (invalidDocRefs.length > 0) {
+        const batch = db.batch();
+        invalidDocRefs.forEach((ref) => {
+          batch.set(
+            ref,
+            {
+              enabled: false,
+              disabledAt: FieldValue.serverTimestamp(),
+            },
+            { merge: true },
+          );
+        });
+        await batch.commit();
+      }
+
+      logger.info("Sent booking notification", {
+        bookingId,
+        tokenCount: tokens.length,
+        successCount: response.successCount,
+        failureCount: response.failureCount,
+      });
+    } catch (error) {
+      logger.error("Failed to send booking notification", {
+        bookingId,
+        error: String(error),
+      });
+    }
+  });
 
 exports.optimizeBookingPdf = functions.storage.object().onFinalize(async (object) => {
   const filePath = object.name || "";

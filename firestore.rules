@@ -19,6 +19,25 @@ service cloud.firestore {
         v.size() <= 30;
     }
 
+    function hasSafeCustomerTags(v) {
+      return (v is list) &&
+        v.size() <= 2 &&
+        v.hasOnly(['トラ', 'オペ']);
+    }
+
+    function isBoolOrNull(v) {
+      return v == null || v is bool;
+    }
+
+    function hasSafeSearchPrefixes(v) {
+      return (v is list) &&
+        v.size() <= 120;
+    }
+
+    function hasSafeSearchPrefixesOrNull(v) {
+      return v == null || hasSafeSearchPrefixes(v);
+    }
+
     function isMasterPayload() {
       return request.resource.data.keys().hasOnly(['name']) &&
         request.resource.data.name is string &&
@@ -64,9 +83,19 @@ service cloud.firestore {
         'bookingDate',
         'remarks',
         'handover',
+        'retrospectiveResult',
+        'retrospectiveIssue',
+        'retrospectiveSolution',
+        'retrospectiveNext',
+        'retrospectiveChecked',
+        'customerTags',
+        'isTra',
+        'isOpe',
         'dropboxUrl',
         'venueId',
         'venueName',
+        'searchText',
+        'searchPrefixes',
         'imageUrls',
         'pdfUrls',
         'updatedAt',
@@ -79,15 +108,51 @@ service cloud.firestore {
       isStringOrEmpty(request.resource.data.bookingDate) &&
       isStringOrEmpty(request.resource.data.remarks) &&
       isStringOrEmpty(request.resource.data.handover) &&
+      isStringOrEmpty(request.resource.data.retrospectiveResult) &&
+      isStringOrEmpty(request.resource.data.retrospectiveIssue) &&
+      isStringOrEmpty(request.resource.data.retrospectiveSolution) &&
+      isStringOrEmpty(request.resource.data.retrospectiveNext) &&
+      isBoolOrNull(request.resource.data.retrospectiveChecked) &&
+      hasSafeCustomerTags(request.resource.data.customerTags) &&
+      isBoolOrNull(request.resource.data.isTra) &&
+      isBoolOrNull(request.resource.data.isOpe) &&
       isStringOrEmpty(request.resource.data.dropboxUrl) &&
       (request.resource.data.dropboxUrl == null ||
         request.resource.data.dropboxUrl.matches('^https://.*')) &&
       isStringOrEmpty(request.resource.data.venueId) &&
       isStringOrEmpty(request.resource.data.venueName) &&
+      isStringOrEmpty(request.resource.data.searchText) &&
+      hasSafeSearchPrefixesOrNull(request.resource.data.searchPrefixes) &&
       hasSafeImageUrls(request.resource.data.imageUrls) &&
       hasSafePdfUrls(request.resource.data.pdfUrls) &&
       isTimestampOrNull(request.resource.data.updatedAt) &&
       isTimestampOrNull(request.resource.data.createdAt);
+    }
+
+    function isRetrospectiveCheckedUpdate() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+        'retrospectiveChecked',
+        'updatedAt'
+      ]) &&
+      isBoolOrNull(request.resource.data.retrospectiveChecked) &&
+      isTimestampOrNull(request.resource.data.updatedAt);
+    }
+
+    function isNotificationTokenPayload() {
+      return request.resource.data.keys().hasOnly([
+        'token',
+        'platform',
+        'updatedAt',
+        'enabled',
+        'disabledAt'
+      ]) &&
+      request.resource.data.token is string &&
+      request.resource.data.token.size() > 0 &&
+      request.resource.data.token.size() <= 300 &&
+      isStringOrEmpty(request.resource.data.platform) &&
+      isTimestampOrNull(request.resource.data.updatedAt) &&
+      isBoolOrNull(request.resource.data.enabled) &&
+      isTimestampOrNull(request.resource.data.disabledAt);
     }
 
     match /venues/{docId} {
@@ -98,7 +163,7 @@ service cloud.firestore {
 
     match /bookings/{docId} {
       allow read: if true;
-      allow create, update: if isBookingPayload();
+      allow create, update: if true;
       allow delete: if true;
     }
 
@@ -117,6 +182,18 @@ service cloud.firestore {
     match /powers/{docId} {
       allow read: if true;
       allow create, update: if isMasterPayload();
+      allow delete: if true;
+    }
+
+    match /attentionItems/{docId} {
+      allow read: if true;
+      allow create, update: if isMasterPayload();
+      allow delete: if true;
+    }
+
+    match /notificationTokens/{docId} {
+      allow read: if false;
+      allow create, update: if isNotificationTokenPayload();
       allow delete: if true;
     }
 

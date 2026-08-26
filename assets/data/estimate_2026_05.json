@@ -1,0 +1,3095 @@
+{
+  "month": "2026-05",
+  "source": "Dropbox見積データ抽出（2026年5月_見積データ抽出.xlsx）",
+  "note": "金額・単価・小計等の金銭情報は含みません",
+  "jobs": [
+    {
+      "folder": "0501BEAMS川谷さま（本町アワーログコーヒー）（Ourlog Coffee Honmachi）",
+      "clientName": "株式会社BEAMS",
+      "deliveryAddress": "Ourlog Coffee Honmachi",
+      "deliveryDate": "2026-05-01",
+      "time": "18:00",
+      "returnTime": "23:00",
+      "items": [
+        {
+          "category": "DJ",
+          "name": "ターンテーブル",
+          "memo": "Technics SL-1200MK5",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "DJミキサー",
+          "memo": "Pioneer DJM-900nxs2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ケーブル類",
+          "name": "マイクケーブル",
+          "memo": "5m",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0501かどた様（大阪大学豊中キャンパス）",
+      "clientName": "かどた　くるみ",
+      "deliveryAddress": "大阪大学豊中キャンパス",
+      "deliveryDate": "2026-05-01",
+      "time": "13:30",
+      "returnTime": "18:30",
+      "items": [
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Marshall DSL100H + 1960A",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "MARKBASS MB58R CMD102PUR",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "電子ピアノ",
+          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "追加キーボードスタンド",
+          "memo": "X型",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0501天本様（兵庫県立芦屋国際中等教育学校）",
+      "clientName": "天本 向日葵",
+      "deliveryAddress": "兵庫県立芦屋国際中等教育学校",
+      "deliveryDate": "2026-05-01",
+      "time": "12:30",
+      "returnTime": "17:30",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "お手軽スピーカーセット",
+          "memo": "・EV ZLX-12P\n・SM58\n・マイクケーブル10m\n・マイクスタンド\n・スピーカースタンド",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "DW Collector's Maple standard\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "サービス",
+          "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0501橋本さま（兼子さんの紹介）（阪大豊中キャンパス全学共通棟の駐車場）",
+      "clientName": "橋本　莉",
+      "deliveryAddress": "阪大豊中キャンパス全学共通棟の駐車場",
+      "deliveryDate": "2026-05-01",
+      "time": "10:30",
+      "returnTime": "14:00～18:00",
+      "items": [
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプ",
+          "memo": "Ampeg SVT-3pro",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプキャビネット",
+          "memo": "Ampeg SVT-810E",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "キーボードスタンド",
+          "memo": "X型",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "車上渡しプラン_2",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0502岡本さま（阪大）（大阪大学 豊中キャンパス）",
+      "clientName": "岡本　賢吾",
+      "deliveryAddress": "大阪大学 豊中キャンパス",
+      "deliveryDate": "2026-05-02",
+      "time": "08:45",
+      "returnTime": "17:30",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 4,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SHURE SM57",
+          "qty": 5,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ロングブーム<210>",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ショートブーム<259>",
+          "qty": 4,
+          "duration": "12h"
+        },
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "Ampeg BA115-V2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Marshall JCM2000",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプキャビネット",
+          "memo": "Marshall 1960A",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "キーボードスタンド",
+          "memo": "コの字型",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "譜面台",
+          "memo": "空白",
+          "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "ダイレクトボックス",
+          "name": "D.I.",
+          "memo": "モノラル",
+          "qty": 4,
+          "duration": "12h"
+        },
+        {
+          "category": "ダイレクトボックス",
+          "name": "雨養生セット",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0502昌本さま(大阪城野音（大阪城野外音楽堂）",
+      "clientName": "昌元　大地",
+      "deliveryAddress": "大阪城野外音楽堂",
+      "deliveryDate": "2026-05-02",
+      "time": "09:00",
+      "returnTime": "20:00",
+      "items": [
+        {
+          "category": "音響",
+          "name": "デジタルミキサー",
+          "memo": "MIDAS M32R",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "音響",
+          "name": "ステージボックス",
+          "memo": "MIDAS DL32",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "音響",
+          "name": "スピーカー",
+          "memo": "L-ACO ARCS Focus",
+          "qty": 4,
+          "duration": "12h"
+        },
+        {
+          "category": "音響",
+          "name": "サブウーハー",
+          "memo": "L-ACO SB18M",
+          "qty": 4,
+          "duration": "12h"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ〔4ch〕",
+          "memo": "L-ACO LA4X",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "音響",
+          "name": "フロントフィルスピーカー",
+          "memo": "Martin Audio X15B",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ〔4ch〕",
+          "memo": "QSC PLD4.5",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "音響",
+          "name": "モニタースピーカー",
+          "memo": "YAMAHA CHR12M",
+          "qty": 6,
+          "duration": "12h"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ〔4ch〕",
+          "memo": "QSC PLD4.5",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "音響",
+          "name": "ワイヤレスマイク〔B帯〕",
+          "memo": "SHENNHEISER EW500 G4-935-JB",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "音響",
+          "name": "マイク・DI",
+          "memo": "基本セット（有線）",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "音響",
+          "name": "スタンド",
+          "memo": "一式",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "音響",
+          "name": "線材費",
+          "memo": "電源/スピーカー/マイク\n上記ケーブルを含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "楽器",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "楽器",
+          "name": "追加タム10\" スタンド付属",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "楽器",
+          "name": "シンバルスタンド",
+          "memo": "空白6",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "楽器",
+          "name": "ベースアンプ",
+          "memo": "Ampeg SVT-3pro + SVT-810E",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "楽器",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "楽器",
+          "name": "ギターアンプ",
+          "memo": "Marshall DSL100H",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "楽器",
+          "name": "ギターアンプキャビネット",
+          "memo": "Marshall 1960A",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "楽器",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 6,
+          "duration": "12h"
+        },
+        {
+          "category": "楽器",
+          "name": "電子ピアノ",
+          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "楽器",
+          "name": "スローン",
+          "memo": "キーボード用椅子",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "楽器",
+          "name": "譜面台",
+          "memo": "サービス",
+          "qty": 6,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "タープテント",
+          "memo": "FIELDOOR Steel Strong",
+          "qty": 5,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "電源コードリール",
+          "memo": "空白",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "照明スタンド",
+          "memo": "MARUMO SK2-K2",
+          "qty": 6,
+          "duration": "12h"
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
+          "qty": 2,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "搬入出増員",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "トランスポート＿エリア1",
+          "memo": "オペレーター併用プラン",
+          "qty": 1,
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "folder": "0503大石様（大東市民会館）",
+      "clientName": "大阪地区連合会　北ブロック",
+      "deliveryAddress": "大東市民会館",
+      "deliveryDate": "2026-05-03",
+      "time": "09:00",
+      "returnTime": "15:00",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー\n・スピーカー×2\n・スピーカースタンド2本\n・マイクSM58s×4\n・卓上マイクスタンド×2\n必要ケーブル付属",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "セットプラン",
+          "name": "機材料金10％OFF"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0503御影連合会(御影）（御影クラッセ前）",
+      "clientName": "御影連合会",
+      "deliveryAddress": "御影クラッセ前",
+      "deliveryDate": "2026-05-03",
+      "time": "14：30　仮",
+      "returnTime": "19：30　仮",
+      "items": [
+        {
+          "category": "ミキサー",
+          "name": "アナログミキサー",
+          "memo": "Mackie ProFX16",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "パワーアンプ・プロセッサー",
+          "name": "パワーアンプ〔4ch〕",
+          "memo": "QSC PLD4.5",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "スピーカー",
+          "memo": "EV SX300",
+          "qty": 8,
+          "duration": "12h"
+        },
+        {
+          "category": "ワイヤレス",
+          "name": "ワイヤレスマイク〔B帯〕",
+          "memo": "SHURE BLX24/BETA58",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ワイヤレス",
+          "name": "線材費",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア3",
+          "memo": "運搬・設営・撤収_3",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0503桑原さま(パークサイドハウス大阪)（パークサイドハウス大阪）",
+      "clientName": "桑原　慶光",
+      "deliveryAddress": "パークサイドハウス大阪",
+      "deliveryDate": "2026-05-03",
+      "time": "09:00",
+      "returnTime": "14:30",
+      "items": [
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "Ampeg BA115-V2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "電源コードリール",
+          "memo": "空白",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0503西川さま（大阪城公園　城天ストリート）",
+      "clientName": "西川　直希",
+      "deliveryAddress": "大阪城公園　城天ストリート",
+      "deliveryDate": "2026-05-03",
+      "items": [
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ドラム関連",
+          "name": "シンバルスタンド",
+          "memo": "空白6",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0504-06井元さま（ダムパークいばきた）",
+      "clientName": "井元　啓",
+      "deliveryAddress": "ダムパークいばきた",
+      "deliveryDate": "2026-05-04",
+      "time": "09:00",
+      "returnTime": "16:30",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "3日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "3日"
+        }
+      ]
+    },
+    {
+      "folder": "0505塚本さま（山手迎賓館　神戸）",
+      "clientName": "塚本 茜",
+      "deliveryAddress": "山手迎賓館　神戸",
+      "deliveryDate": "2026-05-05",
+      "time": "14:00",
+      "returnTime": "20:30",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SHURE SM58\n[付属：マイクホルダー、マイクケーブル10ｍ]",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ロングブーム<210>",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア3",
+          "memo": "運搬・設営・撤収_3",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0506高岡さま(そよら古川橋)（そよら古川橋駅前 店頭特設ステージ）",
+      "clientName": "高岡 俊幸",
+      "deliveryAddress": "そよら古川橋駅前 店頭特設ステージ",
+      "deliveryDate": "2026-05-06",
+      "time": "09:00",
+      "returnTime": "17:00",
+      "items": [
+        {
+          "category": "カラオケ・簡易ステージ",
+          "name": "カラオケ",
+          "memo": "本体：CyberDAM-HD　G100X\nデンモク×2\nワイヤレスマイク：2本\nケーブル一式",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "カラオケ・簡易ステージ",
+          "name": "ディスプレイ",
+          "memo": "28インチ 液晶ディスプレイ\nフィリップス 288P6LJEB1/11",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "カラオケ・簡易ステージ",
+          "name": "ディスプレイ用折り畳み机",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "カラオケ・簡易ステージ",
+          "name": "机用 蹴込み",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0509-10大西さま(東大阪)（クラフトビアタバーン）",
+      "clientName": "大西　一平",
+      "deliveryAddress": "クラフトビアタバーン",
+      "deliveryDate": "2026-05-09",
+      "time": "23:00",
+      "returnTime": "22:00",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "追加スピーカー",
+          "memo": "EV SX300",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "DJ",
+          "name": "DJミキサー",
+          "memo": "Pioneer DJM-900nxs2",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "DJ",
+          "name": "ターンテーブル",
+          "memo": "Technics SL-1200MK5",
+          "qty": 2,
+          "duration": "24h"
+        },
+        {
+          "category": "DJ",
+          "name": "PC台",
+          "qty": 2,
+          "duration": "24h"
+        },
+        {
+          "category": "DJ",
+          "name": "DJテーブル",
+          "memo": "246オリジナル\nサイズ：高さ90cm 幅180cm 奥行き60cm",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "深夜作業料金",
+          "qty": 1,
+          "duration": "24h"
+        }
+      ]
+    },
+    {
+      "folder": "0509-10田村さま（アイネス ヴィラノッツェ）",
+      "clientName": "田村　勇貴",
+      "deliveryAddress": "アイネス ヴィラノッツェ",
+      "deliveryDate": "2026-05-09",
+      "time": "16:00",
+      "returnTime": "16:00",
+      "items": [
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "レンタル機材代差額",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "24h"
+        }
+      ]
+    },
+    {
+      "folder": "0509和田さま（梅田）（ブランリール大阪）",
+      "clientName": "わだ　みさと",
+      "deliveryAddress": "ブランリール大阪",
+      "deliveryDate": "2026-05-09",
+      "time": "夕方ごろ",
+      "returnTime": "20時ごろ　仮",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "Ampeg BA115-V2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "KEY用DI",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "オペレーター併用プラン",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0509木村さん（中屋敷さま案件）（愛知県東海市 太田川駅前）",
+      "clientName": "木村　尚矢",
+      "deliveryAddress": "愛知県東海市 太田川駅前",
+      "deliveryDate": "2026-05-09",
+      "time": "9:00 暫定",
+      "returnTime": "17:00",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "追加スピーカー",
+          "memo": "EV SX300",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ワイヤレス",
+          "name": "ワイヤレスマイク〔B帯〕",
+          "memo": "SHURE BLX24/BETA58",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "CDプレーヤー ",
+          "memo": "TASCAM CD-500B",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "アシスタント人員B",
+          "memo": "1P_B",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート ",
+          "memo": "基本エリア外（愛知県東海市）",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0509東さま（店頭へ変更）（豊中市立芸術文化センター）",
+      "clientName": "東　雅彦",
+      "deliveryAddress": "豊中市立芸術文化センター",
+      "deliveryDate": "2026-05-09",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "追加スピーカー",
+          "memo": "EV SX300",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SHURE SM57\n[付属：マイクホルダー、マイクケーブル10ｍ]",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ロングブーム<210>",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ダイレクトボックス",
+          "name": "D.I.",
+          "memo": "Boss DI-1",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0509金森さま（ノートルダム大阪ONE 15F）",
+      "clientName": "金森 智紀",
+      "deliveryAddress": "ノートルダム大阪ONE 15F",
+      "deliveryDate": "2026-05-09",
+      "time": "09:00",
+      "returnTime": "16:30",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本で\n・スピーカーケーブル必要分\n・マイクケーブル必要分",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ドラムset",
+          "name": "電子ドラム",
+          "memo": "ROLAND TD-1KPX2 V-Drums\nペダル、スローン、マット付属",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "Ampeg BA115-V2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "キーボードスタンド",
+          "memo": "X型",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ドラム関連",
+          "name": "スローン",
+          "memo": "キーボード用椅子",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "電源コードリール",
+          "memo": "空白",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0510坂口さま(難波宮跡)（難波宮跡）",
+      "clientName": "一般社団法人日本ケータリングカー協会",
+      "deliveryAddress": "難波宮跡",
+      "deliveryDate": "2026-05-10",
+      "time": "08:00",
+      "returnTime": "16:00",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "スピーカー",
+          "memo": "EV SX300",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "オペレーター併用プラン",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0515-0516田中さま（UTSUBO STUDIO3）",
+      "clientName": "田中 健伍",
+      "deliveryAddress": "UTSUBO STUDIO3",
+      "deliveryDate": "2026-05-15",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "1.5日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "1.5日"
+        }
+      ]
+    },
+    {
+      "folder": "0515-16瀬尾さま（尼崎信用金庫音楽部）（尼崎市小田南障害学習プラザ）",
+      "clientName": "瀬尾　和弥",
+      "deliveryAddress": "尼崎市小田南障害学習プラザ",
+      "deliveryDate": "2026-05-15",
+      "time": "20:00",
+      "returnTime": "16:30",
+      "items": [
+        {
+          "category": "キーボード関連",
+          "name": "電子ピアノ",
+          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "シンセサイザー",
+          "memo": "Roland JUNO-DS\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "その他",
+          "name": "譜面台",
+          "memo": "空白",
+          "qty": 4,
+          "duration": "24h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "空白",
+          "qty": 2,
+          "duration": "24h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "24h"
+        }
+      ]
+    },
+    {
+      "folder": "0515ナカノさま(尼崎都ホテル)（尼崎　都ホテル）",
+      "clientName": "ナカノ　ヨウコ",
+      "deliveryAddress": "尼崎　都ホテル",
+      "deliveryDate": "2026-05-15",
+      "time": "18:00",
+      "returnTime": "21:00",
+      "items": [
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0516いしとりさま（8G SHOOT）",
+      "clientName": "いしとり　あゆむ",
+      "deliveryAddress": "8G SHOOT",
+      "deliveryDate": "2026-05-16",
+      "time": "10:30",
+      "returnTime": "19:30",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "DJプレイヤー",
+          "memo": "Pioneer CDJ-2000nxs",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "DJミキサー",
+          "memo": "Pioneer DJM-900nxs2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "必要ケーブル一式",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "DJテーブル",
+          "memo": "246オリジナル\nサイズ：高さ90cm 幅180cm 奥行き60cm",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "DJテーブル",
+          "memo": "QUIK LOK DJ233\nサイズ：高さ64～97cm 幅100cm 奥行き49cm",
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "PC台",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0516堀さま(岸和田)（岸和田カンカン オーシャンサーカス）",
+      "clientName": "株式会社CEROUNO",
+      "deliveryAddress": "岸和田カンカン オーシャンサーカス",
+      "deliveryDate": "2026-05-16",
+      "time": "9:00-10:00",
+      "returnTime": "13:20",
+      "items": [
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット小口径",
+          "memo": "CANOPUS NV60-M1EX\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "MARKBASS MB58R CMD102PUR",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "DJテーブル",
+          "memo": "SEELETON SDJT \nサイズ：高さ96cm 幅149cm 奥行き50cm",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア3",
+          "memo": "運搬・設営・撤収_3",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0516川西さま（北堀江マザーズ）",
+      "clientName": "川西 真由",
+      "deliveryAddress": "北堀江マザーズ",
+      "deliveryDate": "2026-05-16",
+      "time": "15:00",
+      "returnTime": "20:30",
+      "items": [
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "HARTKE KICKBACK KB-15",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ドラム関連",
+          "name": "シンバルスタンド",
+          "memo": "空白6",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ロングブーム<210>(ホルダー付属)",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ショートブーム<259>(ホルダー付属)",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "パワードスピーカー",
+          "memo": "EV ZLX-12P(スタンド付属)",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0516松見様(松下記念病院（松下記念病院 リハビリ室）",
+      "clientName": "松下記念病院",
+      "deliveryAddress": "松下記念病院 リハビリ室",
+      "deliveryDate": "2026-05-16",
+      "time": "08:30",
+      "returnTime": "16:00",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "スタンダードPAセット【S】",
+          "memo": "・デジタルミキサー16ch\n・パワーアンプ2ch分\n・EV SX300*2\n・マイク*4\n必要スタンド、ケーブル付属",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "CDプレーヤー ",
+          "memo": "TASCAM CD-500B",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ダイレクトボックス",
+          "name": "D.I.〔STEREO〕",
+          "memo": "RADIAL PRO D2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "クリップ型マイク",
+          "memo": "audio-technica ATM35",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ワイヤレス",
+          "name": "ワイヤレスマイク〔B帯〕",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ワイヤレス",
+          "name": "ワイヤレスヘッドセット〔B帯〕",
+          "memo": "SHURE BLX14J/SM31",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "Ampeg BA115-V2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "竿もの",
+          "name": "エレキベース",
+          "memo": "SEYMOUR DUNCAN\n[付属：シールド5ｍ、\nチューナー、ピック]",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "譜面台",
+          "memo": "空白",
+          "qty": 4,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0516田久保さま（ザ ジャクソン ガーデン）",
+      "clientName": "田久保　裕武",
+      "deliveryAddress": "ザ ジャクソン ガーデン",
+      "deliveryDate": "2026-05-16",
+      "time": "15:00",
+      "returnTime": "20:30",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "Ampeg BA115-V2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0517壇辻さま（福島サードストーン）（福島サードストーン）",
+      "clientName": "壇辻　慶明",
+      "deliveryAddress": "福島サードストーン",
+      "deliveryDate": "2026-05-17",
+      "time": "13:00",
+      "returnTime": "19:00",
+      "items": [
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "DW Collector's Maple standard\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0517芦髙さま（マービーハウス1401前）",
+      "clientName": "芦髙 孝征",
+      "deliveryAddress": "マービーハウス1401前",
+      "deliveryDate": "2026-05-17",
+      "time": "08:30",
+      "returnTime": "19:00",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "duration": "12h"
+        },
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "MARKBASS MB58R CMD102PUR",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Marshall DSL100H + 1960A",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "電子ピアノ",
+          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "キーボードモニター",
+          "memo": "Roland KC-350",
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア3",
+          "memo": "車上渡しプラン_3",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0520-0522高山さま（大阪府立国際会議場）",
+      "clientName": "高山　理佐",
+      "deliveryAddress": "大阪府立国際会議場",
+      "deliveryDate": "2026-05-20",
+      "time": "16:00",
+      "returnTime": "18:00",
+      "items": [
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\nハードウェア一式\nスネア、ペダル、マット付属",
+          "qty": 1,
+          "duration": "3日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "3日"
+        }
+      ]
+    },
+    {
+      "folder": "0520-21友松部長協賛案件（十三）（十三付近）",
+      "clientName": "バンドやろうぜ（仮）",
+      "deliveryAddress": "十三付近",
+      "deliveryDate": "ドラムのみ5/20　他5/21",
+      "time": "未定",
+      "returnTime": "未定",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプ",
+          "memo": "Aguilar DB751",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプキャビネット",
+          "memo": "Aguilar DB410",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "ASHDOWN　AGM-484H",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプキャビネット",
+          "memo": "Fender Super Sonic212",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Marshall JCM2000",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプキャビネット",
+          "memo": "Marshall 1960A",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "TAMA 839",
+          "qty": 3,
+          "duration": "1日"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "黒",
+          "qty": 3,
+          "duration": "1日"
+        },
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "DW Collector's Maple standard\n◆付属物\n【スネア】【ペダル】【マット】\n【ハードウェア一式】\n・ドラム椅子含む\n・シンバルスタンド1本追加　合計4\n\n※シンバルは持込の為不要\n",
+          "qty": 1,
+          "duration": "2日"
+        },
+        {
+          "category": "ドラムset",
+          "name": "機材協賛"
+        },
+        {
+          "category": "ドラムset",
+          "name": "運搬手数料",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "車上渡しプラン",
+          "qty": 1,
+          "duration": "1日"
+        }
+      ]
+    },
+    {
+      "folder": "0520野上さま（六甲山サイレンスリゾート）",
+      "clientName": "野上　元気",
+      "deliveryAddress": "六甲山サイレンスリゾート",
+      "deliveryDate": "2026-05-20",
+      "time": "08:00",
+      "returnTime": "20:00まで",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア3",
+          "memo": "運搬・設営・撤収_3",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0524Jessyさま（ウォルドーフ）",
+      "clientName": "Jessy＆Co.,Ltd",
+      "deliveryDate": "2026-05-24",
+      "items": [
+        {
+          "category": "音響",
+          "name": "デジタルミキサー",
+          "memo": "YAMAHA CL3",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "ステージボックス",
+          "memo": "YAMAHA Rio3224-D2",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "スピーカー",
+          "memo": "MARTIN AUDIO X15B",
+          "qty": 4,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "サブウーハー",
+          "memo": "Martin AUDIO X118",
+          "qty": 4,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ〔4ch〕",
+          "memo": "QSC PLD4.5",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "チャンネルディバイダー",
+          "memo": "dbx 223xs",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "フロントフィルスピーカー",
+          "memo": "EV SX300",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ",
+          "memo": "YAMAHA PX10",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "モニタースピーカー",
+          "memo": "YAMAHA CHR12M",
+          "qty": 5,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "モニタースピーカー",
+          "memo": "[Side Fill]EV SX300",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ〔4ch〕",
+          "memo": "Wharfedale Pro DP-4065N",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "マイク・DI",
+          "memo": "基本セット（有線）",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "スタンド",
+          "memo": "一式",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "線材費",
+          "memo": "電源/スピーカー/マイク\n上記ケーブルを含む",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ベースアンプ",
+          "memo": "Ampeg SVT-3pro",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ベースアンプキャビネット",
+          "memo": "Ampeg SVT-810E",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "スローン",
+          "memo": "キーボード用椅子",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "キーボードスタンド",
+          "memo": "コの字型",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ギタースタンド",
+          "memo": "TAMA 839",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "その他",
+          "name": "ワイヤレスマイク〔B帯〕",
+          "memo": "SHENNHEISER EW500 G4-935-JB",
+          "qty": 3,
+          "duration": "1日"
+        },
+        {
+          "category": "その他",
+          "name": "LEDパーライト",
+          "memo": "e-lite 64J-RGBW V2",
+          "qty": 0,
+          "duration": "1日"
+        },
+        {
+          "category": "その他",
+          "name": "照明スタンド",
+          "memo": "床置きスタンド",
+          "qty": 0,
+          "duration": "1日"
+        },
+        {
+          "category": "その他",
+          "name": "クリップ型マイク",
+          "memo": "DPA4099-DC-1-P",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "その他",
+          "name": "譜面台",
+          "memo": "K&M 11870",
+          "qty": 5,
+          "duration": "1日"
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
+          "qty": 2,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "搬入・搬出アシスタント",
+          "memo": "1P",
+          "qty": 1,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "トランスポート＿エリア1",
+          "memo": "オペレーター併用プラン",
+          "qty": 2,
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "folder": "0524上西様(長堀）（クリスタ長堀水時計広場）",
+      "clientName": "社会人エレクトーンサークルPLUMONY",
+      "deliveryAddress": "クリスタ長堀水時計広場",
+      "deliveryDate": "2026-05-24",
+      "time": "10:00",
+      "returnTime": "17:00",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ダイレクトボックス",
+          "name": "D.I.〔STEREO〕",
+          "memo": "RADIAL PRO D2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ダイレクトボックス",
+          "name": "D.I.〔STEREO〕",
+          "memo": "WHIRLWIND DIRECT2",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ダイレクトボックス",
+          "name": "タブレット用Yケーブル",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ダイレクトボックス",
+          "name": "TS-TS 2P(※持込AI→ステレオDI用）",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0524久保さま(なにわ民謡会)（武庫西生涯学習プラザ 3階ホール）",
+      "clientName": "久保 名津絵",
+      "deliveryAddress": "武庫西生涯学習プラザ 3階ホール",
+      "deliveryDate": "2026-05-24",
+      "time": "09:00",
+      "returnTime": "16:00",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "追加マイクスタンド",
+          "memo": "※",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー(パワーアンプ込み)",
+          "memo": "歌マイク用カエシ",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ワイヤレス",
+          "name": "ワイヤレスマイク〔B帯〕",
+          "memo": "SHENNHEISER EW500 G4-935-JB",
+          "qty": 6,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0524小柳様（神戸総合運動公園野外ステージ）",
+      "clientName": "小柳　実紗",
+      "deliveryAddress": "神戸総合運動公園野外ステージ",
+      "deliveryDate": "2026-05-24",
+      "time": "09:00",
+      "returnTime": "19:00",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SHURE SM58\n[付属：マイクホルダー、マイクケーブル10ｍ]",
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ロングブーム<210>",
+          "duration": "12h"
+        },
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "Ampeg BA115-V2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Marshall DSL100H + 1960A",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "電子ピアノ",
+          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "シンセサイザー",
+          "memo": "Roland JUNO-DS\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ドラム関連",
+          "name": "スローン",
+          "memo": "キーボード用椅子",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "サービス",
+          "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "電源コードリール",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア3",
+          "memo": "運搬・設営・撤収_3",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0524溝口さま（阪急本店13F）（阪急本店13階）",
+      "clientName": "株式会社阪急阪神百貨店",
+      "deliveryAddress": "阪急本店13階",
+      "deliveryDate": "2026-05-24",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "セットプラン",
+          "name": "音源再生機",
+          "memo": "PC",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "チーフエンジニア",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0525GABU（GABU）",
+      "deliveryAddress": "GABU",
+      "items": [
+        {
+          "category": "ワイヤレス",
+          "name": "ワイヤレスヘッドセット〔B帯〕",
+          "memo": "SHENNHEISER ME3 Headset",
+          "qty": 6,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0525ふじもとさま（246JUSO Lスタ）",
+      "clientName": "株式会社チッタワークス",
+      "deliveryAddress": "246JUSO Lスタ",
+      "deliveryDate": "2026-05-25",
+      "time": "12:00",
+      "returnTime": "17:00以降いつでも",
+      "items": [
+        {
+          "category": "DJ",
+          "name": "DJテーブル",
+          "memo": "246オリジナル\nサイズ：高さ90cm 幅180cm 奥行き60cm",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0526やまさきさま（株CIM）（リーガロイヤルホテル大阪）",
+      "clientName": "ヤマサキ",
+      "deliveryAddress": "リーガロイヤルホテル大阪",
+      "deliveryDate": "2026-05-26",
+      "time": "14:00",
+      "returnTime": "19:00",
+      "items": [
+        {
+          "category": "キーボード関連",
+          "name": "電子ピアノ",
+          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "キーボードモニター",
+          "memo": "Roland KC-350",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "スローン",
+          "memo": "キーボード用椅子",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "その他",
+          "name": "譜面台",
+          "memo": "空白",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0526杉本さま（ガレージ）（Bar　GaraGe）",
+      "clientName": "杉本　憲明",
+      "deliveryAddress": "Bar　GaraGe",
+      "deliveryDate": "2026-05-26",
+      "time": "15:00",
+      "returnTime": "2026-05-28",
+      "items": [
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Marshall DSL100H + 1960A",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "パーカッション",
+          "name": "コンガ",
+          "memo": "PEARL WHITEWOODCONGAS",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "車上渡しプラン",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0526村上音楽川村様(Miavia)（Miavia）",
+      "clientName": "株式会社　村上音楽事務所",
+      "deliveryAddress": "Miavia",
+      "deliveryDate": "2026-05-26",
+      "time": "11:00",
+      "returnTime": "16:00",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア2",
+          "memo": "車上渡しプラン_2",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0527-0601ミヨシ様（Super Studio Kitakagaya）",
+      "clientName": "ミヨシ",
+      "deliveryAddress": "Super Studio Kitakagaya",
+      "deliveryDate": "2026-05-27",
+      "time": "10:00",
+      "returnTime": "18:00",
+      "items": [
+        {
+          "category": "スピーカー類",
+          "name": "パワードスピーカー",
+          "memo": "EV ZLX-12P(スタンド付属)",
+          "duration": 6
+        },
+        {
+          "category": "スピーカー類",
+          "name": "パワードスピーカー",
+          "memo": "EV ZLX-12P(スタンド付属)",
+          "qty": 2,
+          "duration": 6
+        },
+        {
+          "category": "ケーブル類",
+          "name": "Yケーブル",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": 6
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "車上渡しプラン",
+          "qty": 1,
+          "duration": 6
+        }
+      ]
+    },
+    {
+      "folder": "0529-30つながらーと（緑地野音）（服部緑地野外音楽堂）",
+      "clientName": "ソーコアファクトリー",
+      "deliveryAddress": "服部緑地野外音楽堂",
+      "deliveryDate": "2026-05-29",
+      "time": "10：40　仮",
+      "returnTime": "18：30　バラシ開始",
+      "items": [
+        {
+          "category": "音響",
+          "name": "デジタルミキサー",
+          "memo": "YAMAHA CL5",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "デジタルミキサー",
+          "memo": "YAMAHA CL3",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "ステージボックス",
+          "memo": "YAMAHA Rio3224-D2",
+          "qty": 4,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "スピーカー",
+          "memo": "MARTIN AUDIO X15B",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ",
+          "memo": "amcron XTi4002",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "モニタースピーカー",
+          "memo": "EV TX1122FM",
+          "qty": 8,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "モニタースピーカー",
+          "memo": "YAMAHA CHR12M",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "スピーカー",
+          "memo": "［SIDEFILL］MARTIN AUDIO X15B",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ",
+          "memo": "QSC PLD4.5",
+          "qty": 3,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "ルーター",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "iPad",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "シャウトシステム",
+          "memo": "YAMAHA MS101",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "CDプレーヤー ",
+          "memo": "TASCAM CD-500B",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "マイク・DI",
+          "memo": "基本セット（有線）",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "スタンド",
+          "memo": "一式",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "線材費",
+          "memo": "電源/スピーカー/マイク\n上記ケーブルを含む",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "箱馬",
+          "qty": 16,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "機材協賛"
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "仕込み人件費",
+          "memo": "特別お値引き料金",
+          "qty": 1,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "本番ステージスタッフ",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "トランスポート＿エリア2",
+          "memo": "運搬・設営・撤収_2",
+          "qty": 2,
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "folder": "0530YoujiYamamoto（心斎橋WILD SIDE）（WILDSIDE YOHJI YAMAMOTO OSAKA　1F/2F）",
+      "clientName": "株式会社ヨウジヤマモト",
+      "deliveryAddress": "WILDSIDE YOHJI YAMAMOTO OSAKA　1F/2F",
+      "deliveryDate": "2026-05-30",
+      "time": "16:00",
+      "returnTime": "20:00",
+      "items": [
+        {
+          "category": "DJ",
+          "name": "DJミキサー",
+          "memo": "Pioneer DJM-900nxs2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "DJプレイヤー",
+          "memo": "Pioneer CDJ-2000nxs",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "ターンテーブル",
+          "memo": "Technics SL-1200MK7",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "カートリッジ",
+          "memo": "ORTOFON Concorde Mk2",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "DJ",
+          "name": "DJテーブル",
+          "memo": "246オリジナル\nサイズ：高さ90cm 幅180cm 奥行き60cm",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット〔L〕",
+          "memo": "・DYNACORD PowerMate1000\n（電源ケーブル付属）\n・sx300×2\n・SPケーブル20m×2\n・スピーカースタンド×2\n・SM58×4\n・マイクケーブル10m×4\n・マイクスタンド×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "追加サブウーハー",
+          "memo": "EV sb122",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "追加スピーカー",
+          "memo": "EV zx1-90B",
+          "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "パワーアンプ・プロセッサー",
+          "name": "追加パワーアンプ",
+          "memo": "YAMAHA P5000s",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "照明",
+          "name": "LEDパーライト",
+          "memo": "AMERICAN DJ PAR Z100 3K",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "照明",
+          "name": "LEDパーライト",
+          "memo": "e-lite 64J-RGBW V2",
+          "qty": 8,
+          "duration": "12h"
+        },
+        {
+          "category": "照明",
+          "name": "LEDパーライト",
+          "memo": "SilverStar CAM3/EMZ",
+          "qty": 8,
+          "duration": "12h"
+        },
+        {
+          "category": "照明",
+          "name": "照明スタンド",
+          "memo": "MARUMO SK2-K2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "照明",
+          "name": "照明スタンド",
+          "memo": "床置きスタンド（サービス）",
+          "qty": 16,
+          "duration": "12h"
+        },
+        {
+          "category": "照明",
+          "name": "録音機",
+          "memo": "TASCAM　SS-R250N",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "オペレーター併用プラン",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "人件費",
+          "memo": "チーフエンジニア",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "オペレート",
+          "name": "エンジニア",
+          "qty": 1
+        },
+        {
+          "category": "オペレート",
+          "name": "諸経費",
+          "memo": "0.1",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0530吉崎さま（京セラドーム大阪外周道路1番柱）",
+      "clientName": "吉崎　賢博",
+      "deliveryAddress": "京セラドーム大阪外周道路1番柱",
+      "deliveryDate": "2026-05-30",
+      "time": "23:30",
+      "returnTime": "00:20",
+      "items": [
+        {
+          "category": "ギターアンプ系",
+          "name": "電池駆動アンプ",
+          "memo": "Roland cube street EX",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SHURE SM58S\n[付属：マイクホルダー、マイクケーブル10ｍ]",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ロングブーム<210>",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ケーブル類",
+          "name": "シールド",
+          "memo": "10m(リンク用)",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ケーブル類",
+          "name": "単三電池",
+          "qty": 16,
+          "duration": "12h"
+        },
+        {
+          "category": "ケーブル類",
+          "name": "Yケーブル(PC,iPad接続用)",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "車上渡しプラン",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0531たにもとさま（てんしば）（THE BBQ GARDEN in てんしば i:na）",
+      "clientName": "たにもと",
+      "deliveryAddress": "THE BBQ GARDEN in てんしば i:na",
+      "deliveryDate": "2026-05-31",
+      "time": "10:30",
+      "returnTime": "14:30",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "追加スピーカー",
+          "memo": "EV SX300(スタンド付属)",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "パワーアンプ・プロセッサー",
+          "name": "パワーアンプ",
+          "memo": "YAMAHA P5000s",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0531はまぐち様(今福音楽堂)（今福音楽堂）",
+      "clientName": "濱口　早苗",
+      "deliveryAddress": "今福音楽堂",
+      "deliveryDate": "2026-05-31",
+      "time": "10:30",
+      "returnTime": "16:30",
+      "items": [
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Marshall JCM2000",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプキャビネット",
+          "memo": "Marshall 1960A",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプコンボ",
+          "memo": "Ampeg BA115-V2",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "電子ピアノ",
+          "memo": "YAMAHA CP-40",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "キーボードスタンド",
+          "memo": "X型",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "スローン",
+          "memo": "キーボード用椅子",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "パワードスピーカー\n(キーボード用)",
+          "memo": "EV ZLX-12P(スタンド付属)",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0531長谷川さま（千里緑丘住宅）",
+      "clientName": "千里緑丘住宅管理組合",
+      "deliveryAddress": "千里緑丘住宅",
+      "deliveryDate": "2026-05-31",
+      "time": "08:00",
+      "returnTime": "17:00",
+      "items": [
+        {
+          "category": "スピーカー類",
+          "name": "パワードスピーカー",
+          "memo": "JBL EON712\n(スタンド付属)",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ミキサー",
+          "name": "ミニミキサー",
+          "memo": "YAMAHA MG10XU",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ワイヤレス",
+          "name": "ワイヤレスマイク〔B帯〕",
+          "memo": "SHURE BLX24/BETA58",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SHURE SM58S ",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "卓上マイクスタンド",
+          "memo": "空白",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "スタンド類",
+          "name": "その他必要ケーブル",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    }
+  ]
+}

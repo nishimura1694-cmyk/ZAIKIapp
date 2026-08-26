@@ -43,3 +43,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# 秘密情報（Dropbox/Google連携用の認証情報）はコミットしない
+scripts/credentials.json
+scripts/token.json
