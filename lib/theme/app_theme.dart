@@ -5,48 +5,45 @@ import 'app_colors.dart';
 
 /// アプリ全体のテーマ定義。
 ///
-/// `VenueApp` に直接書かれていた `ThemeData` をそのままここへ移す
-/// （見た目は既存の値をそのまま踏襲、追加の変更はしない）。
-///
-/// 画面ごとに再宣言されている `ElevatedButton.styleFrom` の統一は、
-/// ここでテーマとして一括変更するとスタイル未指定のボタン（ダイアログの
-/// アクションボタンなど）の見た目まで意図せず変わってしまうため、
-/// 個々の画面を移行するタイミングで対応する。
+/// Claudeのブランドに寄せて、暖色系のクリーム背景とテラコッタの
+/// アクセントカラーを基調にしている。カード・ダイアログ等の「浮く面」は
+/// [AppColors.surface]（暖色寄りの白）を使い、ページ全体は
+/// [AppColors.background]（クリーム）で統一する。
 class AppTheme {
   AppTheme._();
 
   static ThemeData light() {
     return ThemeData(
       useMaterial3: true,
-      scaffoldBackgroundColor: Colors.white,
+      scaffoldBackgroundColor: AppColors.background,
       fontFamily: GoogleFonts.mPlus2().fontFamily,
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.brandOrange,
-        surface: Colors.white,
+        surface: AppColors.surface,
       ),
-      appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.white,
+      appBarTheme: AppBarTheme(
+        backgroundColor: AppColors.background,
         elevation: 0,
         centerTitle: true,
-        titleTextStyle: TextStyle(
-          color: Colors.black,
+        titleTextStyle: const TextStyle(
+          color: AppColors.textPrimary,
           fontWeight: FontWeight.bold,
           fontSize: 18,
         ),
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: AppColors.textPrimary),
       ),
       dialogTheme: const DialogThemeData(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.surface,
         surfaceTintColor: Colors.transparent,
       ),
       datePickerTheme: const DatePickerThemeData(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.surface,
         surfaceTintColor: Colors.transparent,
       ),
-      textSelectionTheme: const TextSelectionThemeData(
-        cursorColor: Colors.black87,
-        selectionColor: Color(0xFFDDDDDD),
-        selectionHandleColor: Colors.black87,
+      textSelectionTheme: TextSelectionThemeData(
+        cursorColor: AppColors.textPrimary,
+        selectionColor: AppColors.brandOrange.withValues(alpha: 0.25),
+        selectionHandleColor: AppColors.textPrimary,
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,

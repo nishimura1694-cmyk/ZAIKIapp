@@ -218,7 +218,7 @@ class _VenueListScreenState extends State<VenueListScreen>
                               child: Icon(
                                 Icons.info_outline,
                                 size: 18,
-                                color: Colors.orange,
+                                color: AppColors.brandOrange,
                               ),
                             ),
                           ),

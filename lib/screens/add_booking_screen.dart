@@ -596,7 +596,10 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
                 _selectedVenueId == null &&
                     _venueSearchController.text.isNotEmpty
                 ? IconButton(
-                    icon: const Icon(Icons.add_circle, color: Colors.orange),
+                    icon: const Icon(
+                      Icons.add_circle,
+                      color: AppColors.brandOrange,
+                    ),
                     onPressed: _quickRegisterVenue,
                   )
                 : null,
@@ -1036,7 +1039,9 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
         onPressed: _isUploading ? null : _save,
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.brandOrange,
-          disabledBackgroundColor: Colors.orange[200], // 無効化時の色
+          disabledBackgroundColor: AppColors.brandOrange.withValues(
+            alpha: 0.4,
+          ), // 無効化時の色
         ),
         child: _isUploading
             ? const SizedBox(

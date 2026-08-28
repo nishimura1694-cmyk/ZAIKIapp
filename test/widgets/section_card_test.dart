@@ -24,7 +24,7 @@ void main() {
       const MaterialApp(
         home: Scaffold(
           body: SectionCard(
-            palette: StatusPalette.blue,
+            palette: StatusPalette.today,
             child: Text('選択中'),
           ),
         ),
@@ -33,7 +33,7 @@ void main() {
 
     final container = tester.widget<Container>(find.byType(Container).first);
     final decoration = container.decoration as BoxDecoration;
-    expect(decoration.color, StatusPalette.blue.background);
+    expect(decoration.color, StatusPalette.today.background);
   });
 
   testWidgets('SectionCard fires onTap when tapped', (tester) async {

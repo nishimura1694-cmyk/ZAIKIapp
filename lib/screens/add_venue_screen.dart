@@ -130,7 +130,7 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
         const SizedBox(width: 8),
         if (_selectedBlock != null && _selectedBlock!.isNotEmpty)
           IconButton(
-            icon: const Icon(Icons.info_outline, color: Colors.orange),
+            icon: const Icon(Icons.info_outline, color: AppColors.brandOrange),
             tooltip: 'エリアの詳細を表示',
             onPressed: () {
               final selectedArea = _selectedBlock!.trim();
@@ -796,7 +796,7 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
                 ),
                 const SizedBox(width: 8),
                 IconButton(
-                  icon: const Icon(Icons.my_location, color: Colors.orange),
+                  icon: const Icon(Icons.my_location, color: AppColors.brandOrange),
                   tooltip: '現在地から取得',
                   onPressed: _setCurrentLocationAddress,
                 ),

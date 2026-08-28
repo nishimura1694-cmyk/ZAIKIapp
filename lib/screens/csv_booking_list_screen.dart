@@ -301,9 +301,9 @@ class _CsvBookingListScreenState extends State<CsvBookingListScreen>
                                       );
 
                               final groupPalette = isTodayGroup
-                                  ? StatusPalette.blue
+                                  ? StatusPalette.today
                                   : isTomorrowGroup
-                                  ? StatusPalette.yellow
+                                  ? StatusPalette.tomorrow
                                   : StatusPalette.neutral;
                               final headerColor = isTodayGroup
                                   ? const Color(0xFFBBDEFB)
@@ -376,7 +376,7 @@ class _CsvBookingListScreenState extends State<CsvBookingListScreen>
                                               color: isTodayGroup
                                                   ? const Color(0xFFBBDEFB)
                                                   : isTomorrowGroup
-                                                  ? StatusPalette.yellow.border
+                                                  ? StatusPalette.tomorrow.border
                                                   : const Color(0xFFF0F0F0),
                                             ),
                                           ListTile(

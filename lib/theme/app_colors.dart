@@ -2,14 +2,26 @@ import 'package:flutter/material.dart';
 
 /// アプリ全体で使う色の一元定義。
 ///
-/// これまで `Color.fromARGB(255, 255, 102, 0)` や `#EEEEEE` のような
-/// リテラルが画面ごとに再宣言されていたものを集約する。
+/// Claudeのブランドに寄せた、暖色系のクリーム背景＋テラコッタ系
+/// オレンジのパレット。以前は `Color.fromARGB(255, 255, 102, 0)` や
+/// `#EEEEEE` のような単色オレンジ・冷色グレーのリテラルが画面ごとに
+/// 再宣言されていたものをここに集約している。
 class AppColors {
   AppColors._();
 
-  static const Color brandOrange = Color.fromARGB(255, 255, 102, 0);
-  static const Color dividerGrey = Color(0xFFEEEEEE);
-  static const Color subtleFill = Color(0xFFF5F5F5);
+  /// Claudeのアクセントカラーに近いテラコッタ/クレイオレンジ。
+  static const Color brandOrange = Color(0xFFD97757);
+  static const Color brandOrangeDark = Color(0xFFBD5D3A);
+
+  /// ページ全体の背景に使う、暖色寄りのクリーム色。
+  static const Color background = Color(0xFFF7F4EC);
+
+  /// カード・入力欄など「背景の上に浮く面」に使う白（純白よりやや暖色）。
+  static const Color surface = Color(0xFFFFFEFB);
+
+  static const Color dividerGrey = Color(0xFFE6E1D6);
+  static const Color subtleFill = Color(0xFFF0ECE1);
+  static const Color textPrimary = Color(0xFF3D3929);
 }
 
 /// カード等の「状態」を表す背景色・枠線色のペア。
@@ -23,23 +35,25 @@ class StatusPalette {
   const StatusPalette({required this.background, required this.border});
 
   static const StatusPalette neutral = StatusPalette(
-    background: Colors.white,
+    background: AppColors.surface,
     border: AppColors.dividerGrey,
   );
 
-  static const StatusPalette blue = StatusPalette(
-    background: Color(0xFFE3F2FD),
-    border: Color(0xFF64B5F6),
+  /// 「本日」を示す強調色。ブランドカラーのテラコッタを薄く敷く。
+  static const StatusPalette today = StatusPalette(
+    background: Color(0xFFF5E3DA),
+    border: AppColors.brandOrange,
   );
 
-  static const StatusPalette yellow = StatusPalette(
-    background: Color(0xFFFFF59D),
-    border: Color(0xFFFFE082),
+  /// 「明日」を示す強調色。テラコッタより控えめな、暖色系のサンド/ゴールド。
+  static const StatusPalette tomorrow = StatusPalette(
+    background: Color(0xFFF3E8CC),
+    border: Color(0xFFC9A227),
   );
 
   static const StatusPalette grey = StatusPalette(
-    background: Color(0xFFF3F3F3),
-    border: Color(0xFFDADADA),
+    background: AppColors.subtleFill,
+    border: AppColors.dividerGrey,
   );
 
   /// 「本日/明日/それ以外」で色分けするカード群（予約一覧のCSV表示・
@@ -51,8 +65,8 @@ class StatusPalette {
     required bool isTomorrow,
     StatusPalette otherwise = neutral,
   }) {
-    if (isToday) return blue;
-    if (isTomorrow) return yellow;
+    if (isToday) return today;
+    if (isTomorrow) return tomorrow;
     return otherwise;
   }
 }
