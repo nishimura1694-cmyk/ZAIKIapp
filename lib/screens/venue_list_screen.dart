@@ -97,7 +97,7 @@ class _VenueListScreenState extends State<VenueListScreen>
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.surface,
         surfaceTintColor: Colors.transparent,
         title: Text('$selectedAreaの詳細'),
         content: SizedBox(
@@ -117,7 +117,7 @@ class _VenueListScreenState extends State<VenueListScreen>
                     style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xFF1976D2),
+                      color: AppColors.brandOrangeDark,
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -393,14 +393,24 @@ class _VenueListScreenState extends State<VenueListScreen>
                                     }
                                   },
                                 )
-                              : const Icon(Icons.location_on),
+                              : SizedBox(
+                                  width: 48,
+                                  height: 48,
+                                  child: Center(
+                                    child: Icon(
+                                      Icons.location_on,
+                                      color: Colors.grey[400],
+                                      size: 22,
+                                    ),
+                                  ),
+                                ),
                         ],
                       ),
                     ),
                     onTap: () => showModalBottomSheet(
                       context: context,
                       isScrollControlled: true,
-                      backgroundColor: Colors.white,
+                      backgroundColor: AppColors.surface,
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.vertical(
                           top: Radius.circular(20),

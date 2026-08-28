@@ -745,12 +745,47 @@ class _PhotoAnnotationPageState extends State<PhotoAnnotationPage> {
             spacing: 8,
             runSpacing: 8,
             alignment: WrapAlignment.start,
+            crossAxisAlignment: WrapCrossAlignment.center,
             children: [
-              _buildActionButton(
-                icon: Icons.zoom_in_map,
-                label: 'ズーム',
-                onPressed: () => _setZoomMode(!_isZoomMode),
-                emphasized: _isZoomMode,
+              // モード切替(押した状態が続く)ボタン群。枠で囲み、下の
+              // 一回きりの操作ボタンと見た目で区別する。
+              Container(
+                padding: const EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                  color: Colors.white10,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Wrap(
+                  spacing: 6,
+                  runSpacing: 6,
+                  children: [
+                    _buildActionButton(
+                      icon: Icons.zoom_in_map,
+                      label: 'ズーム',
+                      onPressed: () => _setZoomMode(!_isZoomMode),
+                      emphasized: _isZoomMode,
+                    ),
+                    _buildActionButton(
+                      icon: Icons.title,
+                      label: '文字',
+                      onPressed: _isZoomMode
+                          ? null
+                          : () => setState(() {
+                              _isTextMode = !_isTextMode;
+                              _isErasing = false;
+                            }),
+                      emphasized: !_isZoomMode && _isTextMode,
+                    ),
+                    _buildActionButton(
+                      icon: Icons.auto_fix_normal,
+                      label: '消しゴム',
+                      onPressed: _isZoomMode
+                          ? null
+                          : () => setState(() => _isErasing = !_isErasing),
+                      emphasized: !_isZoomMode && _isErasing,
+                    ),
+                  ],
+                ),
               ),
               _buildActionButton(
                 icon: Icons.undo,
@@ -768,36 +803,11 @@ class _PhotoAnnotationPageState extends State<PhotoAnnotationPage> {
                 onPressed: _resetView,
               ),
               _buildActionButton(
-                icon: Icons.title,
-                label: '文字',
-                onPressed: _isZoomMode
-                    ? null
-                    : () => setState(() {
-                        _isTextMode = !_isTextMode;
-                        _isErasing = false;
-                      }),
-                emphasized: !_isZoomMode && _isTextMode,
-              ),
-              _buildActionButton(
-                icon: Icons.auto_fix_normal,
-                label: '消しゴム',
-                onPressed: _isZoomMode
-                    ? null
-                    : () => setState(() => _isErasing = !_isErasing),
-                emphasized: !_isZoomMode && _isErasing,
-              ),
-              _buildActionButton(
                 icon: Icons.delete_outline,
                 label: 'クリア',
                 onPressed: _strokes.isEmpty && _textAnnotations.isEmpty
                     ? null
                     : _clear,
-              ),
-              _buildActionButton(
-                icon: Icons.save,
-                label: '保存',
-                onPressed: _save,
-                emphasized: !_isErasing,
               ),
               if (_isZoomMode) ...[
                 _buildActionButton(
@@ -822,6 +832,27 @@ class _PhotoAnnotationPageState extends State<PhotoAnnotationPage> {
                 ),
               ],
             ],
+          ),
+          const SizedBox(height: 12),
+          SizedBox(
+            width: double.infinity,
+            height: 48,
+            child: ElevatedButton.icon(
+              onPressed: _save,
+              icon: const Icon(Icons.save),
+              label: const Text(
+                '保存',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.brandOrange,
+                foregroundColor: Colors.white,
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+            ),
           ),
         ],
       ),

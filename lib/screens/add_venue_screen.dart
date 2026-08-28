@@ -75,7 +75,6 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
   Timer? _autoSaveDebounce;
   String? _lastSavedDraftSignature;
   _VenueAreaData? _areaData; // エリアデータをキャッシュ
-  final TextEditingController _areaController = TextEditingController();
 
   bool get _isEditMode => widget.docId != null;
 
@@ -107,39 +106,32 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
   }
 
   Widget _buildAreaSelector() {
+    final currentValue = _venueAreaSectionOrder.contains(_selectedBlock)
+        ? _selectedBlock
+        : null;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
-          child: TextField(
-            controller: _areaController,
+          child: DropdownButtonFormField<String>(
+            initialValue: currentValue,
+            isExpanded: true,
             decoration: const InputDecoration(labelText: 'エリア'),
-            minLines: 1,
-            maxLines: 1,
-            keyboardType: TextInputType.text,
-            textInputAction: TextInputAction.next,
+            items: _venueAreaSectionOrder
+                .map((area) => DropdownMenuItem(value: area, child: Text(area)))
+                .toList(),
             onChanged: (value) {
-              setState(
-                () =>
-                    _selectedBlock = value.trim().isEmpty ? null : value.trim(),
-              );
+              setState(() => _selectedBlock = value);
               _scheduleAutoSave();
             },
           ),
         ),
         const SizedBox(width: 8),
-        if (_selectedBlock != null && _selectedBlock!.isNotEmpty)
+        if (currentValue != null)
           IconButton(
             icon: const Icon(Icons.info_outline, color: AppColors.brandOrange),
             tooltip: 'エリアの詳細を表示',
-            onPressed: () {
-              final selectedArea = _selectedBlock!.trim();
-              if (!_venueAreaSectionOrder.contains(selectedArea)) {
-                _showSnackBar('エリア1〜エリア5を入力してください');
-                return;
-              }
-              _showAreaDialog(selectedArea);
-            },
+            onPressed: () => _showAreaDialog(currentValue),
           ),
       ],
     );
@@ -163,7 +155,7 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.surface,
         surfaceTintColor: Colors.transparent,
         title: Text('$selectedAreaの詳細'),
         content: SizedBox(
@@ -183,7 +175,7 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
                     style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xFF1976D2),
+                      color: AppColors.brandOrangeDark,
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -227,7 +219,6 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
         }
       });
       _selectedBlock = widget.initialData!['block'];
-      _areaController.text = (_selectedBlock ?? '').toString();
       _selectedCategory = widget.initialData!['category'];
       _selectedAttentionItems
         ..clear()
@@ -264,10 +255,7 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
 
     final detectedArea = _detectAreaFromAddress(address);
     if (detectedArea != null && detectedArea != _selectedBlock) {
-      setState(() {
-        _selectedBlock = detectedArea;
-        _areaController.text = detectedArea;
-      });
+      setState(() => _selectedBlock = detectedArea);
       _scheduleAutoSave();
     }
   }
@@ -280,7 +268,6 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
       controller.removeListener(_onVenueInputChanged);
     }
     _controllers.forEach((_, controller) => controller.dispose());
-    _areaController.dispose();
     super.dispose();
   }
 
@@ -348,146 +335,136 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
 
   // ドロップダウン管理用メソッド追加
   void _manageItems(String col, String label) {
+    final newItemController = TextEditingController();
     showDialog(
       context: context,
-      builder: (ctx) => AlertDialog(
-        backgroundColor: Colors.white,
-        surfaceTintColor: Colors.transparent,
-        title: Text('$labelの管理'),
-        content: SizedBox(
-          width: 300,
-          child: StreamBuilder<QuerySnapshot>(
-            stream: FirebaseFirestore.instance.collection(col).snapshots(),
-            builder: (context, snap) {
-              if (!snap.hasData) return const SizedBox();
-              return ListView.builder(
-                shrinkWrap: true,
-                itemCount: snap.data!.docs.length,
-                itemBuilder: (context, index) {
-                  final doc = snap.data!.docs[index];
-                  return ListTile(
-                    title: Text(doc['name']),
-                    trailing: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        IconButton(
-                          icon: const Icon(Icons.edit, size: 20),
-                          onPressed: () =>
-                              _editItem(col, label, doc.id, doc['name']),
-                        ),
-                        IconButton(
-                          icon: const Icon(
-                            Icons.delete,
-                            size: 20,
-                            color: Colors.red,
-                          ),
-                          onPressed: () => _deleteItem(col, doc.id),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              );
-            },
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: const Text('閉じる'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pop(ctx);
-              WidgetsBinding.instance.addPostFrameCallback((_) {
-                if (mounted) {
-                  _addNewItem(col, label);
-                }
-              });
-            },
-            child: const Text('新規追加'),
-          ),
-        ],
-      ),
-    );
-  }
-
-  void _addNewItem(String col, String label) {
-    final c = TextEditingController();
-    if (!mounted) return;
-    showDialog(
-      context: context,
-      barrierDismissible: false,
       builder: (ctx) {
         var isSubmitting = false;
         return StatefulBuilder(
-          builder: (dialogContext, setDialogState) => AlertDialog(
-            backgroundColor: Colors.white,
-            surfaceTintColor: Colors.transparent,
-            title: Text('$labelの追加'),
-            content: TextField(
-              controller: c,
-              enabled: !isSubmitting,
-              autofocus: true,
-              decoration: const InputDecoration(hintText: '名前を入力'),
-              onSubmitted: (_) async {
-                if (isSubmitting) return;
-                final value = c.text.trim();
-                if (value.isEmpty) return;
-                setDialogState(() => isSubmitting = true);
-                try {
-                  await FirebaseFirestore.instance
-                      .collection(col)
-                      .add({'name': value})
-                      .timeout(const Duration(seconds: 10));
-                  if (dialogContext.mounted) Navigator.of(dialogContext).pop();
-                } catch (e) {
-                  if (dialogContext.mounted) {
-                    setDialogState(() => isSubmitting = false);
-                  }
-                  _showSnackBar('$labelの追加に失敗しました: $e');
+          builder: (dialogContext, setDialogState) {
+            Future<void> submitNewItem() async {
+              if (isSubmitting) return;
+              final value = newItemController.text.trim();
+              if (value.isEmpty) return;
+              setDialogState(() => isSubmitting = true);
+              try {
+                await FirebaseFirestore.instance
+                    .collection(col)
+                    .add({'name': value})
+                    .timeout(const Duration(seconds: 10));
+                newItemController.clear();
+              } catch (e) {
+                _showSnackBar('$labelの追加に失敗しました: $e');
+              } finally {
+                if (dialogContext.mounted) {
+                  setDialogState(() => isSubmitting = false);
                 }
-              },
-            ),
-            actions: [
-              TextButton(
-                onPressed: isSubmitting
-                    ? null
-                    : () => Navigator.of(dialogContext).pop(),
-                child: const Text('キャンセル'),
-              ),
-              TextButton(
-                onPressed: isSubmitting
-                    ? null
-                    : () async {
-                        final value = c.text.trim();
-                        if (value.isEmpty) return;
-                        setDialogState(() => isSubmitting = true);
-                        try {
-                          await FirebaseFirestore.instance
-                              .collection(col)
-                              .add({'name': value})
-                              .timeout(const Duration(seconds: 10));
-                          if (dialogContext.mounted) {
-                            Navigator.of(dialogContext).pop();
+              }
+            }
+
+            return AlertDialog(
+              backgroundColor: AppColors.surface,
+              surfaceTintColor: Colors.transparent,
+              title: Text('$labelの管理'),
+              content: SizedBox(
+                width: 300,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxHeight: 240),
+                      child: StreamBuilder<QuerySnapshot>(
+                        stream: FirebaseFirestore.instance
+                            .collection(col)
+                            .snapshots(),
+                        builder: (context, snap) {
+                          if (!snap.hasData) return const SizedBox();
+                          if (snap.data!.docs.isEmpty) {
+                            return const Padding(
+                              padding: EdgeInsets.symmetric(vertical: 12),
+                              child: Text('項目がありません'),
+                            );
                           }
-                        } catch (e) {
-                          if (dialogContext.mounted) {
-                            setDialogState(() => isSubmitting = false);
-                          }
-                          _showSnackBar('$labelの追加に失敗しました: $e');
-                        }
-                      },
-                child: isSubmitting
-                    ? const SizedBox(
-                        width: 16,
-                        height: 16,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      )
-                    : const Text('追加'),
+                          return ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: snap.data!.docs.length,
+                            itemBuilder: (context, index) {
+                              final doc = snap.data!.docs[index];
+                              return ListTile(
+                                title: Text(doc['name']),
+                                trailing: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    IconButton(
+                                      icon: const Icon(Icons.edit, size: 20),
+                                      onPressed: () => _editItem(
+                                        col,
+                                        label,
+                                        doc.id,
+                                        doc['name'],
+                                      ),
+                                    ),
+                                    IconButton(
+                                      icon: const Icon(
+                                        Icons.delete,
+                                        size: 20,
+                                        color: Colors.red,
+                                      ),
+                                      onPressed: () => _deleteItem(col, doc.id),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          );
+                        },
+                      ),
+                    ),
+                    const Divider(height: 24),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: TextField(
+                            controller: newItemController,
+                            enabled: !isSubmitting,
+                            decoration: const InputDecoration(
+                              hintText: '新しい項目名',
+                            ),
+                            onSubmitted: (_) => submitNewItem(),
+                          ),
+                        ),
+                        const SizedBox(width: 4),
+                        isSubmitting
+                            ? const Padding(
+                                padding: EdgeInsets.all(12),
+                                child: SizedBox(
+                                  width: 20,
+                                  height: 20,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                  ),
+                                ),
+                              )
+                            : IconButton(
+                                icon: const Icon(
+                                  Icons.add_circle,
+                                  color: AppColors.brandOrange,
+                                ),
+                                onPressed: submitNewItem,
+                              ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ],
-          ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(ctx),
+                  child: const Text('閉じる'),
+                ),
+              ],
+            );
+          },
         );
       },
     );
@@ -499,7 +476,7 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.surface,
         surfaceTintColor: Colors.transparent,
         title: Text('$labelの編集'),
         content: TextField(

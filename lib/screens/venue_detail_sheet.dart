@@ -52,7 +52,7 @@ class _VenueDetailSheetState extends State<VenueDetailSheet> {
     final confirm = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.surface,
         surfaceTintColor: Colors.transparent,
         title: const Text('会場の削除'),
         content: const Text('この会場情報を削除しますか？'),
@@ -242,11 +242,10 @@ class _VenueDetailSheetState extends State<VenueDetailSheet> {
                               );
                               return InkWell(
                                 onTap: () {
-                                  Navigator.pop(context);
                                   showModalBottomSheet(
                                     context: context,
                                     isScrollControlled: true,
-                                    backgroundColor: Colors.white,
+                                    backgroundColor: AppColors.surface,
                                     shape: const RoundedRectangleBorder(
                                       borderRadius: BorderRadius.vertical(
                                         top: Radius.circular(20),

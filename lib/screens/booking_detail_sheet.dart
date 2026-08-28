@@ -87,7 +87,7 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
                 return KeyEventResult.ignored;
               },
               child: Dialog(
-                backgroundColor: Colors.white,
+                backgroundColor: AppColors.surface,
                 surfaceTintColor: Colors.transparent,
                 clipBehavior: Clip.antiAlias,
                 shape: RoundedRectangleBorder(
@@ -405,7 +405,7 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
         showModalBottomSheet(
           context: context,
           isScrollControlled: true,
-          backgroundColor: Colors.white,
+          backgroundColor: AppColors.surface,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
           ),
@@ -425,7 +425,7 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
     final confirm = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.surface,
         surfaceTintColor: Colors.transparent,
         title: const Text('削除の確認'),
         content: const Text('この予約履歴を削除しますか？'),

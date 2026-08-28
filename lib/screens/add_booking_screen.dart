@@ -208,6 +208,27 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
     final name = _venueSearchController.text.trim();
     if (name.isEmpty) return;
 
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: AppColors.surface,
+        surfaceTintColor: Colors.transparent,
+        title: const Text('新規会場として登録'),
+        content: Text('「$name」を新しい会場として登録しますか？\n住所などの詳細は後から会場一覧で編集できます。'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('キャンセル'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text('登録'),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true || !mounted) return;
+
     setState(() => _isUploading = true);
     try {
       final docRef = await FirebaseFirestore.instance.collection('venues').add({
@@ -507,26 +528,57 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
   }
 
+  Future<bool> _confirmDiscardChanges() async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: AppColors.surface,
+        surfaceTintColor: Colors.transparent,
+        title: const Text('入力内容を破棄しますか？'),
+        content: const Text('保存せずに戻ると、入力した内容は失われます。'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('キャンセル'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text('破棄する', style: TextStyle(color: Colors.red)),
+          ),
+        ],
+      ),
+    );
+    return confirmed == true;
+  }
+
   Future<void> _handleBackPressed() async {
+    final hasUnsavedChanges =
+        _buildBookingDraftSignature() != _lastSavedDraftSignature;
+    if (!hasUnsavedChanges) {
+      Navigator.pop(context);
+      return;
+    }
+
     if (!_isEditMode) {
-      Navigator.pop(context);
+      final shouldDiscard = await _confirmDiscardChanges();
+      if (shouldDiscard && mounted) {
+        Navigator.pop(context);
+      }
       return;
     }
 
-    if (_buildBookingDraftSignature() == _lastSavedDraftSignature) {
-      Navigator.pop(context);
-      return;
-    }
-
-    await _save(closeOnSuccess: true, showValidationError: true);
+    // 編集中の変更を保存しつつ、内容に不備があっても画面は必ず抜けられるようにする
+    // (以前は保存に失敗すると無言で戻れなくなっていた)。
+    await _save(closeOnSuccess: false, showValidationError: true);
+    if (mounted) Navigator.pop(context);
   }
 
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      canPop: !_isEditMode,
+      canPop: false,
       onPopInvokedWithResult: (didPop, _) {
-        if (!didPop && _isEditMode) {
+        if (!didPop) {
           unawaited(_handleBackPressed());
         }
       },
@@ -628,7 +680,7 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
             decoration: BoxDecoration(
               border: Border.all(color: Colors.grey[300]!),
               borderRadius: BorderRadius.circular(8),
-              color: Colors.white,
+              color: AppColors.surface,
               boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 4)],
             ),
             child: StreamBuilder<List<_SearchResultDocument>>(
@@ -805,8 +857,8 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
         const Text('写真', style: TextStyle(fontWeight: FontWeight.bold)),
         const SizedBox(height: 12),
         Wrap(
-          spacing: 8,
-          runSpacing: 8,
+          spacing: 12,
+          runSpacing: 12,
           children: [
             // 既存画像
             ..._existingUrls.map(
@@ -915,13 +967,18 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
           ),
         ),
         Positioned(
-          top: -4,
-          right: -4,
-          child: IconButton(
-            icon: const Icon(Icons.cancel, color: Colors.red, size: 20),
-            onPressed: onRemove,
-            padding: EdgeInsets.zero,
-            constraints: const BoxConstraints(),
+          top: 2,
+          right: 2,
+          child: GestureDetector(
+            onTap: onRemove,
+            child: Container(
+              padding: const EdgeInsets.all(2),
+              decoration: const BoxDecoration(
+                color: Colors.black45,
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(Icons.close, color: Colors.white, size: 14),
+            ),
           ),
         ),
         if (onEdit != null)
@@ -1002,13 +1059,18 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
           ),
         ),
         Positioned(
-          top: -4,
-          right: -4,
-          child: IconButton(
-            icon: const Icon(Icons.cancel, color: Colors.red, size: 20),
-            onPressed: onRemove,
-            padding: EdgeInsets.zero,
-            constraints: const BoxConstraints(),
+          top: 2,
+          right: 2,
+          child: GestureDetector(
+            onTap: onRemove,
+            child: Container(
+              padding: const EdgeInsets.all(2),
+              decoration: const BoxDecoration(
+                color: Colors.black45,
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(Icons.close, color: Colors.white, size: 14),
+            ),
           ),
         ),
         Positioned(

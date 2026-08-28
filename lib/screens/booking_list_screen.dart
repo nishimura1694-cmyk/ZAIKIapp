@@ -337,7 +337,12 @@ class _BookingListScreenState extends State<BookingListScreen>
                 padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
                 child: Align(
                   alignment: Alignment.center,
-                  child: OutlinedButton.icon(
+                  child: ToggleFilterButton(
+                    isActive: _showHiddenReservations,
+                    icon: Icons.event_note_outlined,
+                    activeIcon: Icons.visibility_off_rounded,
+                    label: '先の予約',
+                    activeLabel: '先の予約を隠す',
                     onPressed: () {
                       final nextValue = !_showHiddenReservations;
                       _invalidateSearchQueryCache(namespace: 'bookings');
@@ -348,25 +353,6 @@ class _BookingListScreenState extends State<BookingListScreen>
                         }
                       });
                     },
-                    style: OutlinedButton.styleFrom(
-                      side: BorderSide(
-                        color: _showHiddenReservations
-                            ? AppColors.brandOrange
-                            : const Color(0xFFDDDDDD),
-                      ),
-                      foregroundColor: _showHiddenReservations
-                          ? AppColors.brandOrange
-                          : Colors.black54,
-                      backgroundColor: _showHiddenReservations
-                          ? const Color(0xFFFFF3E0)
-                          : null,
-                    ),
-                    icon: Icon(
-                      _showHiddenReservations
-                          ? Icons.visibility_off_rounded
-                          : Icons.event_note_outlined,
-                    ),
-                    label: Text(_showHiddenReservations ? '先の予約を隠す' : '先の予約'),
                   ),
                 ),
               ),
@@ -538,7 +524,7 @@ class _BookingListScreenState extends State<BookingListScreen>
                           onTap: () => showModalBottomSheet(
                             context: context,
                             isScrollControlled: true,
-                            backgroundColor: Colors.white,
+                            backgroundColor: AppColors.surface,
                             shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.vertical(
                                 top: Radius.circular(20),

@@ -332,13 +332,43 @@ class _MonthlyEstimateJobTile extends StatefulWidget {
 
 class _MonthlyEstimateJobTileState extends State<_MonthlyEstimateJobTile> {
   bool _isCreating = false;
+  bool _checkedExistingBooking = false;
   EstimateBookingCreationResult? _result;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkExistingBooking();
+  }
+
+  /// この見積案件からすでに予約履歴が作成済みかをFirestoreに問い合わせる。
+  ///
+  /// `_result` だけに頼ると、画面遷移で `_MonthlyEstimateJobTile` が
+  /// 再構築されるたびに「登録済み」表示が消えてしまうため、実際の
+  /// 予約履歴の有無で判定し直す。
+  Future<void> _checkExistingBooking() async {
+    try {
+      final existing = await FirebaseFirestore.instance
+          .collection('bookings')
+          .where('estimateJobId', isEqualTo: _estimateJobId(widget.job))
+          .limit(1)
+          .get();
+      if (!mounted) return;
+      if (existing.docs.isNotEmpty) {
+        setState(() => _result = EstimateBookingCreationResult.alreadyExists);
+      }
+    } catch (_) {
+      // 取得に失敗した場合はボタン表示のままにし、押下時の重複チェックに任せる。
+    } finally {
+      if (mounted) setState(() => _checkedExistingBooking = true);
+    }
+  }
 
   Future<bool> _confirmVehicleHandoff() async {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.surface,
         surfaceTintColor: Colors.transparent,
         title: const Text('車上渡しの案件です'),
         content: const Text('この案件は「車上」(現地設営を伴わない車上渡し等)です。\nこのまま予約履歴を作成しますか？'),
@@ -389,6 +419,19 @@ class _MonthlyEstimateJobTileState extends State<_MonthlyEstimateJobTile> {
   }
 
   Widget _buildActionButton() {
+    if (!_checkedExistingBooking) {
+      return const SizedBox(
+        height: 32,
+        width: 32,
+        child: Center(
+          child: SizedBox(
+            width: 16,
+            height: 16,
+            child: CircularProgressIndicator(strokeWidth: 2),
+          ),
+        ),
+      );
+    }
     final isDone =
         _result == EstimateBookingCreationResult.created ||
         _result == EstimateBookingCreationResult.alreadyExists;
@@ -557,16 +600,6 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
               )
             : null,
         actions: [
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Text('過去分', style: TextStyle(fontSize: 12)),
-              Switch(
-                value: _showPast,
-                onChanged: (value) => setState(() => _showPast = value),
-              ),
-            ],
-          ),
           IconButton(icon: const Icon(Icons.refresh), onPressed: _reload),
         ],
       ),
@@ -613,6 +646,20 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
           }
           return Column(
             children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: ToggleFilterButton(
+                    isActive: _showPast,
+                    icon: Icons.history,
+                    activeIcon: Icons.visibility_off_rounded,
+                    label: '過去分を表示',
+                    activeLabel: '過去分を隠す',
+                    onPressed: () => setState(() => _showPast = !_showPast),
+                  ),
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
                 child: Align(

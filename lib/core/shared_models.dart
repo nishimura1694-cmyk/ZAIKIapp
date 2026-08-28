@@ -187,6 +187,20 @@ class _ExtractedDateRow {
   });
 }
 
+/// シフト画面([ShiftSplitScreen])で日付ごとの列カードを描画するための、
+/// ラベルと値のペア。以前は [DateExtractListScreen] と重複定義されていた。
+class _DateColumnSection {
+  final String label;
+  final List<String> values;
+  final bool isBookingCard;
+
+  const _DateColumnSection({
+    required this.label,
+    required this.values,
+    this.isBookingCard = false,
+  });
+}
+
 class _VenueAreaData {
   final Map<String, Map<String, List<String>>> areaTables;
 
