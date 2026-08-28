@@ -106,7 +106,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               label: '会場',
             ),
           ],
-          selectedItemColor: Color.fromARGB(255, 255, 102, 0),
+          selectedItemColor: AppColors.brandOrange,
           unselectedItemColor: Colors.grey,
           backgroundColor: Colors.white,
           type: BottomNavigationBarType.fixed,

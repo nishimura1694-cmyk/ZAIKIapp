@@ -539,7 +539,7 @@ class _DateExtractListScreenState extends State<DateExtractListScreen>
           future: _dateRowsFuture,
           builder: (context, snapshot) {
             if (snapshot.connectionState != ConnectionState.done) {
-              return const Center(child: CircularProgressIndicator());
+              return const LoadingView();
             }
 
             if (snapshot.hasError) {
@@ -580,7 +580,7 @@ class _DateExtractListScreenState extends State<DateExtractListScreen>
                   physics: const AlwaysScrollableScrollPhysics(),
                   children: const [
                     SizedBox(height: 220),
-                    Center(child: Text('表示できる日付データがありません')),
+                    EmptyStateView(message: '表示できる日付データがありません'),
                   ],
                 ),
               );
@@ -641,7 +641,7 @@ class _DateExtractListScreenState extends State<DateExtractListScreen>
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: const Color(0xFFEEEEEE)),
+                      border: Border.all(color: AppColors.dividerGrey),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -659,16 +659,16 @@ class _DateExtractListScreenState extends State<DateExtractListScreen>
                             width: double.infinity,
                             child: _buildColumnCard(
                               remainingBookingSection,
-                              backgroundColor: isToday
-                                  ? const Color(0xFFE3F2FD)
-                                  : isTomorrow
-                                  ? const Color(0xFFFFF59D)
-                                  : const Color(0xFFF3F3F3),
-                              borderColor: isToday
-                                  ? const Color(0xFF64B5F6)
-                                  : isTomorrow
-                                  ? const Color(0xFFFFE082)
-                                  : const Color(0xFFDADADA),
+                              backgroundColor: StatusPalette.forDateGroup(
+                                isToday: isToday,
+                                isTomorrow: isTomorrow,
+                                otherwise: StatusPalette.grey,
+                              ).background,
+                              borderColor: StatusPalette.forDateGroup(
+                                isToday: isToday,
+                                isTomorrow: isTomorrow,
+                                otherwise: StatusPalette.grey,
+                              ).border,
                               fixedHeight: uniformBookingCardHeight,
                             ),
                           ),
@@ -767,16 +767,20 @@ class _DateExtractListScreenState extends State<DateExtractListScreen>
                                                 null) ...[
                                               _buildColumnCard(
                                                 bookingCardSection,
-                                                backgroundColor: isToday
-                                                    ? const Color(0xFFE3F2FD)
-                                                    : isTomorrow
-                                                    ? const Color(0xFFFFF59D)
-                                                    : const Color(0xFFF3F3F3),
-                                                borderColor: isToday
-                                                    ? const Color(0xFF64B5F6)
-                                                    : isTomorrow
-                                                    ? const Color(0xFFFFE082)
-                                                    : const Color(0xFFDADADA),
+                                                backgroundColor:
+                                                    StatusPalette.forDateGroup(
+                                                      isToday: isToday,
+                                                      isTomorrow: isTomorrow,
+                                                      otherwise:
+                                                          StatusPalette.grey,
+                                                    ).background,
+                                                borderColor:
+                                                    StatusPalette.forDateGroup(
+                                                      isToday: isToday,
+                                                      isTomorrow: isTomorrow,
+                                                      otherwise:
+                                                          StatusPalette.grey,
+                                                    ).border,
                                                 fixedHeight:
                                                     uniformBookingCardHeight,
                                               ),

@@ -489,7 +489,7 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
         decoration: BoxDecoration(
           color: Colors.grey[50],
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: const Color(0xFFEEEEEE)),
+          border: Border.all(color: AppColors.dividerGrey),
         ),
         child: Text(
           'データなし',
@@ -575,7 +575,7 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: const Color(0xFFEEEEEE)),
+          border: Border.all(color: AppColors.dividerGrey),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -693,7 +693,7 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
           future: _combinedFuture,
           builder: (context, snapshot) {
             if (snapshot.connectionState != ConnectionState.done) {
-              return const Center(child: CircularProgressIndicator());
+              return const LoadingView();
             }
             if (snapshot.hasError) {
               return Center(
@@ -756,7 +756,7 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
                   physics: const AlwaysScrollableScrollPhysics(),
                   children: const [
                     SizedBox(height: 220),
-                    Center(child: Text('表示できるデータがありません')),
+                    EmptyStateView(message: '表示できるデータがありません'),
                   ],
                 ),
               );
@@ -827,16 +827,16 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
                             width: double.infinity,
                             child: _buildColumnCard(
                               remainingBookingSection,
-                              backgroundColor: isToday
-                                  ? const Color(0xFFE3F2FD)
-                                  : isTomorrow
-                                  ? const Color(0xFFFFF59D)
-                                  : const Color(0xFFF3F3F3),
-                              borderColor: isToday
-                                  ? const Color(0xFF64B5F6)
-                                  : isTomorrow
-                                  ? const Color(0xFFFFE082)
-                                  : const Color(0xFFDADADA),
+                              backgroundColor: StatusPalette.forDateGroup(
+                                isToday: isToday,
+                                isTomorrow: isTomorrow,
+                                otherwise: StatusPalette.grey,
+                              ).background,
+                              borderColor: StatusPalette.forDateGroup(
+                                isToday: isToday,
+                                isTomorrow: isTomorrow,
+                                otherwise: StatusPalette.grey,
+                              ).border,
                               fixedHeight: uniformBookingCardHeight,
                             ),
                           ),
@@ -865,20 +865,20 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
                                         Container(
                                           padding: const EdgeInsets.all(10),
                                           decoration: BoxDecoration(
-                                            color: isToday
-                                                ? const Color(0xFFE3F2FD)
-                                                : isTomorrow
-                                                ? const Color(0xFFFFF59D)
-                                                : const Color(0xFFF3F3F3),
+                                            color: StatusPalette.forDateGroup(
+                                              isToday: isToday,
+                                              isTomorrow: isTomorrow,
+                                              otherwise: StatusPalette.grey,
+                                            ).background,
                                             borderRadius: BorderRadius.circular(
                                               10,
                                             ),
                                             border: Border.all(
-                                              color: isToday
-                                                  ? const Color(0xFF64B5F6)
-                                                  : isTomorrow
-                                                  ? const Color(0xFFFFE082)
-                                                  : const Color(0xFFDADADA),
+                                              color: StatusPalette.forDateGroup(
+                                                isToday: isToday,
+                                                isTomorrow: isTomorrow,
+                                                otherwise: StatusPalette.grey,
+                                              ).border,
                                             ),
                                           ),
                                           constraints:
@@ -970,16 +970,20 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
                                                 null) ...[
                                               _buildColumnCard(
                                                 bookingCardSection,
-                                                backgroundColor: isToday
-                                                    ? const Color(0xFFE3F2FD)
-                                                    : isTomorrow
-                                                    ? const Color(0xFFFFF59D)
-                                                    : const Color(0xFFF3F3F3),
-                                                borderColor: isToday
-                                                    ? const Color(0xFF64B5F6)
-                                                    : isTomorrow
-                                                    ? const Color(0xFFFFE082)
-                                                    : const Color(0xFFDADADA),
+                                                backgroundColor:
+                                                    StatusPalette.forDateGroup(
+                                                      isToday: isToday,
+                                                      isTomorrow: isTomorrow,
+                                                      otherwise:
+                                                          StatusPalette.grey,
+                                                    ).background,
+                                                borderColor:
+                                                    StatusPalette.forDateGroup(
+                                                      isToday: isToday,
+                                                      isTomorrow: isTomorrow,
+                                                      otherwise:
+                                                          StatusPalette.grey,
+                                                    ).border,
                                                 fixedHeight:
                                                     uniformBookingCardHeight,
                                               ),
@@ -998,22 +1002,16 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
                     );
                   }
 
+                  final rowPalette = StatusPalette.forDateGroup(
+                    isToday: isToday,
+                    isTomorrow: isTomorrow,
+                  );
                   return Container(
                     padding: const EdgeInsets.fromLTRB(12, 10, 12, 12),
                     decoration: BoxDecoration(
-                      color: isToday
-                          ? const Color(0xFFE3F2FD)
-                          : isTomorrow
-                          ? const Color(0xFFFFF59D)
-                          : Colors.white,
+                      color: rowPalette.background,
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                        color: isToday
-                            ? const Color(0xFF64B5F6)
-                            : isTomorrow
-                            ? const Color(0xFFFFE082)
-                            : const Color(0xFFEEEEEE),
-                      ),
+                      border: Border.all(color: rowPalette.border),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

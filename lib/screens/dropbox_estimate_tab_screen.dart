@@ -546,8 +546,16 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
     final searchQuery = _searchQuery.trim();
     final isSearching = searchQuery.isNotEmpty;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('見積抽出'),
+      appBar: SearchAppBar(
+        title: '見積抽出',
+        controller: _searchController,
+        hintText: '顧客名・搬入先で検索...',
+        suffixIcon: isSearching
+            ? IconButton(
+                icon: const Icon(Icons.clear),
+                onPressed: () => _searchController.clear(),
+              )
+            : null,
         actions: [
           Row(
             mainAxisSize: MainAxisSize.min,
@@ -561,35 +569,12 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
           ),
           IconButton(icon: const Icon(Icons.refresh), onPressed: _reload),
         ],
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(58),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
-            child: SizedBox(
-              height: 44,
-              child: TextField(
-                controller: _searchController,
-                decoration: InputDecoration(
-                  hintText: '顧客名・搬入先で検索...',
-                  prefixIcon: const Icon(Icons.search),
-                  contentPadding: EdgeInsets.zero,
-                  suffixIcon: isSearching
-                      ? IconButton(
-                          icon: const Icon(Icons.clear),
-                          onPressed: () => _searchController.clear(),
-                        )
-                      : null,
-                ),
-              ),
-            ),
-          ),
-        ),
       ),
       body: FutureBuilder<List<_MonthlyEstimateJob>>(
         future: _localJobsFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState != ConnectionState.done) {
-            return const Center(child: CircularProgressIndicator());
+            return const LoadingView();
           }
           if (snapshot.hasError) {
             return Center(
@@ -621,8 +606,9 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
                   includePast: _showPast,
                 );
           if (jobs.isEmpty) {
-            return Center(
-              child: Text(isSearching ? '該当する見積データがありません' : '登録済みの見積データがありません'),
+            return EmptyStateView(
+              icon: Icons.description_outlined,
+              message: isSearching ? '該当する見積データがありません' : '登録済みの見積データがありません',
             );
           }
           return Column(
@@ -650,14 +636,11 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
                   itemCount: jobs.length,
                   separatorBuilder: (_, _) => const SizedBox(height: 10),
                   itemBuilder: (context, index) {
-                    return Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: const Color(0xFFEEEEEE)),
+                    return SectionCard(
+                      child: Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: _MonthlyEstimateJobTile(job: jobs[index]),
                       ),
-                      child: _MonthlyEstimateJobTile(job: jobs[index]),
                     );
                   },
                 ),

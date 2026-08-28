@@ -24,6 +24,7 @@ import 'package:geolocator/geolocator.dart';
 import 'services/booking_notification_service.dart';
 import 'theme/app_colors.dart';
 import 'theme/app_theme.dart';
+import 'widgets/editable_app_bar.dart';
 import 'widgets/empty_state.dart';
 import 'widgets/search_app_bar.dart';
 import 'widgets/section_card.dart';

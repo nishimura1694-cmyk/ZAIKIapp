@@ -41,4 +41,18 @@ class StatusPalette {
     background: Color(0xFFF3F3F3),
     border: Color(0xFFDADADA),
   );
+
+  /// 「本日/明日/それ以外」で色分けするカード群（予約一覧のCSV表示・
+  /// シフト表・日付抽出ビューなど）で共通して使う配色の解決ロジック。
+  ///
+  /// これまで同じ判定・同じ色リテラルが画面ごとに個別実装されていた。
+  static StatusPalette forDateGroup({
+    required bool isToday,
+    required bool isTomorrow,
+    StatusPalette otherwise = neutral,
+  }) {
+    if (isToday) return blue;
+    if (isTomorrow) return yellow;
+    return otherwise;
+  }
 }

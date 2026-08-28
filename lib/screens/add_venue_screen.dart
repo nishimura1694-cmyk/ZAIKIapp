@@ -48,7 +48,7 @@ class _MapPickerScreenState extends State<MapPickerScreen> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => Navigator.pop(context, _selectedLocation),
-        backgroundColor: const Color.fromARGB(255, 255, 102, 0),
+        backgroundColor: AppColors.brandOrange,
         label: const Text('この位置を選択'),
         icon: const Icon(Icons.check),
       ),
@@ -746,52 +746,11 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final leadingSlotWidth = _isEditMode ? 160.0 : 56.0;
-
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        leadingWidth: leadingSlotWidth,
-        centerTitle: true,
-        titleSpacing: 0,
-        leading: Row(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            const BackButton(),
-            if (_isEditMode)
-              Expanded(
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    alignment: Alignment.centerLeft,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          _isSaving ? Icons.sync : Icons.check_circle_outline,
-                          size: 20,
-                          color: _isSaving ? Colors.orange : Colors.green,
-                        ),
-                        const SizedBox(width: 4),
-                        Text(
-                          _isSaving ? '自動保存中...' : '自動保存',
-                          maxLines: 1,
-                          softWrap: false,
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w700,
-                            color: _isSaving ? Colors.orange : Colors.grey[700],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-          ],
-        ),
-        title: Text(widget.docId == null ? '会場の登録' : '会場の編集'),
+      appBar: EditableAppBar(
+        title: widget.docId == null ? '会場の登録' : '会場の編集',
+        isEditMode: _isEditMode,
+        isSaving: _isSaving,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
@@ -916,7 +875,7 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
                 child: ElevatedButton(
                   onPressed: _isSaving ? null : _saveVenue,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 255, 102, 0),
+                    backgroundColor: AppColors.brandOrange,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),

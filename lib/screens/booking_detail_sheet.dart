@@ -456,7 +456,7 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
       decoration: BoxDecoration(
-        border: Border.all(color: const Color(0xFFDADADA)),
+        border: Border.all(color: StatusPalette.grey.border),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
@@ -485,7 +485,7 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
       decoration: BoxDecoration(
-        border: Border.all(color: const Color(0xFFDADADA)),
+        border: Border.all(color: StatusPalette.grey.border),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
@@ -631,7 +631,7 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
                           ),
                         ),
                       ),
-                    const Divider(height: 32, color: Color(0xFFEEEEEE)),
+                    const Divider(height: 32, color: AppColors.dividerGrey),
                     const Text(
                       '写真',
                       style: TextStyle(
@@ -690,7 +690,7 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
                               ),
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                  color: const Color(0xFFDADADA),
+                                  color: StatusPalette.grey.border,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                               ),

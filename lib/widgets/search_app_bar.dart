@@ -15,6 +15,8 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
   final ValueChanged<String>? onChanged;
   final Widget? filterRow;
   final double filterRowHeight;
+  final Widget? suffixIcon;
+  final List<Widget>? actions;
 
   const SearchAppBar({
     super.key,
@@ -24,6 +26,8 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.onChanged,
     this.filterRow,
     this.filterRowHeight = 45,
+    this.suffixIcon,
+    this.actions,
   });
 
   double get _bottomHeight =>
@@ -36,6 +40,7 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(title),
+      actions: actions,
       bottom: PreferredSize(
         preferredSize: Size.fromHeight(_bottomHeight),
         child: Column(
@@ -49,6 +54,7 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
                   decoration: InputDecoration(
                     hintText: hintText,
                     prefixIcon: const Icon(Icons.search),
+                    suffixIcon: suffixIcon,
                     contentPadding: EdgeInsets.zero,
                   ),
                   onChanged: onChanged,

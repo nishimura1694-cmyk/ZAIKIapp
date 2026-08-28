@@ -123,7 +123,7 @@ class _CsvBookingListScreenState extends State<CsvBookingListScreen>
           future: _rowsFuture,
           builder: (context, snapshot) {
             if (snapshot.connectionState != ConnectionState.done) {
-              return const Center(child: CircularProgressIndicator());
+              return const LoadingView();
             }
 
             if (snapshot.hasError) {
@@ -185,11 +185,11 @@ class _CsvBookingListScreenState extends State<CsvBookingListScreen>
                       style: OutlinedButton.styleFrom(
                         side: BorderSide(
                           color: _showHiddenReservations
-                              ? const Color.fromARGB(255, 255, 102, 0)
+                              ? AppColors.brandOrange
                               : const Color(0xFFDDDDDD),
                         ),
                         foregroundColor: _showHiddenReservations
-                            ? const Color.fromARGB(255, 255, 102, 0)
+                            ? AppColors.brandOrange
                             : Colors.black54,
                         backgroundColor: _showHiddenReservations
                             ? const Color(0xFFFFF3E0)
@@ -234,7 +234,10 @@ class _CsvBookingListScreenState extends State<CsvBookingListScreen>
                 ),
                 Expanded(
                   child: filteredRows.isEmpty
-                      ? const Center(child: Text('表示できる予約データがありません'))
+                      ? const EmptyStateView(
+                          icon: Icons.event_busy_outlined,
+                          message: '表示できる予約データがありません',
+                        )
                       : RefreshIndicator(
                           onRefresh: _reload,
                           child: ListView.builder(
@@ -297,21 +300,23 @@ class _CsvBookingListScreenState extends State<CsvBookingListScreen>
                                         ),
                                       );
 
+                              final groupPalette = isTodayGroup
+                                  ? StatusPalette.blue
+                                  : isTomorrowGroup
+                                  ? StatusPalette.yellow
+                                  : StatusPalette.neutral;
+                              final headerColor = isTodayGroup
+                                  ? const Color(0xFFBBDEFB)
+                                  : isTomorrowGroup
+                                  ? const Color(0xFFFFF176)
+                                  : const Color(0xFFF8F8F8);
                               return Container(
                                 margin: const EdgeInsets.only(bottom: 10),
                                 decoration: BoxDecoration(
-                                  color: isTodayGroup
-                                      ? const Color(0xFFE3F2FD)
-                                      : isTomorrowGroup
-                                      ? const Color(0xFFFFF59D)
-                                      : Colors.white,
+                                  color: groupPalette.background,
                                   borderRadius: BorderRadius.circular(12),
                                   border: Border.all(
-                                    color: isTodayGroup
-                                        ? const Color(0xFF64B5F6)
-                                        : isTomorrowGroup
-                                        ? const Color(0xFFFFE082)
-                                        : const Color(0xFFEEEEEE),
+                                    color: groupPalette.border,
                                   ),
                                 ),
                                 child: Column(
@@ -324,11 +329,7 @@ class _CsvBookingListScreenState extends State<CsvBookingListScreen>
                                         vertical: 10,
                                       ),
                                       decoration: BoxDecoration(
-                                        color: isTodayGroup
-                                            ? const Color(0xFFBBDEFB)
-                                            : isTomorrowGroup
-                                            ? const Color(0xFFFFF176)
-                                            : const Color(0xFFF8F8F8),
+                                        color: headerColor,
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(12),
                                           topRight: Radius.circular(12),
@@ -375,7 +376,7 @@ class _CsvBookingListScreenState extends State<CsvBookingListScreen>
                                               color: isTodayGroup
                                                   ? const Color(0xFFBBDEFB)
                                                   : isTomorrowGroup
-                                                  ? const Color(0xFFFFE082)
+                                                  ? StatusPalette.yellow.border
                                                   : const Color(0xFFF0F0F0),
                                             ),
                                           ListTile(

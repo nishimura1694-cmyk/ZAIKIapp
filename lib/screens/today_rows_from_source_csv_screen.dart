@@ -77,7 +77,7 @@ class _TodayRowsFromSourceCsvScreenState
           future: _todayRowsFuture,
           builder: (context, snapshot) {
             if (snapshot.connectionState != ConnectionState.done) {
-              return const Center(child: CircularProgressIndicator());
+              return const LoadingView();
             }
 
             if (snapshot.hasError) {
@@ -113,7 +113,7 @@ class _TodayRowsFromSourceCsvScreenState
                   physics: const AlwaysScrollableScrollPhysics(),
                   children: const [
                     SizedBox(height: 220),
-                    Center(child: Text('1か月分の抽出データは見つかりませんでした')),
+                    EmptyStateView(message: '1か月分の抽出データは見つかりませんでした'),
                   ],
                 ),
               );
@@ -205,21 +205,20 @@ class _TodayRowsFromSourceCsvScreenState
                   final isTodayGroup = dayKey == todayKey;
                   final isTomorrowGroup = dayKey == tomorrowKey;
 
+                  final dayPalette = StatusPalette.forDateGroup(
+                    isToday: isTodayGroup,
+                    isTomorrow: isTomorrowGroup,
+                  );
+                  final dayHeaderColor = isTodayGroup
+                      ? const Color(0xFFBBDEFB)
+                      : isTomorrowGroup
+                      ? const Color(0xFFFFF176)
+                      : const Color(0xFFF8F8F8);
                   return Container(
                     decoration: BoxDecoration(
-                      color: isTodayGroup
-                          ? const Color(0xFFE3F2FD)
-                          : isTomorrowGroup
-                          ? const Color(0xFFFFF59D)
-                          : Colors.white,
+                      color: dayPalette.background,
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                        color: isTodayGroup
-                            ? const Color(0xFF64B5F6)
-                            : isTomorrowGroup
-                            ? const Color(0xFFFFE082)
-                            : const Color(0xFFEEEEEE),
-                      ),
+                      border: Border.all(color: dayPalette.border),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(12, 10, 12, 12),
@@ -233,11 +232,7 @@ class _TodayRowsFromSourceCsvScreenState
                               vertical: 8,
                             ),
                             decoration: BoxDecoration(
-                              color: isTodayGroup
-                                  ? const Color(0xFFBBDEFB)
-                                  : isTomorrowGroup
-                                  ? const Color(0xFFFFF176)
-                                  : const Color(0xFFF8F8F8),
+                              color: dayHeaderColor,
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Center(
@@ -287,7 +282,7 @@ class _TodayRowsFromSourceCsvScreenState
                                             10,
                                           ),
                                           border: Border.all(
-                                            color: const Color(0xFFEEEEEE),
+                                            color: AppColors.dividerGrey,
                                           ),
                                         ),
                                         child: Column(

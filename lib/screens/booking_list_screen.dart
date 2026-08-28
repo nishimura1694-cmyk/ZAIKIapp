@@ -87,7 +87,7 @@ class _BookingListScreenState extends State<BookingListScreen>
         constraints: const BoxConstraints.tightFor(width: 32, height: 32),
         splashRadius: 18,
         visualDensity: VisualDensity.compact,
-        color: const Color.fromARGB(255, 255, 102, 0),
+        color: AppColors.brandOrange,
         onPressed: () => _openMapForAddress(directAddress),
       );
     }
@@ -123,7 +123,7 @@ class _BookingListScreenState extends State<BookingListScreen>
           constraints: const BoxConstraints.tightFor(width: 32, height: 32),
           splashRadius: 18,
           visualDensity: VisualDensity.compact,
-          color: const Color.fromARGB(255, 255, 102, 0),
+          color: AppColors.brandOrange,
           onPressed: () => _openMapForAddress(address),
         );
       },
@@ -141,7 +141,7 @@ class _BookingListScreenState extends State<BookingListScreen>
       constraints: const BoxConstraints.tightFor(width: 32, height: 32),
       splashRadius: 18,
       visualDensity: VisualDensity.compact,
-      color: const Color.fromARGB(255, 255, 102, 0),
+      color: AppColors.brandOrange,
       tooltip: '見積を確認',
       onPressed: () => Navigator.push(
         context,
@@ -236,26 +236,11 @@ class _BookingListScreenState extends State<BookingListScreen>
     );
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('予約履歴'),
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(66),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-            child: SizedBox(
-              height: 50,
-              child: TextField(
-                controller: _searchController,
-                decoration: const InputDecoration(
-                  hintText: '顧客・会場名で検索...',
-                  prefixIcon: Icon(Icons.search),
-                  contentPadding: EdgeInsets.zero,
-                ),
-                onChanged: (_) => _onSearchChanged(),
-              ),
-            ),
-          ),
-        ),
+      appBar: SearchAppBar(
+        title: '予約履歴',
+        controller: _searchController,
+        hintText: '顧客・会場名で検索...',
+        onChanged: (_) => _onSearchChanged(),
       ),
       body: StreamBuilder<List<_SearchResultDocument>>(
         stream: bookingStream,
@@ -265,7 +250,7 @@ class _BookingListScreenState extends State<BookingListScreen>
           }
           final searchDocs = snapshot.data ?? _lastBookingDocs;
           if (searchDocs.isEmpty && !snapshot.hasData) {
-            return const Center(child: CircularProgressIndicator());
+            return const LoadingView();
           }
           final query = searchQuery;
           final shouldFilterBySearch = query.isNotEmpty;
@@ -366,11 +351,11 @@ class _BookingListScreenState extends State<BookingListScreen>
                     style: OutlinedButton.styleFrom(
                       side: BorderSide(
                         color: _showHiddenReservations
-                            ? const Color.fromARGB(255, 255, 102, 0)
+                            ? AppColors.brandOrange
                             : const Color(0xFFDDDDDD),
                       ),
                       foregroundColor: _showHiddenReservations
-                          ? const Color.fromARGB(255, 255, 102, 0)
+                          ? AppColors.brandOrange
                           : Colors.black54,
                       backgroundColor: _showHiddenReservations
                           ? const Color(0xFFFFF3E0)
@@ -414,7 +399,22 @@ class _BookingListScreenState extends State<BookingListScreen>
                 ),
               ),
               Expanded(
-                child: RefreshIndicator(
+                child: docs.isEmpty
+                    ? RefreshIndicator(
+                        onRefresh: _refreshBookings,
+                        triggerMode: RefreshIndicatorTriggerMode.anywhere,
+                        child: ListView(
+                          physics: const AlwaysScrollableScrollPhysics(),
+                          children: const [
+                            SizedBox(height: 80),
+                            EmptyStateView(
+                              icon: Icons.event_busy_outlined,
+                              message: '該当する予約がありません',
+                            ),
+                          ],
+                        ),
+                      )
+                    : RefreshIndicator(
                   onRefresh: _refreshBookings,
                   triggerMode: RefreshIndicatorTriggerMode.anywhere,
                   child: ListView.separated(
@@ -452,12 +452,7 @@ class _BookingListScreenState extends State<BookingListScreen>
                           fallbackRetrospectiveChecked;
                       final List urls = data['imageUrls'] ?? [];
 
-                      return Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: const Color(0xFFEEEEEE)),
-                        ),
+                      return SectionCard(
                         child: ListTile(
                           contentPadding: const EdgeInsets.symmetric(
                             horizontal: 12,
@@ -569,7 +564,7 @@ class _BookingListScreenState extends State<BookingListScreen>
           context,
           MaterialPageRoute(builder: (_) => const AddBookingScreen()),
         ),
-        backgroundColor: const Color.fromARGB(255, 255, 102, 0),
+        backgroundColor: AppColors.brandOrange,
         foregroundColor: Colors.white,
         icon: const Icon(Icons.post_add),
         label: const Text('予約を登録'),

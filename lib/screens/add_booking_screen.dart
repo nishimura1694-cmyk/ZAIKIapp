@@ -523,8 +523,6 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final leadingSlotWidth = _isEditMode ? 160.0 : 56.0;
-
     return PopScope(
       canPop: !_isEditMode,
       onPopInvokedWithResult: (didPop, _) {
@@ -533,54 +531,11 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
         }
       },
       child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          leadingWidth: leadingSlotWidth,
-          centerTitle: true,
-          titleSpacing: 0,
-          leading: Row(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              BackButton(onPressed: _handleBackPressed),
-              if (_isEditMode)
-                Expanded(
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.centerLeft,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                            _isUploading
-                                ? Icons.sync
-                                : Icons.check_circle_outline,
-                            size: 20,
-                            color: _isUploading ? Colors.orange : Colors.green,
-                          ),
-                          const SizedBox(width: 4),
-                          Text(
-                            _isUploading ? '自動保存中...' : '自動保存',
-                            maxLines: 1,
-                            softWrap: false,
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w700,
-                              color: _isUploading
-                                  ? Colors.orange
-                                  : Colors.grey[700],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-            ],
-          ),
-          title: Text(widget.docId == null ? '予約の登録' : '予約の編集'),
-          elevation: 0,
+        appBar: EditableAppBar(
+          title: widget.docId == null ? '予約の登録' : '予約の編集',
+          isEditMode: _isEditMode,
+          isSaving: _isUploading,
+          onBack: _handleBackPressed,
         ),
         body: Stack(
           children: [
@@ -1080,7 +1035,7 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
         // アップロード中はボタン自体を無効化（連打防止）
         onPressed: _isUploading ? null : _save,
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.orange[800],
+          backgroundColor: AppColors.brandOrange,
           disabledBackgroundColor: Colors.orange[200], // 無効化時の色
         ),
         child: _isUploading
