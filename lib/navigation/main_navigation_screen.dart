@@ -91,25 +91,33 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             _hasOpenedVenueTab ? _venuePage : const SizedBox.shrink(),
           ],
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _tabIndex,
-          onTap: _handleTabChange,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.history), label: '履歴'),
-            BottomNavigationBarItem(icon: Icon(Icons.description), label: '見積'),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_today),
+        bottomNavigationBar: NavigationBar(
+          selectedIndex: _tabIndex,
+          onDestinationSelected: _handleTabChange,
+          backgroundColor: AppColors.surface,
+          indicatorColor: AppColors.brandOrange.withValues(alpha: 0.16),
+          destinations: const [
+            NavigationDestination(
+              icon: Icon(Icons.history_outlined),
+              selectedIcon: Icon(Icons.history),
+              label: '履歴',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.description_outlined),
+              selectedIcon: Icon(Icons.description),
+              label: '見積',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.calendar_today_outlined),
+              selectedIcon: Icon(Icons.calendar_today),
               label: 'シフト',
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.location_city),
+            NavigationDestination(
+              icon: Icon(Icons.location_city_outlined),
+              selectedIcon: Icon(Icons.location_city),
               label: '会場',
             ),
           ],
-          selectedItemColor: AppColors.brandOrange,
-          unselectedItemColor: AppColors.textPrimary.withValues(alpha: 0.5),
-          backgroundColor: AppColors.surface,
-          type: BottomNavigationBarType.fixed,
         ),
       ),
     );

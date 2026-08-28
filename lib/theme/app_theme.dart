@@ -59,6 +59,26 @@ class AppTheme {
           vertical: 12,
         ),
       ),
+      navigationBarTheme: NavigationBarThemeData(
+        iconTheme: WidgetStateProperty.resolveWith(
+          (states) => IconThemeData(
+            color: states.contains(WidgetState.selected)
+                ? AppColors.brandOrange
+                : AppColors.textSecondary,
+          ),
+        ),
+        labelTextStyle: WidgetStateProperty.resolveWith(
+          (states) => TextStyle(
+            fontSize: 12,
+            fontWeight: states.contains(WidgetState.selected)
+                ? FontWeight.w700
+                : FontWeight.w500,
+            color: states.contains(WidgetState.selected)
+                ? AppColors.brandOrange
+                : AppColors.textSecondary,
+          ),
+        ),
+      ),
     );
   }
 }

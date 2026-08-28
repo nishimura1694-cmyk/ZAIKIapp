@@ -241,7 +241,7 @@ class _VenueListScreenState extends State<VenueListScreen>
             return ErrorRetryView(onRetry: () => setState(() {}));
           }
           if (searchDocs.isEmpty && !snapshot.hasData) {
-            return const LoadingView();
+            return const SkeletonList();
           }
           final query = searchQuery;
           final shouldFilterBySearch = query.isNotEmpty;
