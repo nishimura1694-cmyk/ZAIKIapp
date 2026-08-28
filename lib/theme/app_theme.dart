@@ -16,7 +16,7 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       scaffoldBackgroundColor: AppColors.background,
-      fontFamily: GoogleFonts.mPlus2().fontFamily,
+      fontFamily: GoogleFonts.zenKakuGothicNew().fontFamily,
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.brandOrange,
         surface: AppColors.surface,
