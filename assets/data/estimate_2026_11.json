@@ -1,6 +1,6 @@
 {
   "month": "2026-11",
-  "source": "Dropbox見積データ抽出（2026年11月_見積データ抽出.xlsx）",
+  "source": "Dropbox見積データ抽出（ローカル同期）（2026年11月_見積データ抽出.xlsx）",
   "note": "金額・単価・小計等の金銭情報は含みません",
   "jobs": [
     {
@@ -213,6 +213,7 @@
       "folder": "1101中川さま（生育公園）",
       "clientName": "なかがわ　よしたか",
       "deliveryAddress": "生育公園",
+      "deliveryAddressDetail": "〒536-0007 大阪府大阪市城東区成育３丁目１８",
       "deliveryDate": "2026-11-01",
       "time": "10:00",
       "returnTime": "13:30",
@@ -244,6 +245,7 @@
       "folder": "1101大岩様（NPO法人CIL豊中）（豊中市障害者自立支援センター）",
       "clientName": "NPO法人CIL豊中",
       "deliveryAddress": "豊中市障害者自立支援センター",
+      "deliveryAddressDetail": "〒561-0854大阪府豊中市稲津町1-1-20",
       "deliveryDate": "2026-11-01",
       "time": "未定",
       "returnTime": "未定",
@@ -303,6 +305,7 @@
       "folder": "1101山田さま（Partyup!Wedding produce）（ガーブグリーンウォーク）",
       "clientName": "Partyup!Wedding Produce",
       "deliveryAddress": "ガーブグリーンウォーク",
+      "deliveryAddressDetail": "〒595-0067 大阪府泉大津市小松町１−８１",
       "deliveryDate": "2026-11-01",
       "time": "※",
       "returnTime": "※",
@@ -348,6 +351,7 @@
       "folder": "1101島田様（大阪大学 豊中キャンパス）",
       "clientName": "島田 尚",
       "deliveryAddress": "大阪大学 豊中キャンパス",
+      "deliveryAddressDetail": "〒560-0043 大阪府豊中市待兼山町１",
       "deliveryDate": "2026-11-01",
       "time": "未定",
       "returnTime": "未定",
@@ -518,6 +522,7 @@
       "folder": "1108吉田さま(ヒルトン大阪)（ヒルトン大阪）",
       "clientName": "吉田　千恵",
       "deliveryAddress": "ヒルトン大阪",
+      "deliveryAddressDetail": "〒530-0001 大阪府大阪市北区梅田１丁目８−８",
       "deliveryDate": "2026-11-08",
       "time": "15:00",
       "returnTime": "20:00",
@@ -576,6 +581,7 @@
       "folder": "1108福間さま（大成閣）",
       "clientName": " 福間　博義",
       "deliveryAddress": "大成閣",
+      "deliveryAddressDetail": "〒542-0083 大阪府大阪市中央区東心斎橋１丁目１８−１２",
       "deliveryDate": "2026-11-08",
       "items": [
         {
@@ -668,6 +674,7 @@
       "folder": "1113-14木村さん案件（神戸女子大）（神戸女子大学                                   ポートアイランドキャンパス）",
       "clientName": "木村 尚矢",
       "deliveryAddress": "神戸女子大学                                   ポートアイランドキャンパス",
+      "deliveryAddressDetail": "〒650-0046 兵庫県神戸市中央区港島中町４丁目７−２",
       "deliveryDate": "2026-11-13",
       "time": "未定",
       "returnTime": "未定",
@@ -747,6 +754,7 @@
     {
       "folder": "1114-15向田さま（住之江区消防署）",
       "clientName": "住之江区消防署 解放デー 実行委員",
+      "deliveryAddressDetail": "〒531-0061 大阪市北区長柄西2丁目10-9",
       "deliveryDate": "2026-11-14",
       "time": "午後",
       "returnTime": "午後",
@@ -764,34 +772,14 @@
       "folder": "1114山田様(ホツマインターナショナルスクール大阪校)（あべのHoop\n1F 円形ステージ「オープンエアプラザ」）",
       "clientName": "ホツマインターナショナルスクール大阪校",
       "deliveryAddress": "あべのHoop\n1F 円形ステージ「オープンエアプラザ」",
+      "deliveryAddressDetail": "〒545-0052 大阪府大阪市阿倍野区阿倍野筋１丁目２−３０",
       "deliveryDate": "2026-11-14",
-      "note": "261114見積書_オペレーター込み.xlsm: 161,700円（旧版/別プラン）",
+      "note": "261114見積書_オペレーター有.xlsm: 83,380円（旧版/別プラン）",
       "items": [
         {
           "category": "セットプラン",
-          "name": "楽々PAセット〔LL〕",
-          "memo": "・YAMAHA 5016cf×1\n・Martin AUDIO X15B×2\n・SPケーブル20m×2\n・スピーカースタンド×2\n・SM58×4\n・マイクケーブル10m×4\n・マイクスタンド×4",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "スピーカー類",
-          "name": "追加サブウーハー",
-          "memo": "Martin AUDIO X118",
-          "qty": 2,
-          "duration": "12h"
-        },
-        {
-          "category": "パワーアンプ・プロセッサー",
-          "name": "パワーアンプ〔4ch〕",
-          "memo": "QSC PLD4.5",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "パワーアンプ・プロセッサー",
-          "name": "チャンネルディバイダー",
-          "memo": "dbx 223xs",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
           "qty": 1,
           "duration": "12h"
         },
@@ -800,12 +788,6 @@
           "name": "モニタースピーカー",
           "memo": "パワーアンプ込み",
           "qty": 2,
-          "duration": "12h"
-        },
-        {
-          "category": "スピーカー類",
-          "name": "追加 有線マイク・スタンド一式",
-          "qty": 1,
           "duration": "12h"
         },
         {
@@ -821,6 +803,7 @@
       "folder": "1114福間さま（ホテルロイヤルクラシック大阪）",
       "clientName": "福間　湧児",
       "deliveryAddress": "ホテルロイヤルクラシック大阪",
+      "deliveryAddressDetail": "〒542-0076 大阪府大阪市中央区難波４丁目３−３",
       "deliveryDate": "2026-11-14",
       "items": [
         {
@@ -885,6 +868,7 @@
       "folder": "1114鈴木さま（彩都西コミュニティセンター　多目的室）",
       "clientName": "鈴木　尚美",
       "deliveryAddress": "彩都西コミュニティセンター　多目的室",
+      "deliveryAddressDetail": "〒567-0085 大阪府茨木市彩都あさぎ１丁目３−４",
       "deliveryDate": "2026-11-14",
       "items": [
         {
@@ -914,6 +898,7 @@
       "folder": "1114黒田さま（大阪セントバース教会）",
       "clientName": "黒田",
       "deliveryAddress": "大阪セントバース教会",
+      "deliveryAddressDetail": "〒542-0081 大阪府大阪市中央区南船場３丁目３−１０",
       "deliveryDate": "2026-11-14",
       "items": [
         {
@@ -999,6 +984,7 @@
       "folder": "1115UmAさま(グランドサロン十三)（十三グランドサロン）",
       "clientName": "UmA ShAdow",
       "deliveryAddress": "十三グランドサロン",
+      "deliveryAddressDetail": "〒532-0024 大阪市淀川区十三本町1-16-20",
       "deliveryDate": "2026-11-15",
       "time": "08:00",
       "items": [
@@ -1202,6 +1188,7 @@
       "folder": "1120辻さま(日々一泡Brewery)（日々一泡Brewery）",
       "clientName": "辻　綾子",
       "deliveryAddress": "日々一泡Brewery",
+      "deliveryAddressDetail": "〒553-0003 大阪府大阪市福島区福島８丁目１−１",
       "deliveryDate": "2026-11-20",
       "time": "16:00",
       "returnTime": "22:00",
@@ -1267,6 +1254,7 @@
       "folder": "1121上野さま（Osteria il Gatto）",
       "clientName": "上野　正已",
       "deliveryAddress": "Osteria il Gatto",
+      "deliveryAddressDetail": "〒581-0074 大阪府八尾市栄町２丁目２−４",
       "deliveryDate": "2026-11-21",
       "time": "10:00",
       "returnTime": "15:00",
@@ -1326,6 +1314,7 @@
       "folder": "1121友井さま（都島区民センター　ホール）",
       "clientName": "友井　健二",
       "deliveryAddress": "都島区民センター　ホール",
+      "deliveryAddressDetail": "〒534-0027 大阪府大阪市都島区中野町2-16-25",
       "deliveryDate": "2026-11-21",
       "time": "09:30",
       "returnTime": "16:00-17:00",
@@ -1350,6 +1339,7 @@
       "folder": "1121永池さま（NEEDS心斎橋 by T&G WEDDING）",
       "clientName": "永池　朱音",
       "deliveryAddress": "NEEDS心斎橋 by T&G WEDDING",
+      "deliveryAddressDetail": "〒542-0081 大阪府大阪市中央区南船場１丁目１８−８",
       "deliveryDate": "2026-11-20",
       "time": "19:00",
       "returnTime": "13:30-15:00",
@@ -1525,6 +1515,7 @@
       "folder": "1122なかつかささま（久宝寺緑地　修景広場）",
       "clientName": "なかつかさ　ひろみち",
       "deliveryAddress": "久宝寺緑地　修景広場",
+      "deliveryAddressDetail": "〒581-0077 大阪府八尾市西久宝寺３２３",
       "deliveryDate": "2026-11-22",
       "time": "08:15",
       "returnTime": "16:00",

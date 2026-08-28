@@ -18,7 +18,6 @@ import 'package:image/image.dart' as img;
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:syncfusion_flutter_pdf/pdf.dart';
 import 'firebase_options.dart';
 import 'package:geolocator/geolocator.dart';
 import 'services/booking_notification_service.dart';

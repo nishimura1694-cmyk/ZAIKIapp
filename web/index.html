@@ -51,6 +51,33 @@
       });
     })();
   </script>
+  <script>
+    // Service Worker registration can fail with
+    // "InvalidStateError: ... document is in an invalid state" when the app
+    // is running inside a sandboxed preview (e.g. VS Code's embedded Web
+    // view). This is harmless — it only disables the offline caching
+    // worker — so we swallow just that specific error to avoid noisy
+    // error toasts/logs in such environments.
+    (function () {
+      function isServiceWorkerRegistrationError(message) {
+        return typeof message === 'string' &&
+          message.indexOf('register a ServiceWorker') !== -1;
+      }
+      window.addEventListener('unhandledrejection', function (event) {
+        var reason = event.reason;
+        var message = reason && reason.message ? reason.message : String(reason);
+        if (isServiceWorkerRegistrationError(message)) {
+          event.preventDefault();
+        }
+      });
+      window.addEventListener('error', function (event) {
+        if (isServiceWorkerRegistrationError(event.message)) {
+          event.preventDefault();
+        }
+      }, true);
+    })();
+  </script>
+
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader

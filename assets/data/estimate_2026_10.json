@@ -1,12 +1,13 @@
 {
   "month": "2026-10",
-  "source": "Dropbox見積データ抽出（2026年10月_見積データ抽出.xlsx）",
+  "source": "Dropbox見積データ抽出（ローカル同期）（2026年10月_見積データ抽出.xlsx）",
   "note": "金額・単価・小計等の金銭情報は含みません",
   "jobs": [
     {
       "folder": "1004加納さま(尼崎)（尼崎市立中央南生涯学習プラザ）",
       "clientName": "加納 尚美",
       "deliveryAddress": "尼崎市立中央南生涯学習プラザ",
+      "deliveryAddressDetail": "〒660-0868 兵庫県尼崎市西御園町93−２−９３−２\nサンシビック尼崎",
       "deliveryDate": "2026-10-04",
       "time": "09:00",
       "returnTime": "17:30",
@@ -58,6 +59,7 @@
       "folder": "1004松下さま（市内セントグレースヴィラ）（セントグレースヴィラ）",
       "clientName": "松下　紗希",
       "deliveryAddress": "セントグレースヴィラ",
+      "deliveryAddressDetail": "〒550-0013 大阪府大阪市西区新町１丁目１−１８",
       "deliveryDate": "2026-10-04",
       "time": "11:30",
       "returnTime": "17:00",
@@ -190,6 +192,7 @@
       "folder": "1009川口さま（中之島LOVE　CENTRAL）",
       "clientName": "川口　哲史",
       "deliveryAddress": "中之島LOVE　CENTRAL",
+      "deliveryAddressDetail": "〒530-0047 大阪府大阪市北区西天満２丁目１−１８",
       "deliveryDate": "2026-10-09",
       "time": "14:00",
       "returnTime": "20:00",
@@ -242,6 +245,7 @@
       "folder": "1009－10林さま（株式会社フォトスタジオエル）",
       "clientName": "林 厚希",
       "deliveryAddress": "株式会社フォトスタジオエル",
+      "deliveryAddressDetail": "〒639-1160 奈良県大和郡山市北郡山町77−１",
       "deliveryDate": "2026-10-09",
       "items": [
         {
@@ -467,6 +471,7 @@
       "folder": "1010-12木村さん（金沢案件）（金沢　赤羽ホール）",
       "clientName": "木村　尚矢",
       "deliveryAddress": "金沢　赤羽ホール",
+      "deliveryAddressDetail": "〒920-0919 石川県金沢市南町２−１",
       "note": "協力金: -30,000円",
       "items": [
         {
@@ -721,6 +726,7 @@
       "folder": "1010前原さま（UNWEDDING 中之島）",
       "clientName": "前原　心",
       "deliveryAddress": "UNWEDDING 中之島",
+      "deliveryAddressDetail": "〒530-0005 大阪府大阪市北区中之島５丁目３−６０",
       "deliveryDate": "2026-10-10",
       "time": "09:00",
       "returnTime": "14:00",
@@ -798,6 +804,7 @@
       "folder": "1010長谷川さま（けいはんな記念公園　水景園）",
       "clientName": "長谷川　伸彦",
       "deliveryAddress": "けいはんな記念公園　水景園",
+      "deliveryAddressDetail": "〒619-0238 京都府相楽郡精華町精華台６丁目１",
       "deliveryDate": "2026-10-10",
       "time": "15:00",
       "returnTime": "20:00",
@@ -822,6 +829,7 @@
       "folder": "1011中島さま(箕面市)（箕面市立かやの広場）",
       "clientName": "中島 和恵",
       "deliveryAddress": "箕面市立かやの広場",
+      "deliveryAddressDetail": "〒562-0034 大阪府箕面市西宿１丁目１５−３０",
       "deliveryDate": "2026-10-11",
       "items": [
         {
@@ -935,6 +943,7 @@
       "folder": "1011久保さま(日本なにわ民謡会)（立花南生涯学習プラザ 3階ホール）",
       "clientName": "久保 名津絵",
       "deliveryAddress": "立花南生涯学習プラザ 3階ホール",
+      "deliveryAddressDetail": "兵庫県尼崎市栗山町2丁目25ー28",
       "deliveryDate": "2026-10-11",
       "time": "09:00",
       "returnTime": "17:00",
@@ -994,6 +1003,7 @@
       "folder": "1011坂口さま(旧桜宮公会堂)（旧桜宮公会堂）",
       "clientName": "坂口　純",
       "deliveryAddress": "旧桜宮公会堂",
+      "deliveryAddressDetail": "〒530-0042　大阪市北区天満橋1丁目1-1",
       "deliveryDate": "2026-10-11",
       "time": "14:40",
       "returnTime": "19:00",
@@ -1085,6 +1095,7 @@
       "folder": "1011木嶋さま（MiaVia）（MiaVia イザベラ邸）",
       "clientName": "木嶋　麟太郎",
       "deliveryAddress": "MiaVia イザベラ邸",
+      "deliveryAddressDetail": "〒564-0054 大阪府吹田市芳野町１３−８",
       "deliveryDate": "2026-10-10",
       "time": "暫定18:00",
       "items": [
@@ -1150,6 +1161,7 @@
       "folder": "1011村上様（荒川小学校）（東大阪市立荒川小学校）",
       "clientName": "進修第二幼稚園",
       "deliveryAddress": "東大阪市立荒川小学校",
+      "deliveryAddressDetail": "〒577-0843 大阪府東大阪市荒川３丁目２３−７",
       "deliveryDate": "2026-10-11",
       "time": "8：00頃",
       "returnTime": "12:30頃",
@@ -1188,6 +1200,7 @@
       "folder": "1011村上様（長堂小学校）（東大阪長堂小学校）",
       "clientName": "進修幼稚園",
       "deliveryAddress": "東大阪長堂小学校",
+      "deliveryAddressDetail": "〒577-0056 大阪府東大阪市長堂１丁目１７−８",
       "deliveryDate": "2026-10-11",
       "time": "07:00",
       "returnTime": "12:00",
@@ -1226,6 +1239,7 @@
       "folder": "1012井元さま（グラビテート大阪）（グラビテート大阪）",
       "clientName": "Gravity　Park Ibaraki 株式会社",
       "deliveryAddress": "グラビテート大阪",
+      "deliveryAddressDetail": "〒568-0092 大阪府茨木市生保５３−１",
       "deliveryDate": "2026-10-10",
       "time": "09:00",
       "returnTime": "16:30以降or翌日",
@@ -1269,6 +1283,7 @@
       "folder": "1012小板さま(matineesoiree)（クリエイティブセンター大阪\nWHITE CHAMBER）",
       "clientName": "小板 伊織",
       "deliveryAddress": "クリエイティブセンター大阪\nWHITE CHAMBER",
+      "deliveryAddressDetail": "〒559-0011 大阪府大阪市住之江区北加賀屋４丁目１−５５",
       "deliveryDate": "2026-10-12",
       "time": "09:00",
       "returnTime": "20:00",
@@ -1342,6 +1357,7 @@
       "folder": "1012森本さま（グランドサロン）（グランドサロン十三）",
       "clientName": "森本　真",
       "deliveryAddress": "グランドサロン十三",
+      "deliveryAddressDetail": "〒532-0024 大阪府大阪市淀川区十三本町１丁目１６−２０",
       "deliveryDate": "2026-10-12",
       "time": "08:00",
       "returnTime": "16:30",
@@ -1443,6 +1459,7 @@
       "folder": "1016-17ノックアウトモンキー(神戸サンボーホール）（神戸サンボーホール）",
       "clientName": "ノックアウトモンキー",
       "deliveryAddress": "神戸サンボーホール",
+      "deliveryAddressDetail": "〒651-0083 神戸市中央区浜辺通 5-1-32",
       "note": "協力金: -200,000円",
       "items": [
         {
@@ -1837,6 +1854,7 @@
       "folder": "1016-17倉田さま（大阪総合デザイン専門学校）（大阪総合デザイン専門学校）",
       "clientName": "大阪総合デザイン専門学校",
       "deliveryAddress": "大阪総合デザイン専門学校",
+      "deliveryAddressDetail": "〒530-0012 大阪府大阪市北区芝田２丁目８−３５",
       "deliveryDate": "2026-10-16",
       "time": "14:00",
       "returnTime": "14:00",
@@ -1861,6 +1879,7 @@
       "folder": "1016－17林さま（株式会社フォトスタジオエル）",
       "clientName": "林 厚希",
       "deliveryAddress": "株式会社フォトスタジオエル",
+      "deliveryAddressDetail": "〒639-1160 奈良県大和郡山市北郡山町77−１",
       "deliveryDate": "2026-10-16",
       "items": [
         {
@@ -1890,6 +1909,7 @@
       "folder": "1017-18瀬島さまウォンバット（五月山動物園）（池田市五月山体育館）",
       "clientName": "一般財団法人　池田みどりスポーツ財団",
       "deliveryAddress": "池田市五月山体育館",
+      "deliveryAddressDetail": "〒563-0051 大阪府池田市綾羽２丁目７−１",
       "deliveryDate": "2026-10-17",
       "time": "14：30(仮）",
       "returnTime": "15：00(仮)",
@@ -1990,6 +2010,7 @@
       "folder": "1017ちゃいれっく(与力町公園)（与力町公園）",
       "clientName": "株式会社プロケア\nちゃいれっく東天満保育園",
       "deliveryAddress": "与力町公園",
+      "deliveryAddressDetail": "〒530-0036 大阪府大阪市北区与力町５",
       "deliveryDate": "2026-10-21",
       "time": "07:00",
       "returnTime": "12:00",
@@ -2043,6 +2064,7 @@
       "folder": "1017杉谷様（アートグレイス ウェディングコースト）",
       "clientName": "杉谷 朋哉",
       "deliveryAddress": "アートグレイス ウェディングコースト",
+      "deliveryAddressDetail": "〒559-0034 大阪府大阪市住之江区南港北２丁目８−１",
       "deliveryDate": "2026-10-17",
       "time": "10:00",
       "returnTime": "15:00ごろ",
@@ -2109,6 +2131,7 @@
       "folder": "1017長瀬さま（リッツ・カールトン大阪）",
       "clientName": "長瀬　博次",
       "deliveryAddress": "リッツ・カールトン大阪",
+      "deliveryAddressDetail": "〒530-0001 大阪府大阪市北区梅田2-5-25",
       "deliveryDate": "2026-10-17",
       "items": [
         {
@@ -2218,6 +2241,7 @@
       "folder": "1023-24林さま（株式会社フォトスタジオエル）",
       "clientName": "林 厚希",
       "deliveryAddress": "株式会社フォトスタジオエル",
+      "deliveryAddressDetail": "〒639-1160 奈良県大和郡山市北郡山町77−１",
       "deliveryDate": "2026-10-23",
       "items": [
         {
@@ -2433,6 +2457,7 @@
       "folder": "1025フォーシーカンパニー清水さま（塚口プラウドシティ）（プラウドシティ塚口）",
       "clientName": "株式会社フォーシーカンパニー",
       "deliveryAddress": "プラウドシティ塚口",
+      "deliveryAddressDetail": "〒661-0979 兵庫県尼崎市上坂部１丁目１\t\t\t\t\t\t\t",
       "deliveryDate": "2026-10-25",
       "time": "未定",
       "returnTime": "未定",
@@ -2653,6 +2678,7 @@
       "folder": "1025左子さま（南野坂自治会）（川西市北ひばりが丘公園）",
       "clientName": "南野坂自治会",
       "deliveryAddress": "川西市北ひばりが丘公園",
+      "deliveryAddressDetail": "〒666-0136 兵庫県川西市南野坂２丁目１",
       "deliveryDate": "2026-10-25",
       "time": "09:00",
       "returnTime": "16:00",
@@ -2754,6 +2780,7 @@
       "folder": "1025木村様（アヴァンセリアン大阪）（アヴァンセリアン大阪）",
       "clientName": " 木村 朱音",
       "deliveryAddress": "アヴァンセリアン大阪",
+      "deliveryAddressDetail": "〒554-0024 大阪府大阪市此花区島屋６丁目２−２５",
       "deliveryDate": "2026-10-25",
       "time": "未定",
       "returnTime": "未定",
@@ -2785,6 +2812,7 @@
       "folder": "1025本間さま（リバー道頓堀 5F B）",
       "clientName": "本間　英莉",
       "deliveryAddress": "リバー道頓堀 5F B",
+      "deliveryAddressDetail": "大阪府大阪市中央区島之内2丁目17-11",
       "deliveryDate": "2026-10-25",
       "time": "12:00",
       "returnTime": "19:00",
@@ -2837,6 +2865,7 @@
       "folder": "1025福間さま（キャッスルホテル大阪 1Fルポール）",
       "clientName": "福間　博義",
       "deliveryAddress": "キャッスルホテル大阪 1Fルポール",
+      "deliveryAddressDetail": "〒540-0032 大阪市中央区天満橋京町１−１",
       "deliveryDate": "2026-10-25",
       "time": "15:00",
       "returnTime": "20:30",
@@ -2882,6 +2911,7 @@
       "folder": "1031-1101たけだ様（羽衣国際大学）",
       "clientName": "CASTIA",
       "deliveryAddress": "羽衣国際大学",
+      "deliveryAddressDetail": "〒592-8344 大阪府堺市西区浜寺南町１丁目８９−１",
       "deliveryDate": "2026-10-31",
       "items": [
         {
@@ -2999,6 +3029,7 @@
       "folder": "1031おかざき様(グランドサロン)（グランドサロン十三）",
       "clientName": "岡嵜　裕子",
       "deliveryAddress": "グランドサロン十三",
+      "deliveryAddressDetail": "〒532-0024 大阪府大阪市淀川区十三本町\n１丁目１６−２０",
       "deliveryDate": "2026-10-31",
       "items": [
         {
@@ -3222,6 +3253,7 @@
       "folder": "1031寺内様（西政ビル7階　）",
       "clientName": "寺内 壮",
       "deliveryAddress": "西政ビル7階　",
+      "deliveryAddressDetail": "〒542-0075 大阪府大阪市中央区難波千日前６−７",
       "deliveryDate": "2026-10-31",
       "time": "17:00",
       "returnTime": "21:00",
@@ -3246,6 +3278,7 @@
       "folder": "1031松田様（大正川）（摂津市大正川付近）",
       "clientName": "摂津市生涯学習フェスティバル\n実行委員会",
       "deliveryAddress": "摂津市大正川付近",
+      "deliveryAddressDetail": "〒566-0034 大阪府摂津市香露園34-2付近",
       "deliveryDate": "2026-10-31",
       "items": [
         {
@@ -3419,6 +3452,7 @@
     {
       "folder": "1031高田さま",
       "clientName": "高田　裕一朗",
+      "deliveryAddressDetail": "受け渡し：大阪府大阪市西区西本町１丁目３−４大阪陶磁器会館\n返却：大阪府大阪市中央区北久宝寺町４丁目１−６",
       "deliveryDate": "2026-10-31",
       "time": "09:00",
       "returnTime": "19:00",

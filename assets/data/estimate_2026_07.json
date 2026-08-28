@@ -1,15 +1,16 @@
 {
   "month": "2026-07",
-  "source": "Dropbox見積データ抽出（2026年7月_見積データ抽出.xlsx）",
+  "source": "Dropbox見積データ抽出（ローカル同期）（2026年7月_見積データ抽出.xlsx）",
   "note": "金額・単価・小計等の金銭情報は含みません",
   "jobs": [
     {
       "folder": "0703松下様（東大阪市文化創造館）",
       "clientName": "マツシタ",
       "deliveryAddress": "東大阪市文化創造館",
-      "deliveryDate": "2026-07-03",
-      "time": "12:00",
-      "returnTime": "21:00",
+      "deliveryAddressDetail": "2026-07-03",
+      "deliveryDate": "12:00",
+      "time": "21:00",
+      "returnTime": 16220,
       "items": [
         {
           "category": "その他",
@@ -37,9 +38,10 @@
       "folder": "0703松元さま（dining café asia）",
       "clientName": "松元 秀人",
       "deliveryAddress": "dining café asia",
-      "deliveryDate": "2026-07-03",
-      "time": "13:00",
-      "returnTime": "22:00",
+      "deliveryAddressDetail": "2026-07-03",
+      "deliveryDate": "13:00",
+      "time": "22:00",
+      "returnTime": 21600,
       "items": [
         {
           "category": "セットプラン",
@@ -75,9 +77,10 @@
       "folder": "0705太田さま（ホテルモントレ大阪（会場：浪鳴舘））",
       "clientName": "太田 涼介",
       "deliveryAddress": "ホテルモントレ大阪（会場：浪鳴舘）",
-      "deliveryDate": "2026-07-05",
+      "deliveryAddressDetail": "2026-07-05",
+      "deliveryDate": "未定",
       "time": "未定",
-      "returnTime": "未定",
+      "returnTime": 96600,
       "items": [
         {
           "category": "セットプラン",
@@ -141,9 +144,9 @@
       "folder": "0709-16阪本さま(追手門中高)（追手門学院中・高等学校）",
       "clientName": "追手門学院中・高等学校",
       "deliveryAddress": "追手門学院中・高等学校",
-      "deliveryDate": "2026/7/9(木) 11:00",
-      "returnTime": "2026/7/10(金) 夕方頃",
-      "note": "協力金: -50,000円",
+      "deliveryAddressDetail": "2026/7/9(木) 11:00",
+      "time": "2026/7/10(金) 夕方頃",
+      "returnTime": 402096,
       "items": [
         {
           "category": "セットプラン",
@@ -289,6 +292,7 @@
       "folder": "0711古賀様（Djam）（HEP FIVE）",
       "clientName": "ディージャムクリエイト株式会社",
       "deliveryAddress": "HEP FIVE",
+      "returnTime": 40200,
       "items": [
         {
           "category": "DJ",
@@ -324,9 +328,10 @@
       "folder": "0711松尾さま（江坂MUSE HALL）",
       "clientName": "松尾　幹稔",
       "deliveryAddress": "江坂MUSE HALL",
-      "deliveryDate": "2026-07-11",
-      "time": "10:00",
-      "returnTime": "22:30",
+      "deliveryAddressDetail": "2026-07-11",
+      "deliveryDate": "10:00",
+      "time": "22:30",
+      "returnTime": 21750,
       "items": [
         {
           "category": "ドラム関連",
@@ -367,9 +372,10 @@
       "folder": "0711株式会社EMP（京都MUSE）（KYOTO MUSE）",
       "clientName": "株式会社EMP",
       "deliveryAddress": "KYOTO MUSE",
-      "deliveryDate": "2026-07-11",
-      "time": "10:00",
-      "returnTime": "19:30",
+      "deliveryAddressDetail": "2026-07-11",
+      "deliveryDate": "10:00",
+      "time": "19:30",
+      "returnTime": 37240,
       "items": [
         {
           "category": "ワイヤレス",
@@ -398,9 +404,10 @@
       "folder": "0711直川さま（豊中ホテルアイボリー）（ホテルアイボリー3F　宴会場）",
       "clientName": "直川　俊彦",
       "deliveryAddress": "ホテルアイボリー3F　宴会場",
-      "deliveryDate": "2026-07-11",
-      "time": "10:40",
-      "returnTime": "14:00",
+      "deliveryAddressDetail": "2026-07-11",
+      "deliveryDate": "10:40",
+      "time": "14:00",
+      "returnTime": 23000,
       "items": [
         {
           "category": "スピーカー類",
@@ -422,9 +429,10 @@
       "folder": "0711真木さま(サンフォニックス)（アロフト大阪堂島1F W XYZ Bar）",
       "clientName": "株式会社サンフォニックス大阪",
       "deliveryAddress": "アロフト大阪堂島1F W XYZ Bar",
-      "deliveryDate": "2026-07-11",
-      "time": "12:00",
-      "returnTime": "21:00",
+      "deliveryAddressDetail": "2026-07-11",
+      "deliveryDate": "12:00",
+      "time": "21:00",
+      "returnTime": 20400,
       "items": [
         {
           "category": "カラオケ・簡易ステージ",
@@ -453,9 +461,10 @@
       "folder": "0712岡村さま（ESP）（尼崎中央公園）",
       "clientName": "専門学校ESPエンタテインメント大阪",
       "deliveryAddress": "尼崎中央公園",
-      "deliveryDate": "2026-07-12",
-      "time": "12:15",
-      "returnTime": "19:30",
+      "deliveryAddressDetail": "2026-07-12",
+      "deliveryDate": "12:15",
+      "time": "19:30",
+      "returnTime": 16400,
       "items": [
         {
           "category": "セットプラン",
@@ -497,9 +506,10 @@
       "folder": "0712高橋さま（近畿大学校友会）（シェラトン都ホテル大阪）",
       "clientName": "学校法人近畿大学学園校友部　",
       "deliveryAddress": "シェラトン都ホテル大阪",
-      "deliveryDate": "2026-07-12",
-      "time": "08:30",
-      "returnTime": "13:00",
+      "deliveryAddressDetail": "2026-07-12",
+      "deliveryDate": "08:30",
+      "time": "13:00",
+      "returnTime": 35000,
       "items": [
         {
           "category": "ドラムset",
@@ -556,9 +566,10 @@
       "folder": "0716小林さま（OMO関西空港）（OMO関西空港 by 星野リゾート）",
       "clientName": "OMO関西空港 by 星野リゾート",
       "deliveryAddress": "OMO関西空港 by 星野リゾート",
-      "deliveryDate": "2026-07-16",
-      "time": "10:15",
-      "returnTime": "14:30",
+      "deliveryAddressDetail": "2026-07-16",
+      "deliveryDate": "10:15",
+      "time": "14:30",
+      "returnTime": 28520,
       "items": [
         {
           "category": "セットプラン",
@@ -601,9 +612,10 @@
       "folder": "0716鈴木様（株式会社TSI）（MHL. 南船場店）",
       "clientName": "株式会社TSI",
       "deliveryAddress": "MHL. 南船場店",
-      "deliveryDate": "2026-07-16",
-      "time": "17:00",
-      "returnTime": "21:00-21:30",
+      "deliveryAddressDetail": "2026-07-16",
+      "deliveryDate": "17:00",
+      "time": "21:00-21:30",
+      "returnTime": 40400,
       "items": [
         {
           "category": "スピーカー類",
@@ -639,10 +651,10 @@
       "folder": "0718-20東元さま（名村）（名村造船所跡地）",
       "clientName": "ライブハウスBRONZE",
       "deliveryAddress": "名村造船所跡地",
-      "deliveryDate": "2026-07-18",
+      "deliveryAddressDetail": "2026-07-18",
+      "deliveryDate": "未定",
       "time": "未定",
-      "returnTime": "未定",
-      "note": "協力金: -50,000円",
+      "returnTime": 551380,
       "items": [
         {
           "category": "7/18～20　ブラックチャンバー",
@@ -891,9 +903,10 @@
     {
       "folder": "0719　名竹さま（-）",
       "clientName": "名竹 恵美",
-      "deliveryDate": "2026-07-19",
-      "time": "09:00",
-      "returnTime": "17:00",
+      "deliveryAddressDetail": "2026-07-19",
+      "deliveryDate": "09:00",
+      "time": "17:00",
+      "returnTime": 1200,
       "items": [
         {
           "category": "スタンド類",
@@ -908,9 +921,10 @@
       "folder": "0719賀内さま(FREEMIND)（関西大学　千里山キャンパス）",
       "clientName": "株式会社フリーマインド 賀内",
       "deliveryAddress": "関西大学　千里山キャンパス",
-      "deliveryDate": "2026-07-19",
-      "time": "08:00",
-      "returnTime": "13:00頃",
+      "deliveryAddressDetail": "2026-07-19",
+      "deliveryDate": "08:00",
+      "time": "13:00頃",
+      "returnTime": 149440,
       "items": [
         {
           "category": "1号館",
@@ -1032,9 +1046,10 @@
       "folder": "0720ふるきさま(ラグナヴェール大阪)（ラグナヴェール大阪）",
       "clientName": "ふるき　けいた",
       "deliveryAddress": "ラグナヴェール大阪",
-      "deliveryDate": "2026-07-20",
-      "time": "11:00",
-      "returnTime": "18:00",
+      "deliveryAddressDetail": "2026-07-20",
+      "deliveryDate": "11:00",
+      "time": "18:00",
+      "returnTime": 52200,
       "items": [
         {
           "category": "セットプラン",
@@ -1105,10 +1120,10 @@
       "folder": "0724株式会社無茶苦茶　宇野さま（都島）（ガーデンオリエンタル大阪）",
       "clientName": "株式会社無茶苦茶",
       "deliveryAddress": "ガーデンオリエンタル大阪",
-      "deliveryDate": "2026-07-24",
-      "time": "10:30-11:00",
-      "returnTime": "22：00以降",
-      "note": "別プラン（配送設営あり）見積: 33,550円",
+      "deliveryAddressDetail": "2026-07-24",
+      "deliveryDate": "10:30-11:00",
+      "time": "22：00以降",
+      "returnTime": 20500,
       "items": [
         {
           "category": "DJ",
@@ -1137,9 +1152,10 @@
       "folder": "0724猪尾さま（加賀屋天満宮）",
       "clientName": "猪尾 忠昭",
       "deliveryAddress": "加賀屋天満宮",
-      "deliveryDate": "2026-07-24",
-      "time": "15:30",
-      "returnTime": "20:30",
+      "deliveryAddressDetail": "2026-07-24",
+      "deliveryDate": "15:30",
+      "time": "20:30",
+      "returnTime": 24800,
       "items": [
         {
           "category": "ドラムset",
@@ -1175,8 +1191,8 @@
       "folder": "0725-26るうーフェス（城野音）（大阪城野外音楽堂）",
       "clientName": "株式会社クラウドシード",
       "deliveryAddress": "大阪城野外音楽堂",
-      "deliveryDate": "2026-07-25",
-      "note": "特別協賛お値引き: -120,000円",
+      "deliveryAddressDetail": "2026-07-25",
+      "returnTime": 611300,
       "items": [
         {
           "category": "音響",
@@ -1386,9 +1402,10 @@
       "folder": "0725岸本さん（市内ガーデンオリエンタル大阪）（ザ・ガーデンオリエンタル・大阪）",
       "clientName": "有限会社HEADLINE",
       "deliveryAddress": "ザ・ガーデンオリエンタル・大阪",
-      "deliveryDate": "2026-07-25",
-      "time": "16：00　仮",
-      "returnTime": "21：00　仮",
+      "deliveryAddressDetail": "2026-07-25",
+      "deliveryDate": "16：00　仮",
+      "time": "21：00　仮",
+      "returnTime": 67720,
       "items": [
         {
           "category": "セットプラン",
@@ -1438,9 +1455,10 @@
       "folder": "0725嶋田さま（どんどこ船）（どんどこ供奉）",
       "clientName": "どんどこ船講事務所 御中",
       "deliveryAddress": "どんどこ供奉",
-      "deliveryDate": "2026-07-25",
-      "time": "14:30 天神橋 橋下",
-      "returnTime": "21:00 金幣船 発着場",
+      "deliveryAddressDetail": "2026-07-25",
+      "deliveryDate": "14:30 天神橋 橋下",
+      "time": "21:00 金幣船 発着場",
+      "returnTime": 57800,
       "items": [
         {
           "category": "セットプラン",
@@ -1483,9 +1501,10 @@
       "folder": "0725嶋田さま（どんどこ船）（金幣）",
       "clientName": "どんどこ船講事務所 御中",
       "deliveryAddress": "金幣",
-      "deliveryDate": "2026-07-25",
-      "time": "14:30 天神橋 橋下",
-      "returnTime": "21:00 金幣船 発着場",
+      "deliveryAddressDetail": "2026-07-25",
+      "deliveryDate": "14:30 天神橋 橋下",
+      "time": "21:00 金幣船 発着場",
+      "returnTime": 20400,
       "items": [
         {
           "category": "セットプラン",
@@ -1513,9 +1532,10 @@
       "folder": "0725御神酒講　和田さま（市内）（天神祭船渡御　お渡し場所未定）",
       "clientName": "大阪天満宮　御神酒講事務局",
       "deliveryAddress": "天神祭船渡御　お渡し場所未定",
-      "deliveryDate": "2026-07-25",
-      "time": "10:00",
-      "returnTime": "21:00頃",
+      "deliveryAddressDetail": "2026-07-25",
+      "deliveryDate": "10:00",
+      "time": "21:00頃",
+      "returnTime": 111200,
       "items": [
         {
           "category": "セットプラン",
@@ -1572,9 +1592,10 @@
       "folder": "0725谷口さま（道頓堀ホテル）（道頓堀ホテル）",
       "clientName": "道頓堀ホテル",
       "deliveryAddress": "道頓堀ホテル",
-      "deliveryDate": "2026-07-25",
-      "time": "09:30",
-      "returnTime": "17:30",
+      "deliveryAddressDetail": "2026-07-25",
+      "deliveryDate": "09:30",
+      "time": "17:30",
+      "returnTime": 14600,
       "items": [
         {
           "category": "キーボード関連",
@@ -1603,9 +1624,10 @@
       "folder": "0726阪口さま（船尾会館）",
       "clientName": "阪口　晋作",
       "deliveryAddress": "船尾会館",
-      "deliveryDate": "2026-07-26",
-      "time": "08:50",
-      "returnTime": "13:40",
+      "deliveryAddressDetail": "2026-07-26",
+      "deliveryDate": "08:50",
+      "time": "13:40",
+      "returnTime": 50400,
       "items": [
         {
           "category": "セットプラン",
@@ -1676,9 +1698,10 @@
       "folder": "0727山口さま(日本ベッド)（谷町四丁目　ビル）",
       "clientName": "日本ベッド",
       "deliveryAddress": "谷町四丁目　ビル",
-      "deliveryDate": "2026-07-27",
-      "time": "10:00",
-      "returnTime": "14:00",
+      "deliveryAddressDetail": "2026-07-27",
+      "deliveryDate": "10:00",
+      "time": "14:00",
+      "returnTime": 109480,
       "items": [
         {
           "category": "セットプラン",
@@ -1727,9 +1750,10 @@
       "folder": "0731多田さま（兵庫芸術文化センター）（兵庫芸術文化センター　中ホール）",
       "clientName": "株式会社ジンズアクション",
       "deliveryAddress": "兵庫芸術文化センター　中ホール",
-      "deliveryDate": "2026-07-31",
-      "time": "10:30",
-      "returnTime": "21:15",
+      "deliveryAddressDetail": "2026-07-31",
+      "deliveryDate": "10:30",
+      "time": "21:15",
+      "returnTime": 19200,
       "items": [
         {
           "category": "ベースアンプ系",
@@ -1758,9 +1782,10 @@
       "folder": "0731崔(チェ)さま（鴻臚館）",
       "clientName": "崔　仁圭",
       "deliveryAddress": "鴻臚館",
-      "deliveryDate": "2026-07-31",
-      "time": "16:00過ぎ",
-      "returnTime": "20:00過ぎ",
+      "deliveryAddressDetail": "2026-07-31",
+      "deliveryDate": "16:00過ぎ",
+      "time": "20:00過ぎ",
+      "returnTime": 14200,
       "items": [
         {
           "category": "スピーカー類",
@@ -1782,9 +1807,10 @@
       "folder": "0731田井さま（YES THEATER）",
       "clientName": "田井 直樹",
       "deliveryAddress": "YES THEATER",
-      "deliveryDate": "2026-07-31",
-      "time": "09:00",
-      "returnTime": "21:00",
+      "deliveryAddressDetail": "2026-07-31",
+      "deliveryDate": "09:00",
+      "time": "21:00",
+      "returnTime": 41800,
       "items": [
         {
           "category": "ドラムset",

@@ -29,7 +29,7 @@ class _MonthlyEstimateItem {
   String get qtyDurationLabel {
     final parts = <String>[];
     if (qty != null) parts.add('数量:$qty');
-    if (duration != null) parts.add('${duration}');
+    if (duration != null) parts.add('$duration');
     return parts.join(' / ');
   }
 }
@@ -281,7 +281,7 @@ Future<List<_MonthlyEstimateJob>> _loadBundledEstimateJobsFromIndex() async {
     final files = ((decoded['files'] as List?) ?? const [])
         .map((e) => 'assets/data/$e')
         .toList(growable: false);
-    return _loadAllBundledEstimateJobs(files);
+    return await _loadAllBundledEstimateJobs(files);
   } catch (_) {
     // index.jsonが無い場合は空扱い
     return const [];
@@ -535,9 +535,18 @@ class _MonthlyEstimateJobTileState extends State<_MonthlyEstimateJobTile> {
 }
 
 class DropboxEstimateTabScreen extends StatefulWidget {
-  const DropboxEstimateTabScreen({super.key, this.initialSearchQuery});
+  const DropboxEstimateTabScreen({
+    super.key,
+    this.initialSearchQuery,
+    this.initialDeliveryDate,
+  });
 
   final String? initialSearchQuery;
+
+  /// 予約履歴から遷移した場合の予約日（'yyyy/MM/dd'）。
+  /// 検索語（顧客名）に加えてこの日付が一致する見積のみに絞り込むために使う。
+  /// ユーザーが検索語を編集した時点で解除する。
+  final String? initialDeliveryDate;
 
   @override
   State<DropboxEstimateTabScreen> createState() =>
@@ -553,6 +562,7 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
   bool _showPast = false;
   late final TextEditingController _searchController;
   String _searchQuery = '';
+  DateTime? _strictDeliveryDate;
 
   @override
   bool get wantKeepAlive => true;
@@ -562,12 +572,31 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
     super.initState();
     _localJobsFuture = _loadBundledEstimateJobsFromIndex();
     _searchQuery = widget.initialSearchQuery?.trim() ?? '';
+    _strictDeliveryDate = _parseBookingDate(widget.initialDeliveryDate);
     _searchController = TextEditingController(text: _searchQuery);
     _searchController.addListener(() {
       final value = _searchController.text;
       if (_searchQuery == value) return;
-      setState(() => _searchQuery = value);
+      setState(() {
+        _searchQuery = value;
+        // 検索語をユーザーが編集したら、予約日による絞り込みは解除する。
+        _strictDeliveryDate = null;
+      });
     });
+  }
+
+  DateTime? _parseBookingDate(String? raw) {
+    final trimmed = raw?.trim() ?? '';
+    if (trimmed.isEmpty) return null;
+    try {
+      return DateFormat('yyyy/MM/dd').parseStrict(trimmed);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  bool _isSameDate(DateTime a, DateTime b) {
+    return a.year == b.year && a.month == b.month && a.day == b.day;
   }
 
   @override
@@ -625,12 +654,19 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
                     enableSubsequence: false,
                     enableEditDistance: false,
                   );
+                  final strictDate = _strictDeliveryDate;
                   return allJobs
                       .where(
                         (job) => matchesQuery(
                           '${job.clientName ?? ''} ${job.deliveryAddress ?? ''} ${job.folder}',
                         ),
                       )
+                      .where((job) {
+                        if (strictDate == null) return true;
+                        final deliveryDate = job.parsedDeliveryDate;
+                        return deliveryDate != null &&
+                            _isSameDate(deliveryDate, strictDate);
+                      })
                       .toList();
                 })()
               : _filterJobsWithinDisplayRange(

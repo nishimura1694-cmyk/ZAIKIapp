@@ -134,6 +134,7 @@ class _BookingListScreenState extends State<BookingListScreen>
     final customerName = (data['customerName'] ?? '').toString().trim();
     final venueName = (data['venueName'] ?? '').toString().trim();
     final query = customerName.isNotEmpty ? customerName : venueName;
+    final bookingDate = (data['bookingDate'] ?? '').toString().trim();
     return IconButton(
       icon: const Icon(Icons.description_outlined),
       iconSize: 20,
@@ -148,6 +149,7 @@ class _BookingListScreenState extends State<BookingListScreen>
         MaterialPageRoute(
           builder: (_) => DropboxEstimateTabScreen(
             initialSearchQuery: query.isEmpty ? null : query,
+            initialDeliveryDate: bookingDate.isEmpty ? null : bookingDate,
           ),
         ),
       ),

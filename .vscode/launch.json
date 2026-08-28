@@ -8,6 +8,13 @@
             "program": "lib/main.dart"
         },
         {
+            "name": "Flutter (Chrome Debug)",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "chrome",
+            "program": "lib/main.dart"
+        },
+        {
             "name": "Flutter (Profile)",
             "request": "launch",
             "type": "dart",

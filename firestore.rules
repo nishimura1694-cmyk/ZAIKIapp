@@ -9,33 +9,8 @@ service cloud.firestore {
       return v == null || v is timestamp;
     }
 
-    function hasSafeImageUrls(v) {
-      return (v is list) &&
-        v.size() <= 30;
-    }
-
-    function hasSafePdfUrls(v) {
-      return (v is list) &&
-        v.size() <= 30;
-    }
-
-    function hasSafeCustomerTags(v) {
-      return (v is list) &&
-        v.size() <= 2 &&
-        v.hasOnly(['トラ', 'オペ']);
-    }
-
     function isBoolOrNull(v) {
       return v == null || v is bool;
-    }
-
-    function hasSafeSearchPrefixes(v) {
-      return (v is list) &&
-        v.size() <= 120;
-    }
-
-    function hasSafeSearchPrefixesOrNull(v) {
-      return v == null || hasSafeSearchPrefixes(v);
     }
 
     function isMasterPayload() {
@@ -43,99 +18,6 @@ service cloud.firestore {
         request.resource.data.name is string &&
         request.resource.data.name.size() > 0 &&
         request.resource.data.name.size() <= 100;
-    }
-
-    function isVenuePayload() {
-      return request.resource.data.keys().hasOnly([
-        'name',
-        'address',
-        'shopAndRoom',
-        'loadingPort',
-        'parking',
-        'capacity',
-        'remarks',
-        'block',
-        'category',
-        'power',
-        'updatedAt',
-        'createdAt'
-      ]) &&
-      request.resource.data.name is string &&
-      request.resource.data.name.size() > 0 &&
-      request.resource.data.name.size() <= 120 &&
-      isStringOrEmpty(request.resource.data.address) &&
-      isStringOrEmpty(request.resource.data.shopAndRoom) &&
-      isStringOrEmpty(request.resource.data.loadingPort) &&
-      isStringOrEmpty(request.resource.data.parking) &&
-      isStringOrEmpty(request.resource.data.capacity) &&
-      isStringOrEmpty(request.resource.data.remarks) &&
-      isStringOrEmpty(request.resource.data.block) &&
-      isStringOrEmpty(request.resource.data.category) &&
-      isStringOrEmpty(request.resource.data.power) &&
-      isTimestampOrNull(request.resource.data.updatedAt) &&
-      isTimestampOrNull(request.resource.data.createdAt);
-    }
-
-    function isBookingPayload() {
-      return request.resource.data.keys().hasOnly([
-        'customerName',
-        'staffName',
-        'bookingDate',
-        'remarks',
-        'handover',
-        'retrospectiveResult',
-        'retrospectiveIssue',
-        'retrospectiveSolution',
-        'retrospectiveNext',
-        'retrospectiveChecked',
-        'customerTags',
-        'isTra',
-        'isOpe',
-        'dropboxUrl',
-        'venueId',
-        'venueName',
-        'searchText',
-        'searchPrefixes',
-        'imageUrls',
-        'pdfUrls',
-        'updatedAt',
-        'createdAt'
-      ]) &&
-      request.resource.data.customerName is string &&
-      request.resource.data.customerName.size() > 0 &&
-      request.resource.data.customerName.size() <= 120 &&
-      isStringOrEmpty(request.resource.data.staffName) &&
-      isStringOrEmpty(request.resource.data.bookingDate) &&
-      isStringOrEmpty(request.resource.data.remarks) &&
-      isStringOrEmpty(request.resource.data.handover) &&
-      isStringOrEmpty(request.resource.data.retrospectiveResult) &&
-      isStringOrEmpty(request.resource.data.retrospectiveIssue) &&
-      isStringOrEmpty(request.resource.data.retrospectiveSolution) &&
-      isStringOrEmpty(request.resource.data.retrospectiveNext) &&
-      isBoolOrNull(request.resource.data.retrospectiveChecked) &&
-      hasSafeCustomerTags(request.resource.data.customerTags) &&
-      isBoolOrNull(request.resource.data.isTra) &&
-      isBoolOrNull(request.resource.data.isOpe) &&
-      isStringOrEmpty(request.resource.data.dropboxUrl) &&
-      (request.resource.data.dropboxUrl == null ||
-        request.resource.data.dropboxUrl.matches('^https://.*')) &&
-      isStringOrEmpty(request.resource.data.venueId) &&
-      isStringOrEmpty(request.resource.data.venueName) &&
-      isStringOrEmpty(request.resource.data.searchText) &&
-      hasSafeSearchPrefixesOrNull(request.resource.data.searchPrefixes) &&
-      hasSafeImageUrls(request.resource.data.imageUrls) &&
-      hasSafePdfUrls(request.resource.data.pdfUrls) &&
-      isTimestampOrNull(request.resource.data.updatedAt) &&
-      isTimestampOrNull(request.resource.data.createdAt);
-    }
-
-    function isRetrospectiveCheckedUpdate() {
-      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
-        'retrospectiveChecked',
-        'updatedAt'
-      ]) &&
-      isBoolOrNull(request.resource.data.retrospectiveChecked) &&
-      isTimestampOrNull(request.resource.data.updatedAt);
     }
 
     function isNotificationTokenPayload() {

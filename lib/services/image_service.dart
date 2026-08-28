@@ -1,4 +1,3 @@
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 // ↓ Webでエラーを出さないための条件付きインポート（重要！）
 import 'package:flutter_image_compress/flutter_image_compress.dart';

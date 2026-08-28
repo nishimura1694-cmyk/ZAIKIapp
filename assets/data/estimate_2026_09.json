@@ -1,6 +1,6 @@
 {
   "month": "2026-09",
-  "source": "Dropbox見積データ抽出（2026年9月_見積データ抽出.xlsx）",
+  "source": "Dropbox見積データ抽出（ローカル同期）（2026年9月_見積データ抽出.xlsx）",
   "note": "金額・単価・小計等の金銭情報は含みません",
   "jobs": [
     {
@@ -26,11 +26,12 @@
       ]
     },
     {
-      "folder": "0902KENZO夏輝さま（奈良）（奈良橿原付近）",
-      "clientName": "吟遊家KENZO",
-      "deliveryAddress": "奈良橿原付近",
+      "folder": "0902KENZO夏輝さま（奈良）（奈良 橿原神宮　養正殿）",
+      "clientName": "吟遊家KENZO　森夏輝",
+      "deliveryAddress": "奈良 橿原神宮　養正殿",
+      "deliveryAddressDetail": "〒634-0063 奈良県橿原市久米町９３４",
       "deliveryDate": "2026-09-02",
-      "time": "お昼ごろなど",
+      "time": "15:30",
       "returnTime": "終演後",
       "note": "協力金: -15,000円",
       "items": [
@@ -79,121 +80,10 @@
       ]
     },
     {
-      "folder": "0904-05吉村様（大阪府立生野高校）（大阪府立生野高等学校　体育館）",
-      "clientName": "大阪府立生野高等学校 　吉村 健",
-      "deliveryAddress": "大阪府立生野高等学校　体育館",
-      "deliveryDate": "2026-09-04",
-      "note": "0904-05見積書②.xlsm: 274,395円（旧版/別プラン）；協力金: -10,000円",
-      "items": [
-        {
-          "category": "音響",
-          "name": "楽々PAセット",
-          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "音響",
-          "name": "モニタースピーカー",
-          "memo": "[Side Fill]EV SX300",
-          "qty": 2,
-          "duration": "1日"
-        },
-        {
-          "category": "音響",
-          "name": "追加パワーアンプ",
-          "memo": "YAMAHA P5000s",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "音響",
-          "name": "ダイナミックマイク",
-          "memo": "SHURE SM58\n[付属：マイクホルダー、マイクケーブル10ｍ]",
-          "qty": 2,
-          "duration": "1日"
-        },
-        {
-          "category": "音響",
-          "name": "CDプレーヤー ",
-          "memo": "TASCAM CD-500B",
-          "qty": 2,
-          "duration": "1日"
-        },
-        {
-          "category": "楽器",
-          "name": "ドラムセット",
-          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
-          "duration": "1日"
-        },
-        {
-          "category": "楽器",
-          "name": "ベースアンプコンボ",
-          "memo": "MARKBASS MB58R CMD102PUR",
-          "duration": "1日"
-        },
-        {
-          "category": "楽器",
-          "name": "ギターアンプ",
-          "memo": "Roland JC-120",
-          "duration": "1日"
-        },
-        {
-          "category": "楽器",
-          "name": "ギターアンプ",
-          "memo": "Marshall DSL100H",
-          "duration": "1日"
-        },
-        {
-          "category": "楽器",
-          "name": "ギターアンプキャビネット",
-          "memo": "Marshall 1960A",
-          "duration": "1日"
-        },
-        {
-          "category": "楽器",
-          "name": "ギタースタンド",
-          "memo": "TAMA 839",
-          "duration": "1日"
-        },
-        {
-          "category": "楽器",
-          "name": "電子ピアノ",
-          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
-          "duration": "1日"
-        },
-        {
-          "category": "楽器",
-          "name": "スローン",
-          "memo": "キーボード用椅子",
-          "duration": "1日"
-        },
-        {
-          "category": "人件費・運搬費・諸経費",
-          "name": "オペレーター人員",
-          "memo": "1P",
-          "qty": 1,
-          "duration": 2
-        },
-        {
-          "category": "人件費・運搬費・諸経費",
-          "name": "設営・撤収アシスタント",
-          "qty": 1,
-          "duration": 2
-        },
-        {
-          "category": "人件費・運搬費・諸経費",
-          "name": "トランスポート＿エリア1",
-          "memo": "オペレーター併用プラン",
-          "qty": 2,
-          "duration": 2
-        }
-      ]
-    },
-    {
       "folder": "0904森野辺さま（ジ オリエント 神戸）",
       "clientName": "森野辺 裕紀",
       "deliveryAddress": "ジ オリエント 神戸",
+      "deliveryAddressDetail": "〒650-0034 兵庫県神戸市中央区京町２５",
       "deliveryDate": "2026-09-04",
       "time": "14:45",
       "returnTime": "21:15",
@@ -413,6 +303,7 @@
       "folder": "0905積水化学京都研究所（積水化学工業 京都研究所）",
       "clientName": "積水化学工業株式会社",
       "deliveryAddress": "積水化学工業 京都研究所",
+      "deliveryAddressDetail": "〒601-8105 京都府京都市南区上鳥羽上調子町２−２",
       "deliveryDate": "2026-09-05",
       "time": "07:00",
       "returnTime": "17:00",
@@ -568,6 +459,7 @@
       "folder": "0905籔さま（ラヴィマーナ神戸 瑠璃）",
       "clientName": "籔 涼介",
       "deliveryAddress": "ラヴィマーナ神戸 瑠璃",
+      "deliveryAddressDetail": "〒650-0048 兵庫県神戸市中央区神戸空港８−２",
       "deliveryDate": "2026-09-05",
       "time": "14:30",
       "returnTime": "19:15",
@@ -648,6 +540,7 @@
       "folder": "0905藤井さま(いまそう)（いまそう今里会館）",
       "clientName": "株式会社いまそう",
       "deliveryAddress": "いまそう今里会館",
+      "deliveryAddressDetail": "大阪市東成区大今里西3-2-20",
       "deliveryDate": "2026-09-05",
       "time": "08:45",
       "returnTime": "14:30",
@@ -854,6 +747,7 @@
       "folder": "0911漆畑さま（大高商会）（株式会社大高商会）",
       "clientName": "株式会社 大高商会",
       "deliveryAddress": "株式会社大高商会",
+      "deliveryAddressDetail": "〒558-0004大阪市住吉区長居東3丁目11-23",
       "deliveryDate": "2026-09-11",
       "time": "08:30",
       "returnTime": "17:30",
@@ -892,6 +786,7 @@
       "folder": "0911野村さま(大阪青凌中学校・高等学校)（大阪青凌中学校・高等学校）",
       "clientName": "野村 康孝",
       "deliveryAddress": "大阪青凌中学校・高等学校",
+      "deliveryAddressDetail": "〒618-0024 大阪府三島郡島本町若山台１丁目１−１",
       "deliveryDate": "2026-09-11",
       "time": "15:00",
       "returnTime": "15:00",
@@ -930,6 +825,7 @@
       "folder": "0912八木さま(あいおい同友会関西支部)（アウトバック ステーキハウス 梅田店（OUTBACK STEAKHOUSE））",
       "clientName": "あいおい同友会関西支部",
       "deliveryAddress": "アウトバック ステーキハウス 梅田店（OUTBACK STEAKHOUSE）",
+      "deliveryAddressDetail": "〒530-0003 大阪府大阪市北区堂島１丁目６−２０ \nアバンザビル",
       "deliveryDate": "2026-09-12",
       "time": "10:00",
       "returnTime": "14:00",
@@ -982,6 +878,7 @@
       "folder": "0912山下さま(カノビアーノ・アネックス)（カノビアーノ・アネックス）",
       "clientName": "山下　遼",
       "deliveryAddress": "カノビアーノ・アネックス",
+      "deliveryAddressDetail": "〒564-0054 大阪府吹田市芳野町１３−１０ \nMiaViaアトリエ棟",
       "deliveryDate": "2026-09-12",
       "time": "18:00",
       "returnTime": "21:00",
@@ -1006,6 +903,7 @@
       "folder": "0912番匠谷様（中鴻池リージョンセンター）",
       "clientName": "バンジョウヤ ナオヤ",
       "deliveryAddress": "中鴻池リージョンセンター",
+      "deliveryAddressDetail": "〒578-0975 大阪府東大阪市中鴻池町２丁目３−１３",
       "deliveryDate": "2026-09-12",
       "time": "14:30",
       "returnTime": "17:30",
@@ -1030,6 +928,7 @@
       "folder": "0912野村さま（パシフィックコンサルタンツ株式会社）（大阪万博記念公園 B-Base Area-A）",
       "clientName": "パシフィックコンサルタンツ株式会社",
       "deliveryAddress": "大阪万博記念公園 B-Base Area-A",
+      "deliveryAddressDetail": "〒532-0011 大阪府吹田市千里万博公園１−１０",
       "deliveryDate": "2026-09-12",
       "time": "10:00",
       "returnTime": "13:00過ぎ",
@@ -1061,6 +960,7 @@
       "folder": "0914坂口さま（旧桜ノ宮公会堂）（旧桜宮公会堂）",
       "clientName": "坂口　純",
       "deliveryAddress": "旧桜宮公会堂",
+      "deliveryAddressDetail": "〒530-0042　大阪市北区天満橋1丁目1-1",
       "deliveryDate": "2026-09-14",
       "time": "16:00",
       "returnTime": "17:10",
@@ -1085,6 +985,7 @@
       "folder": "0918-19尾西さま(追手門学院大手前中高等学校)（追手門学院大手前中・高等学校）",
       "clientName": "追手門学院大手前中・高等学校",
       "deliveryAddress": "追手門学院大手前中・高等学校",
+      "deliveryAddressDetail": "〒540-0008 大阪府大阪市中央区大手前1丁目3−20",
       "deliveryDate": "2026-09-18",
       "time": "お昼ごろ",
       "returnTime": "15:30",
@@ -1133,6 +1034,20 @@
           "name": "ミニミキサー",
           "memo": "YAMAHA MG10XU",
           "qty": 1,
+          "duration": "1.5日"
+        },
+        {
+          "category": "ケーブル類",
+          "name": "マイクケーブル",
+          "memo": "5m",
+          "qty": 1,
+          "duration": "1.5日"
+        },
+        {
+          "category": "ケーブル類",
+          "name": "シールド",
+          "memo": "・5m×8本\n・10m×1本",
+          "qty": 9,
           "duration": "1.5日"
         },
         {
@@ -1242,6 +1157,7 @@
       "folder": "0919林さま(堀江)（Farm Cafe mothers 堀江店）",
       "clientName": "林　日菜子",
       "deliveryAddress": "Farm Cafe mothers 堀江店",
+      "deliveryAddressDetail": "〒550-0014 大阪府大阪市西区北堀江２丁目１７−７",
       "deliveryDate": "2026-09-19",
       "time": "9:00暫定",
       "returnTime": "16:00暫定",
@@ -1287,6 +1203,7 @@
       "folder": "0919森岡さま（新大阪江坂東急REIホテル）",
       "clientName": "森岡　彩斗",
       "deliveryAddress": "新大阪江坂東急REIホテル",
+      "deliveryAddressDetail": "〒564-0051 大阪府吹田市豊津町９−６",
       "deliveryDate": "2026-09-19",
       "time": "08:00",
       "returnTime": "15:00",
@@ -1359,6 +1276,7 @@
       "folder": "0919金正さま（MOTHER POPCORN）",
       "clientName": "きんしょう　てつお",
       "deliveryAddress": "MOTHER POPCORN",
+      "deliveryAddressDetail": "大阪市西区西本町1-10-22 AXIS西本町ビルB1",
       "deliveryDate": "2026-09-19",
       "time": "15:15",
       "returnTime": "21:15",
@@ -1403,6 +1321,7 @@
       "folder": "0920坪谷さま（大阪倶楽部）（大阪倶楽部）",
       "clientName": "坪谷　春希",
       "deliveryAddress": "大阪倶楽部",
+      "deliveryAddressDetail": "〒541-0042 大阪府大阪市中央区今橋４丁目４−１１",
       "deliveryDate": "2026-09-20",
       "time": "08:30",
       "returnTime": "17:30",
@@ -1490,6 +1409,7 @@
       "folder": "0920岩波さま（Park Side House Osaka）",
       "clientName": "岩波　健吾",
       "deliveryAddress": "Park Side House Osaka",
+      "deliveryAddressDetail": "〒531-0076 大阪府大阪市北区大淀中１丁目８−３０",
       "deliveryDate": "2026-09-20",
       "time": "18:00",
       "items": [
@@ -1555,6 +1475,7 @@
       "folder": "0920服部さま（兵庫県加古川市尾上町今福49-1）",
       "clientName": "服部　凌矢",
       "deliveryAddress": "兵庫県加古川市尾上町今福49-1",
+      "deliveryAddressDetail": "兵庫県加古川市尾上町今福49-1",
       "deliveryDate": "2026-09-20",
       "time": "09:00",
       "returnTime": "15:20",
@@ -1600,6 +1521,7 @@
       "folder": "0920村上さま（アートグレイスウエディングコースト大阪）",
       "clientName": "村上　颯太",
       "deliveryAddress": "アートグレイスウエディングコースト大阪",
+      "deliveryAddressDetail": "〒559-0034 大阪市住之江区南港北2-8-1",
       "deliveryDate": "2026-09-20",
       "time": "12:30",
       "returnTime": "19:40",
@@ -1669,6 +1591,7 @@
       "folder": "0921服部さま（滋賀県彦根市高宮町1410）",
       "clientName": "服部　凌矢",
       "deliveryAddress": "滋賀県彦根市高宮町1410",
+      "deliveryAddressDetail": "滋賀県彦根市高宮町1410",
       "deliveryDate": "2026-09-21",
       "time": "09:00",
       "returnTime": "15:20",
@@ -1714,6 +1637,7 @@
       "folder": "0921朝日さま（オフィスライジング株）（J-GREEN堺）",
       "clientName": "朝日　里佳",
       "deliveryAddress": "J-GREEN堺",
+      "deliveryAddressDetail": "〒590-0901 大阪府堺市堺区築港八幡町１４５",
       "deliveryDate": "2026-09-21",
       "items": [
         {
@@ -1757,6 +1681,7 @@
       "folder": "0921栗林さま（神戸迎賓館 旧西尾邸）",
       "clientName": "栗林　晃平",
       "deliveryAddress": "神戸迎賓館 旧西尾邸",
+      "deliveryAddressDetail": "〒654-0067 兵庫県神戸市須磨区離宮西町２丁目４−１",
       "deliveryDate": "2026-09-21",
       "time": "10:00",
       "returnTime": "19:00",
@@ -1809,6 +1734,7 @@
       "folder": "0922奥平さま（泉大津フェニックス）",
       "clientName": "奥平 力",
       "deliveryAddress": "泉大津フェニックス",
+      "deliveryAddressDetail": "〒595-0056 大阪府泉大津市夕凪町",
       "deliveryDate": "2026-09-22",
       "time": "08:00",
       "returnTime": "16:30",
@@ -1903,6 +1829,7 @@
       "folder": "0922岡田さま（迎賓館）",
       "clientName": "岡田　龍也",
       "deliveryAddress": "迎賓館",
+      "deliveryAddressDetail": "〒565-0826 大阪府吹田市千里万博公園9-1",
       "deliveryDate": "2026-09-22",
       "items": [
         {
@@ -2005,6 +1932,7 @@
       "folder": "0923藤原さま（Mia Via　ソフィ邸）",
       "clientName": "藤原　裕次郎",
       "deliveryAddress": "Mia Via　ソフィ邸",
+      "deliveryAddressDetail": "〒564-0054 大阪府吹田市芳野町１３−８",
       "deliveryDate": "2026-09-23",
       "items": [
         {
@@ -2069,6 +1997,7 @@
       "folder": "0925-26さかもと様（Farm Cafe mothers 堀江店）",
       "clientName": "坂本　覇樹",
       "deliveryAddress": "Farm Cafe mothers 堀江店",
+      "deliveryAddressDetail": "〒550-0014 大阪府大阪市西区北堀江２丁目１７−７",
       "deliveryDate": "2026-09-25",
       "time": "20:00",
       "returnTime": "15:00",
@@ -2157,6 +2086,7 @@
       "folder": "0926-27加集さま（sasa）",
       "clientName": "加集　広樹",
       "deliveryAddress": "sasa",
+      "deliveryAddressDetail": "大阪府豊中市服部緑地1-8",
       "deliveryDate": "2026-09-26",
       "time": "18:00",
       "returnTime": "16:30",
@@ -2202,6 +2132,7 @@
       "folder": "0926チェさま（ヒルトン大阪）（ヒルトン大阪）",
       "clientName": "チェ　ミンウン",
       "deliveryAddress": "ヒルトン大阪",
+      "deliveryAddressDetail": "〒530-0001 大阪府大阪市北区梅田１丁目８−８",
       "deliveryDate": "2026-09-26",
       "time": "11:15",
       "items": [
@@ -2279,6 +2210,7 @@
       "folder": "0926永濱さま(京都信用金庫枚方支店)（京都信用金庫枚方支店 駐車場）",
       "clientName": "宮之阪中央商店街振興組合",
       "deliveryAddress": "京都信用金庫枚方支店 駐車場",
+      "deliveryAddressDetail": "〒573-0022 大阪府枚方市宮之阪１丁目２４−１",
       "deliveryDate": "下記4日程",
       "time": "08:00",
       "returnTime": "15:00",
@@ -2346,9 +2278,41 @@
       ]
     },
     {
+      "folder": "0926田嶋さま（和泉市弥生町）",
+      "clientName": "田嶋　清太郎",
+      "deliveryAddress": "和泉市弥生町",
+      "deliveryDate": "2026-09-26",
+      "time": "11:00",
+      "returnTime": "17:00",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ダイレクトボックス",
+          "name": "D.I.〔STEREO〕",
+          "memo": "RADIAL PRO D2",
+          "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア3",
+          "memo": "運搬・設営・撤収_3",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
       "folder": "0927宇野さま(八幡市商工会青年部)（八幡市 松花堂 広場）",
       "clientName": "八幡市商工会青年部",
       "deliveryAddress": "八幡市 松花堂 広場",
+      "deliveryAddressDetail": "〒614-8077 京都府八幡市八幡女郎花43−1\n(八幡市立松花堂庭園・美術館)",
       "deliveryDate": "2026-09-27",
       "items": [
         {
@@ -2482,6 +2446,7 @@
       "folder": "0927服部さま（兵庫県西宮市高松町２−２９）",
       "clientName": "服部　凌矢",
       "deliveryAddress": "兵庫県西宮市高松町２−２９",
+      "deliveryAddressDetail": "〒663-8204 兵庫県西宮市高松町２−２９",
       "deliveryDate": "2026-09-27",
       "time": "09:00",
       "returnTime": "15:20",
@@ -2527,6 +2492,7 @@
       "folder": "0927濱崎さま(ノバティホール)（ノバティホール　南館3F）",
       "clientName": "濱崎　義行",
       "deliveryAddress": "ノバティホール　南館3F",
+      "deliveryAddressDetail": "〒586-0014 大阪府河内長野市長野町5-1-303",
       "deliveryDate": "2026-09-27",
       "time": "12:00",
       "returnTime": "18:00",
@@ -2558,6 +2524,7 @@
       "folder": "0927菅生さま(西成スポセン)（西成スポーツセンター）",
       "clientName": "フィットネス21事業団\n大阪市立西成スポーツセンター",
       "deliveryAddress": "西成スポーツセンター",
+      "deliveryAddressDetail": "〒557-0043 大阪市西成区玉出東1-6-1",
       "deliveryDate": "2026-09-27",
       "time": "08:00",
       "returnTime": "ご返却夕方まで",
