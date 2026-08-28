@@ -487,7 +487,7 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
       return Container(
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: Colors.grey[50],
+          color: AppColors.subtleFill,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: AppColors.dividerGrey),
         ),
@@ -696,27 +696,9 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
               return const LoadingView();
             }
             if (snapshot.hasError) {
-              return Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Icon(Icons.error_outline, color: Colors.redAccent),
-                      const SizedBox(height: 12),
-                      Text(
-                        'データの読み込みに失敗しました\n${snapshot.error}',
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 16),
-                      FilledButton.icon(
-                        onPressed: _reload,
-                        icon: const Icon(Icons.refresh),
-                        label: const Text('再試行'),
-                      ),
-                    ],
-                  ),
-                ),
+              return ErrorRetryView(
+                message: 'データの読み込みに失敗しました',
+                onRetry: _reload,
               );
             }
 

@@ -88,6 +88,7 @@ class _BookingListScreenState extends State<BookingListScreen>
         splashRadius: 18,
         visualDensity: VisualDensity.compact,
         color: AppColors.brandOrange,
+        tooltip: '地図アプリで開く',
         onPressed: () => _openMapForAddress(directAddress),
       );
     }
@@ -124,6 +125,7 @@ class _BookingListScreenState extends State<BookingListScreen>
           splashRadius: 18,
           visualDensity: VisualDensity.compact,
           color: AppColors.brandOrange,
+          tooltip: '地図アプリで開く',
           onPressed: () => _openMapForAddress(address),
         );
       },
@@ -243,6 +245,16 @@ class _BookingListScreenState extends State<BookingListScreen>
         controller: _searchController,
         hintText: '顧客・会場名で検索...',
         onChanged: (_) => _onSearchChanged(),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings_outlined),
+            tooltip: '設定',
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const SettingsScreen()),
+            ),
+          ),
+        ],
       ),
       body: StreamBuilder<List<_SearchResultDocument>>(
         stream: bookingStream,
@@ -251,6 +263,9 @@ class _BookingListScreenState extends State<BookingListScreen>
             _lastBookingDocs = snapshot.data!;
           }
           final searchDocs = snapshot.data ?? _lastBookingDocs;
+          if (snapshot.hasError && searchDocs.isEmpty) {
+            return ErrorRetryView(onRetry: () => setState(() {}));
+          }
           if (searchDocs.isEmpty && !snapshot.hasData) {
             return const LoadingView();
           }
@@ -335,29 +350,34 @@ class _BookingListScreenState extends State<BookingListScreen>
 
           return Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: ToggleFilterButton(
-                    isActive: _showHiddenReservations,
-                    icon: Icons.event_note_outlined,
-                    activeIcon: Icons.visibility_off_rounded,
-                    label: '先の予約',
-                    activeLabel: '先の予約を隠す',
-                    onPressed: () {
-                      final nextValue = !_showHiddenReservations;
-                      _invalidateSearchQueryCache(namespace: 'bookings');
-                      setState(() {
-                        _showHiddenReservations = nextValue;
-                        if (nextValue) {
-                          _selectedMonthKey = null;
-                        }
-                      });
-                    },
+              if (snapshot.hasError)
+                ErrorBanner(onRetry: () => setState(() {})),
+              // 検索中はこのトグルが結果に一切影響しないため、押せそうに
+              // 見えて実は無効というUIを避けるために非表示にする。
+              if (!isSearching)
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: ToggleFilterButton(
+                      isActive: _showHiddenReservations,
+                      icon: Icons.event_note_outlined,
+                      activeIcon: Icons.visibility_off_rounded,
+                      label: '先の予約',
+                      activeLabel: '先の予約を隠す',
+                      onPressed: () {
+                        final nextValue = !_showHiddenReservations;
+                        _invalidateSearchQueryCache(namespace: 'bookings');
+                        setState(() {
+                          _showHiddenReservations = nextValue;
+                          if (nextValue) {
+                            _selectedMonthKey = null;
+                          }
+                        });
+                      },
+                    ),
                   ),
                 ),
-              ),
               SizedBox(
                 height: 45,
                 child: ListView(
@@ -462,7 +482,7 @@ class _BookingListScreenState extends State<BookingListScreen>
                                   width: 40,
                                   height: 40,
                                   decoration: BoxDecoration(
-                                    color: Colors.grey[100],
+                                    color: AppColors.subtleFill,
                                     borderRadius: BorderRadius.circular(6),
                                   ),
                                   child: const Icon(

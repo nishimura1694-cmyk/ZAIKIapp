@@ -10,6 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:intl/intl.dart';
 import 'package:image_picker/image_picker.dart';
@@ -42,6 +43,7 @@ part 'screens/venue_detail_sheet.dart';
 part 'screens/add_venue_screen.dart';
 part 'screens/add_booking_screen.dart';
 part 'screens/photo_annotation_page.dart';
+part 'screens/settings_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

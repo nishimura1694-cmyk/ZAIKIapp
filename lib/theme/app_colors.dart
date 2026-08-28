@@ -22,6 +22,14 @@ class AppColors {
   static const Color dividerGrey = Color(0xFFE6E1D6);
   static const Color subtleFill = Color(0xFFF0ECE1);
   static const Color textPrimary = Color(0xFF3D3929);
+
+  /// 補足テキスト・非活性アイコンなどに使う、暖色寄りのミュートグレー。
+  static const Color textSecondary = Color(0xFF8A8375);
+
+  /// 削除・エラーなど「危険」を示す色。Material標準の赤ではなく、
+  /// テラコッタ寄りの暖色パレットに馴染むよう少し落ち着かせている。
+  static const Color danger = Color(0xFFC4483A);
+  static const Color dangerBackground = Color(0xFFF5E1DC);
 }
 
 /// カード等の「状態」を表す背景色・枠線色のペア。

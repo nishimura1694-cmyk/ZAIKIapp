@@ -68,14 +68,34 @@ class _VenueDetailSheetState extends State<VenueDetailSheet> {
         ],
       ),
     );
-    if (confirm == true && context.mounted) {
-      await FirebaseFirestore.instance
-          .collection('venues')
-          .doc(widget.docId)
-          .delete();
-      _invalidateSearchQueryCache(namespace: 'venues');
-      if (context.mounted) Navigator.pop(context);
-    }
+    if (confirm != true || !context.mounted) return;
+
+    final messenger = ScaffoldMessenger.of(context);
+    final restoreData = Map<String, dynamic>.from(_currentData);
+    final docId = widget.docId;
+
+    await FirebaseFirestore.instance.collection('venues').doc(docId).delete();
+    _invalidateSearchQueryCache(namespace: 'venues');
+    if (context.mounted) Navigator.pop(context);
+
+    messenger.showSnackBar(
+      SnackBar(
+        content: const Text('会場を削除しました'),
+        action: SnackBarAction(
+          label: '元に戻す',
+          onPressed: () async {
+            await FirebaseFirestore.instance
+                .collection('venues')
+                .doc(docId)
+                .set(restoreData);
+            _invalidateSearchQueryCache(namespace: 'venues');
+            messenger.showSnackBar(
+              const SnackBar(content: Text('会場を元に戻しました')),
+            );
+          },
+        ),
+      ),
+    );
   }
 
   @override
@@ -97,7 +117,7 @@ class _VenueDetailSheetState extends State<VenueDetailSheet> {
               width: 40,
               height: 4,
               decoration: BoxDecoration(
-                color: Colors.grey[300],
+                color: AppColors.dividerGrey,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
@@ -140,7 +160,7 @@ class _VenueDetailSheetState extends State<VenueDetailSheet> {
                             IconButton(
                               icon: const Icon(
                                 Icons.delete_outline,
-                                color: Colors.redAccent,
+                                color: AppColors.danger,
                               ),
                               onPressed: () => _deleteVenue(context),
                             ),
@@ -207,7 +227,23 @@ class _VenueDetailSheetState extends State<VenueDetailSheet> {
                         builder: (context, snap) {
                           if (snap.hasError) {
                             return Center(
-                              child: Text('履歴の取得に失敗しました: ${snap.error}'),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    '履歴の取得に失敗しました',
+                                    style: TextStyle(
+                                      color: Colors.grey[600],
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                  TextButton.icon(
+                                    onPressed: () => setState(() {}),
+                                    icon: const Icon(Icons.refresh, size: 16),
+                                    label: const Text('再試行'),
+                                  ),
+                                ],
+                              ),
                             );
                           }
                           if (snap.connectionState == ConnectionState.waiting) {
@@ -278,7 +314,7 @@ class _VenueDetailSheetState extends State<VenueDetailSheet> {
                                           width: 50,
                                           height: 50,
                                           decoration: BoxDecoration(
-                                            color: Colors.grey[100],
+                                            color: AppColors.subtleFill,
                                             borderRadius: BorderRadius.circular(
                                               6,
                                             ),

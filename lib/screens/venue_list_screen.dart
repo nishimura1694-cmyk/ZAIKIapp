@@ -131,7 +131,7 @@ class _VenueListScreenState extends State<VenueListScreen>
                               city,
                               style: const TextStyle(fontSize: 12),
                             ),
-                            backgroundColor: Colors.grey[100],
+                            backgroundColor: AppColors.subtleFill,
                           ),
                         )
                         .toList(growable: false),
@@ -237,6 +237,9 @@ class _VenueListScreenState extends State<VenueListScreen>
             _lastVenueDocs = snapshot.data!;
           }
           final searchDocs = snapshot.data ?? _lastVenueDocs;
+          if (snapshot.hasError && searchDocs.isEmpty) {
+            return ErrorRetryView(onRetry: () => setState(() {}));
+          }
           if (searchDocs.isEmpty && !snapshot.hasData) {
             return const LoadingView();
           }
@@ -264,165 +267,193 @@ class _VenueListScreenState extends State<VenueListScreen>
           final canLoadMore =
               !isSearching && searchDocs.length >= _venueFetchLimit;
           if (docs.isEmpty) {
-            return RefreshIndicator(
-              onRefresh: _refreshVenues,
-              triggerMode: RefreshIndicatorTriggerMode.anywhere,
-              child: ListView(
-                physics: const AlwaysScrollableScrollPhysics(),
-                children: const [
-                  SizedBox(height: 80),
-                  EmptyStateView(
-                    icon: Icons.location_city_outlined,
-                    message: '該当する会場がありません',
-                  ),
-                ],
-              ),
-            );
-          }
-          return RefreshIndicator(
-            onRefresh: _refreshVenues,
-            triggerMode: RefreshIndicatorTriggerMode.anywhere,
-            child: ListView.separated(
-              physics: const AlwaysScrollableScrollPhysics(),
-              padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
-              itemCount: docs.length + (canLoadMore ? 1 : 0),
-              separatorBuilder: (_, index) {
-                if (index >= docs.length - 1) {
-                  return const SizedBox(height: 0);
-                }
-                return const SizedBox(height: 12);
-              },
-              itemBuilder: (context, index) {
-                if (index >= docs.length) {
-                  return Padding(
-                    padding: const EdgeInsets.only(top: 16),
-                    child: Center(
-                      child: OutlinedButton.icon(
-                        onPressed: _loadMoreVenues,
-                        icon: const Icon(Icons.expand_more),
-                        label: const Text('さらに表示'),
-                      ),
-                    ),
-                  );
-                }
-                final data = docs[index].data;
-                final hasAddress = (data['address'] ?? '')
-                    .toString()
-                    .isNotEmpty;
-                final hasAttention = _extractVenueAttentionItems(
-                  data,
-                ).isNotEmpty;
-                final hasExtraCharge = _extractVenueExtraChargeNote(
-                  data,
-                ).isNotEmpty;
-                return SectionCard(
-                  child: ListTile(
-                    title: Row(
-                      children: [
-                        if (hasAttention) ...[
-                          const Tooltip(
-                            message: '要注意項目あり',
-                            child: Icon(
-                              Icons.warning_amber_rounded,
-                              color: Colors.redAccent,
-                              size: 20,
-                            ),
-                          ),
-                          const SizedBox(width: 6),
-                        ],
-                        if (hasExtraCharge) ...[
-                          const Tooltip(
-                            message: '追加料金発生あり',
-                            child: Icon(
-                              Icons.currency_yen_rounded,
-                              color: Colors.deepOrange,
-                              size: 20,
-                            ),
-                          ),
-                          const SizedBox(width: 6),
-                        ],
-                        Expanded(
-                          child: Text(
-                            data['name'] ?? '',
-                            style: const TextStyle(fontWeight: FontWeight.bold),
-                          ),
+            return Column(
+              children: [
+                if (snapshot.hasError)
+                  ErrorBanner(onRetry: () => setState(() {})),
+                Expanded(
+                  child: RefreshIndicator(
+                    onRefresh: _refreshVenues,
+                    triggerMode: RefreshIndicatorTriggerMode.anywhere,
+                    child: ListView(
+                      physics: const AlwaysScrollableScrollPhysics(),
+                      children: const [
+                        SizedBox(height: 80),
+                        EmptyStateView(
+                          icon: Icons.location_city_outlined,
+                          message: '該当する会場がありません',
                         ),
                       ],
                     ),
-                    subtitle: Text(
-                      "エリア: ${data['block'] ?? '-'} / ${data['shopAndRoom'] ?? '-'}",
-                    ),
-                    trailing: SizedBox(
-                      width: 88,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          hasAddress
-                              ? IconButton(
-                                  icon: const Icon(Icons.location_on),
-                                  color: AppColors.brandOrange,
-                                  onPressed: () async {
-                                    final address = data['address'] ?? '';
-                                    final String uri =
-                                        'https://maps.google.com/?q=${Uri.encodeComponent(address)}';
-                                    try {
-                                      if (await canLaunchUrl(Uri.parse(uri))) {
-                                        await launchUrl(
-                                          Uri.parse(uri),
-                                          mode: LaunchMode.externalApplication,
-                                        );
-                                      } else {
-                                        if (context.mounted) {
-                                          ScaffoldMessenger.of(
-                                            context,
-                                          ).showSnackBar(
-                                            const SnackBar(
-                                              content: Text('地図アプリを開けませんでした'),
-                                            ),
-                                          );
-                                        }
-                                      }
-                                    } catch (e) {
-                                      if (context.mounted) {
-                                        ScaffoldMessenger.of(
-                                          context,
-                                        ).showSnackBar(
-                                          SnackBar(content: Text('エラー: $e')),
-                                        );
-                                      }
-                                    }
-                                  },
-                                )
-                              : SizedBox(
-                                  width: 48,
-                                  height: 48,
-                                  child: Center(
-                                    child: Icon(
-                                      Icons.location_on,
-                                      color: Colors.grey[400],
-                                      size: 22,
-                                    ),
+                  ),
+                ),
+              ],
+            );
+          }
+          return Column(
+            children: [
+              if (snapshot.hasError)
+                ErrorBanner(onRetry: () => setState(() {})),
+              Expanded(
+                child: RefreshIndicator(
+                  onRefresh: _refreshVenues,
+                  triggerMode: RefreshIndicatorTriggerMode.anywhere,
+                  child: ListView.separated(
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
+                    itemCount: docs.length + (canLoadMore ? 1 : 0),
+                    separatorBuilder: (_, index) {
+                      if (index >= docs.length - 1) {
+                        return const SizedBox(height: 0);
+                      }
+                      return const SizedBox(height: 12);
+                    },
+                    itemBuilder: (context, index) {
+                      if (index >= docs.length) {
+                        return Padding(
+                          padding: const EdgeInsets.only(top: 16),
+                          child: Center(
+                            child: OutlinedButton.icon(
+                              onPressed: _loadMoreVenues,
+                              icon: const Icon(Icons.expand_more),
+                              label: const Text('さらに表示'),
+                            ),
+                          ),
+                        );
+                      }
+                      final data = docs[index].data;
+                      final hasAddress = (data['address'] ?? '')
+                          .toString()
+                          .isNotEmpty;
+                      final hasAttention = _extractVenueAttentionItems(
+                        data,
+                      ).isNotEmpty;
+                      final hasExtraCharge = _extractVenueExtraChargeNote(
+                        data,
+                      ).isNotEmpty;
+                      return SectionCard(
+                        child: ListTile(
+                          title: Row(
+                            children: [
+                              if (hasAttention) ...[
+                                const Tooltip(
+                                  message: '要注意項目あり',
+                                  child: Icon(
+                                    Icons.warning_amber_rounded,
+                                    color: AppColors.danger,
+                                    size: 20,
                                   ),
                                 ),
-                        ],
-                      ),
-                    ),
-                    onTap: () => showModalBottomSheet(
-                      context: context,
-                      isScrollControlled: true,
-                      backgroundColor: AppColors.surface,
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.vertical(
-                          top: Radius.circular(20),
+                                const SizedBox(width: 6),
+                              ],
+                              if (hasExtraCharge) ...[
+                                const Tooltip(
+                                  message: '追加料金発生あり',
+                                  child: Icon(
+                                    Icons.currency_yen_rounded,
+                                    color: Colors.deepOrange,
+                                    size: 20,
+                                  ),
+                                ),
+                                const SizedBox(width: 6),
+                              ],
+                              Expanded(
+                                child: Text(
+                                  data['name'] ?? '',
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          subtitle: Text(
+                            "エリア: ${data['block'] ?? '-'} / ${data['shopAndRoom'] ?? '-'}",
+                          ),
+                          trailing: SizedBox(
+                            width: 88,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                hasAddress
+                                    ? IconButton(
+                                        icon: const Icon(Icons.location_on),
+                                        color: AppColors.brandOrange,
+                                        tooltip: '地図アプリで開く',
+                                        onPressed: () async {
+                                          final address = data['address'] ?? '';
+                                          final String uri =
+                                              'https://maps.google.com/?q=${Uri.encodeComponent(address)}';
+                                          try {
+                                            if (await canLaunchUrl(
+                                              Uri.parse(uri),
+                                            )) {
+                                              await launchUrl(
+                                                Uri.parse(uri),
+                                                mode: LaunchMode
+                                                    .externalApplication,
+                                              );
+                                            } else {
+                                              if (context.mounted) {
+                                                ScaffoldMessenger.of(
+                                                  context,
+                                                ).showSnackBar(
+                                                  const SnackBar(
+                                                    content: Text(
+                                                      '地図アプリを開けませんでした',
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                            }
+                                          } catch (e) {
+                                            if (context.mounted) {
+                                              ScaffoldMessenger.of(
+                                                context,
+                                              ).showSnackBar(
+                                                SnackBar(
+                                                  content: Text('エラー: $e'),
+                                                ),
+                                              );
+                                            }
+                                          }
+                                        },
+                                      )
+                                    : SizedBox(
+                                        width: 48,
+                                        height: 48,
+                                        child: Center(
+                                          child: Icon(
+                                            Icons.location_on,
+                                            color: Colors.grey[400],
+                                            size: 22,
+                                          ),
+                                        ),
+                                      ),
+                              ],
+                            ),
+                          ),
+                          onTap: () => showModalBottomSheet(
+                            context: context,
+                            isScrollControlled: true,
+                            backgroundColor: AppColors.surface,
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(20),
+                              ),
+                            ),
+                            builder: (_) => VenueDetailSheet(
+                              data: data,
+                              docId: docs[index].id,
+                            ),
+                          ),
                         ),
-                      ),
-                      builder: (_) =>
-                          VenueDetailSheet(data: data, docId: docs[index].id),
-                    ),
+                      );
+                    },
                   ),
-                );
-              },
-            ),
+                ),
+              ),
+            ],
           );
         },
       ),

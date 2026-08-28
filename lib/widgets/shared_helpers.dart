@@ -10,10 +10,10 @@ Widget _detailRow(IconData icon, String label, String? value) {
         Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: Colors.grey[50],
+            color: AppColors.subtleFill,
             borderRadius: BorderRadius.circular(8),
           ),
-          child: Icon(icon, size: 20, color: Colors.grey[700]),
+          child: Icon(icon, size: 20, color: AppColors.textSecondary),
         ),
         const SizedBox(width: 16),
         Expanded(
@@ -22,9 +22,9 @@ Widget _detailRow(IconData icon, String label, String? value) {
             children: [
               Text(
                 label,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 12,
-                  color: Colors.grey[500],
+                  color: AppColors.textSecondary,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -33,7 +33,7 @@ Widget _detailRow(IconData icon, String label, String? value) {
                 value == null || value.isEmpty ? "-" : value,
                 style: const TextStyle(
                   fontSize: 16,
-                  color: Colors.black87,
+                  color: AppColors.textPrimary,
                   fontWeight: FontWeight.w600,
                 ),
               ),

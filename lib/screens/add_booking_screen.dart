@@ -543,7 +543,10 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
           ),
           TextButton(
             onPressed: () => Navigator.pop(ctx, true),
-            child: const Text('破棄する', style: TextStyle(color: Colors.red)),
+            child: const Text(
+              '破棄する',
+              style: TextStyle(color: AppColors.danger),
+            ),
           ),
         ],
       ),
@@ -678,7 +681,7 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
             constraints: const BoxConstraints(maxHeight: 200),
             margin: const EdgeInsets.only(top: 4),
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey[300]!),
+              border: Border.all(color: AppColors.dividerGrey),
               borderRadius: BorderRadius.circular(8),
               color: AppColors.surface,
               boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 4)],
@@ -765,7 +768,7 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
         decoration: InputDecoration(
           labelText: label,
           labelStyle: isUrgent
-              ? const TextStyle(color: Colors.redAccent)
+              ? const TextStyle(color: AppColors.danger)
               : null,
         ),
       ),
@@ -1010,10 +1013,10 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
         width: 80,
         height: 80,
         decoration: BoxDecoration(
-          color: Colors.grey[200],
+          color: AppColors.subtleFill,
           borderRadius: BorderRadius.circular(8),
         ),
-        child: const Icon(Icons.add_a_photo, color: Colors.grey),
+        child: const Icon(Icons.add_a_photo, color: AppColors.textSecondary),
       ),
     );
   }
@@ -1033,9 +1036,9 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
             height: 80,
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: const Color(0xFFF5F5F5),
+              color: AppColors.subtleFill,
               borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: const Color(0xFFE0E0E0)),
+              border: Border.all(color: AppColors.dividerGrey),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

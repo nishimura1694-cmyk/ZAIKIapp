@@ -193,6 +193,50 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
                                         borderRadius: BorderRadius.circular(
                                           999,
                                         ),
+                                        onTap: () => _copyImageLink(
+                                          context,
+                                          urls[currentIndex].toString(),
+                                        ),
+                                        child: const Padding(
+                                          padding: EdgeInsets.all(8),
+                                          child: Icon(
+                                            Icons.link,
+                                            size: 18,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(height: 8),
+                                    Material(
+                                      color: Colors.black54,
+                                      borderRadius: BorderRadius.circular(999),
+                                      child: InkWell(
+                                        borderRadius: BorderRadius.circular(
+                                          999,
+                                        ),
+                                        onTap: () => _openImageExternally(
+                                          context,
+                                          urls[currentIndex].toString(),
+                                        ),
+                                        child: const Padding(
+                                          padding: EdgeInsets.all(8),
+                                          child: Icon(
+                                            Icons.open_in_new,
+                                            size: 18,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(height: 8),
+                                    Material(
+                                      color: Colors.black54,
+                                      borderRadius: BorderRadius.circular(999),
+                                      child: InkWell(
+                                        borderRadius: BorderRadius.circular(
+                                          999,
+                                        ),
                                         onTap: _isEditingPhoto
                                             ? null
                                             : openEditorForCurrentImage,
@@ -275,6 +319,33 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
         );
       },
     );
+  }
+
+  Future<void> _copyImageLink(BuildContext context, String url) async {
+    await Clipboard.setData(ClipboardData(text: url));
+    if (!context.mounted) return;
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(const SnackBar(content: Text('画像のリンクをコピーしました')));
+  }
+
+  Future<void> _openImageExternally(BuildContext context, String url) async {
+    try {
+      final uri = Uri.parse(url);
+      if (await canLaunchUrl(uri)) {
+        await launchUrl(uri, mode: LaunchMode.externalApplication);
+      } else if (context.mounted) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('画像を開けませんでした')));
+      }
+    } catch (e) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('画像を開けませんでした: $e')));
+      }
+    }
   }
 
   Future<void> _reloadBooking() async {
@@ -441,14 +512,37 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
         ],
       ),
     );
-    if (confirm == true && context.mounted) {
-      await FirebaseFirestore.instance
-          .collection('bookings')
-          .doc(widget.docId)
-          .delete();
-      _invalidateSearchQueryCache(namespace: 'bookings');
-      if (context.mounted) Navigator.pop(context);
-    }
+    if (confirm != true || !context.mounted) return;
+
+    final messenger = ScaffoldMessenger.of(context);
+    final restoreData = Map<String, dynamic>.from(_currentData);
+    final docId = widget.docId;
+
+    await FirebaseFirestore.instance
+        .collection('bookings')
+        .doc(docId)
+        .delete();
+    _invalidateSearchQueryCache(namespace: 'bookings');
+    if (context.mounted) Navigator.pop(context);
+
+    messenger.showSnackBar(
+      SnackBar(
+        content: const Text('予約履歴を削除しました'),
+        action: SnackBarAction(
+          label: '元に戻す',
+          onPressed: () async {
+            await FirebaseFirestore.instance
+                .collection('bookings')
+                .doc(docId)
+                .set(restoreData);
+            _invalidateSearchQueryCache(namespace: 'bookings');
+            messenger.showSnackBar(
+              const SnackBar(content: Text('予約履歴を元に戻しました')),
+            );
+          },
+        ),
+      ),
+    );
   }
 
   Widget _buildRetrospectiveBox(String title, String value) {
@@ -528,7 +622,7 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
               width: 40,
               height: 4,
               decoration: BoxDecoration(
-                color: Colors.grey[300],
+                color: AppColors.dividerGrey,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
@@ -571,7 +665,7 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
                             IconButton(
                               icon: const Icon(
                                 Icons.delete_outline,
-                                color: Colors.redAccent,
+                                color: AppColors.danger,
                               ),
                               onPressed: () => _deleteBooking(context),
                             ),

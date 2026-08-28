@@ -639,11 +639,9 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
             return const LoadingView();
           }
           if (snapshot.hasError) {
-            return Center(
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Text('読み込みに失敗しました\n${snapshot.error}'),
-              ),
+            return ErrorRetryView(
+              message: '読み込みに失敗しました',
+              onRetry: _reload,
             );
           }
           final allJobs = snapshot.data ?? const <_MonthlyEstimateJob>[];
@@ -682,20 +680,22 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
           }
           return Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: ToggleFilterButton(
-                    isActive: _showPast,
-                    icon: Icons.history,
-                    activeIcon: Icons.visibility_off_rounded,
-                    label: '過去分を表示',
-                    activeLabel: '過去分を隠す',
-                    onPressed: () => setState(() => _showPast = !_showPast),
+              // 検索中はこのトグルが結果に影響しないため非表示にする。
+              if (!isSearching)
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: ToggleFilterButton(
+                      isActive: _showPast,
+                      icon: Icons.history,
+                      activeIcon: Icons.visibility_off_rounded,
+                      label: '過去分を表示',
+                      activeLabel: '過去分を隠す',
+                      onPressed: () => setState(() => _showPast = !_showPast),
+                    ),
                   ),
                 ),
-              ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
                 child: Align(

@@ -189,7 +189,7 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
                               city,
                               style: const TextStyle(fontSize: 12),
                             ),
-                            backgroundColor: Colors.grey[100],
+                            backgroundColor: AppColors.subtleFill,
                           ),
                         )
                         .toList(growable: false),
@@ -408,7 +408,7 @@ class _AddVenueScreenState extends State<AddVenueScreen> {
                                       icon: const Icon(
                                         Icons.delete,
                                         size: 20,
-                                        color: Colors.red,
+                                        color: AppColors.danger,
                                       ),
                                       onPressed: () => _deleteItem(col, doc.id),
                                     ),
