@@ -450,8 +450,6 @@ class _BookingListScreenState extends State<BookingListScreen>
                       }
                       final booking = docs[index];
                       final data = booking.data;
-                      final isCompactMobile =
-                          MediaQuery.of(context).size.width < 430;
                       final bookingTags = _extractBookingTagsFromData(data);
                       final fallbackRetrospectiveChecked =
                           _isRetrospectiveChecked(data);
@@ -461,101 +459,127 @@ class _BookingListScreenState extends State<BookingListScreen>
                       final List urls = data['imageUrls'] ?? [];
 
                       return SectionCard(
-                        child: ListTile(
-                          contentPadding: const EdgeInsets.symmetric(
+                        onTap: () => showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          backgroundColor: AppColors.surface,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(20),
+                            ),
+                          ),
+                          builder: (_) => BookingDetailSheet(
+                            data: data,
+                            docId: booking.id,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
                             horizontal: 12,
+                            vertical: 10,
                           ),
-                          leading: urls.isNotEmpty
-                              ? ClipRRect(
-                                  borderRadius: BorderRadius.circular(6),
-                                  child: Image.network(
-                                    urls[0],
-                                    width: 40,
-                                    height: 40,
-                                    fit: BoxFit.cover,
-                                    cacheWidth: 96,
-                                    cacheHeight: 96,
-                                    filterQuality: FilterQuality.medium,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  urls.isNotEmpty
+                                      ? ClipRRect(
+                                          borderRadius: BorderRadius.circular(
+                                            6,
+                                          ),
+                                          child: Image.network(
+                                            urls[0],
+                                            width: 40,
+                                            height: 40,
+                                            fit: BoxFit.cover,
+                                            cacheWidth: 96,
+                                            cacheHeight: 96,
+                                            filterQuality: FilterQuality.medium,
+                                          ),
+                                        )
+                                      : Container(
+                                          width: 40,
+                                          height: 40,
+                                          decoration: BoxDecoration(
+                                            color: AppColors.subtleFill,
+                                            borderRadius:
+                                                BorderRadius.circular(6),
+                                          ),
+                                          child: const Icon(
+                                            Icons.image_outlined,
+                                            color: Colors.grey,
+                                            size: 18,
+                                          ),
+                                        ),
+                                  const SizedBox(width: 12),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          data['customerName'] ?? '',
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                        const SizedBox(height: 2),
+                                        Text(
+                                          "${data['bookingDate']} / ${data['venueName']}",
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                                            color: AppColors.textSecondary,
+                                            fontSize: 13,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                )
-                              : Container(
-                                  width: 40,
-                                  height: 40,
-                                  decoration: BoxDecoration(
-                                    color: AppColors.subtleFill,
-                                    borderRadius: BorderRadius.circular(6),
-                                  ),
-                                  child: const Icon(
-                                    Icons.image_outlined,
-                                    color: Colors.grey,
-                                    size: 18,
-                                  ),
-                                ),
-                          title: Text(
-                            data['customerName'] ?? '',
-                            style: const TextStyle(fontWeight: FontWeight.bold),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          subtitle: Text(
-                            "${data['bookingDate']} / ${data['venueName']}",
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          trailing: SizedBox(
-                            width: bookingTags.isNotEmpty
-                                ? (isCompactMobile ? 200 : 216)
-                                : (isCompactMobile ? 118 : 136),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                const Text(
-                                  '振',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.black54,
-                                  ),
-                                ),
-                                const SizedBox(width: 1),
-                                SizedBox(
-                                  width: 24,
-                                  child: Checkbox(
-                                    value: isRetrospectiveChecked,
-                                    visualDensity: VisualDensity.compact,
-                                    onChanged: (value) {
-                                      if (value == null) return;
-                                      _setRetrospectiveChecked(
-                                        bookingId: booking.id,
-                                        nextValue: value,
-                                        previousValue: isRetrospectiveChecked,
-                                      );
-                                    },
-                                  ),
-                                ),
-                                const SizedBox(width: 2),
-                                if (bookingTags.isNotEmpty) ...[
-                                  ...bookingTags.map(_buildBookingTagChip),
-                                  const SizedBox(width: 4),
                                 ],
-                                _buildBookingLocationButton(data),
-                                _buildBookingEstimateButton(data),
-                              ],
-                            ),
-                          ),
-                          onTap: () => showModalBottomSheet(
-                            context: context,
-                            isScrollControlled: true,
-                            backgroundColor: AppColors.surface,
-                            shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.vertical(
-                                top: Radius.circular(20),
                               ),
-                            ),
-                            builder: (_) => BookingDetailSheet(
-                              data: data,
-                              docId: booking.id,
-                            ),
+                              const SizedBox(height: 6),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  const Text(
+                                    '振',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.black54,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 1),
+                                  SizedBox(
+                                    width: 24,
+                                    child: Checkbox(
+                                      value: isRetrospectiveChecked,
+                                      visualDensity: VisualDensity.compact,
+                                      onChanged: (value) {
+                                        if (value == null) return;
+                                        _setRetrospectiveChecked(
+                                          bookingId: booking.id,
+                                          nextValue: value,
+                                          previousValue: isRetrospectiveChecked,
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                  const SizedBox(width: 2),
+                                  if (bookingTags.isNotEmpty) ...[
+                                    ...bookingTags.map(_buildBookingTagChip),
+                                    const SizedBox(width: 4),
+                                  ],
+                                  _buildBookingLocationButton(data),
+                                  _buildBookingEstimateButton(data),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
                       );
