@@ -4,28 +4,6 @@
   "note": "金額・単価・小計等の金銭情報は含みません",
   "jobs": [
     {
-      "folder": "0901-02古田土さま（大阪市内）",
-      "clientName": "古田土",
-      "deliveryAddress": "大阪市内",
-      "deliveryDate": "2026-09-01",
-      "items": [
-        {
-          "category": "カラオケ・簡易ステージ",
-          "name": "簡易ステージ",
-          "memo": "INTELLI STAGE\nサイズ：幅100cm×長さ100cm\nライザー：高さ20cm",
-          "qty": 6,
-          "duration": "2日"
-        },
-        {
-          "category": "運搬サービス",
-          "name": "トランスポート＿エリア1",
-          "memo": "運搬・設営・撤収",
-          "qty": 1,
-          "duration": "2日"
-        }
-      ]
-    },
-    {
       "folder": "0902KENZO夏輝さま（奈良）（奈良 橿原神宮　養正殿）",
       "clientName": "吟遊家KENZO　森夏輝",
       "deliveryAddress": "奈良 橿原神宮　養正殿",
@@ -1826,7 +1804,7 @@
       ]
     },
     {
-      "folder": "0922岡田さま（迎賓館）",
+      "folder": "0922岡田さま（万博迎賓館）（迎賓館）",
       "clientName": "岡田　龍也",
       "deliveryAddress": "迎賓館",
       "deliveryAddressDetail": "〒565-0826 大阪府吹田市千里万博公園9-1",
@@ -1880,13 +1858,6 @@
           "memo": "1P",
           "qty": 1,
           "duration": "12h"
-        },
-        {
-          "category": "オペレート",
-          "name": "アシスタント人員A",
-          "memo": "1P_A",
-          "qty": 1,
-          "duration": "12h"
         }
       ]
     },
@@ -1934,6 +1905,8 @@
       "deliveryAddress": "Mia Via　ソフィ邸",
       "deliveryAddressDetail": "〒564-0054 大阪府吹田市芳野町１３−８",
       "deliveryDate": "2026-09-23",
+      "time": "13:50",
+      "returnTime": "17:40",
       "items": [
         {
           "category": "セットプラン",
@@ -2282,8 +2255,8 @@
       "clientName": "田嶋　清太郎",
       "deliveryAddress": "和泉市弥生町",
       "deliveryDate": "2026-09-26",
-      "time": "11:00",
-      "returnTime": "17:00",
+      "time": "10:00",
+      "returnTime": "18:00",
       "items": [
         {
           "category": "セットプラン",

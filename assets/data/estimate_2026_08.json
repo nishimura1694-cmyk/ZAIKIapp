@@ -2694,46 +2694,6 @@
       ]
     },
     {
-      "folder": "0829ふくお様",
-      "items": [
-        {
-          "category": "その他",
-          "name": "譜面台",
-          "memo": "空白",
-          "qty": 14,
-          "duration": "12h"
-        },
-        {
-          "category": "ケーブル類",
-          "name": "マイクケーブル",
-          "memo": "10m",
-          "qty": 11,
-          "duration": "12h"
-        },
-        {
-          "category": "マイク",
-          "name": "ダイナミックマイク",
-          "memo": "SHURE SM58\n[付属：マイクホルダー、マイクケーブル10ｍ]",
-          "qty": 11,
-          "duration": "12h"
-        },
-        {
-          "category": "スタンド類",
-          "name": "マイクスタンド",
-          "memo": "ロングブーム<210>",
-          "qty": 5,
-          "duration": "12h"
-        },
-        {
-          "category": "運搬サービス",
-          "name": "トランスポート＿エリア1",
-          "memo": "車上渡しプラン",
-          "qty": 1,
-          "duration": "12h"
-        }
-      ]
-    },
-    {
       "folder": "0829キムさま(在日本大韓民国民団大阪本部)（在日本大韓民国民団大阪府地方本部 5階ホール）",
       "clientName": "在日本大韓民国青年会兵庫県地方本部",
       "deliveryAddress": "在日本大韓民国民団大阪府地方本部 5階ホール",
@@ -3066,7 +3026,28 @@
           "duration": "12h"
         },
         {
-          "category": "運搬サービス",
+          "category": "<椅子>",
+          "name": "ペーパースツール",
+          "memo": "H430",
+          "qty": 6,
+          "duration": "12h"
+        },
+        {
+          "category": "<椅子>",
+          "name": "折り畳み丸椅子",
+          "memo": "H460",
+          "qty": 4,
+          "duration": "12h"
+        },
+        {
+          "category": "<椅子>",
+          "name": "ハイチェア",
+          "memo": "H700",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "<椅子>",
           "name": "トランスポート＿エリア1",
           "memo": "車上渡しプラン",
           "qty": 1,
@@ -3184,6 +3165,7 @@
       "deliveryDate": "2026-08-29",
       "time": "14:30",
       "returnTime": "17:30",
+      "note": "260829見積書.xlsm: 20,460円（旧版/別プラン）",
       "items": [
         {
           "category": "ドラムset",
@@ -3304,6 +3286,37 @@
           "memo": "運搬・設営・撤収",
           "qty": 1,
           "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0831株式会社chap（大阪市内）",
+      "clientName": "株式会社chap",
+      "deliveryAddress": "大阪市内",
+      "deliveryDate": "2026-08-31",
+      "time": "11:00",
+      "returnTime": "16:00",
+      "items": [
+        {
+          "category": "カラオケ・簡易ステージ",
+          "name": "簡易ステージ",
+          "memo": "INTELLI STAGE\nサイズ：幅100cm×長さ100cm\nライザー：高さ20cm",
+          "qty": 8,
+          "duration": "1.5日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "1.5日"
+        },
+        {
+          "category": "ムダン設営費",
+          "name": "ステージ設営費〔S〕",
+          "memo": "人件費含む",
+          "qty": 1,
+          "duration": "1.5日"
         }
       ]
     }
