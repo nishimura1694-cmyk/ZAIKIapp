@@ -542,7 +542,10 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
             child: const Text('キャンセル'),
           ),
           TextButton(
-            onPressed: () => Navigator.pop(ctx, true),
+            onPressed: () {
+              HapticFeedback.mediumImpact();
+              Navigator.pop(ctx, true);
+            },
             child: const Text(
               '破棄する',
               style: TextStyle(color: AppColors.danger),

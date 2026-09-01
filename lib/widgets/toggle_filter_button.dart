@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../theme/app_colors.dart';
 
@@ -28,7 +29,10 @@ class ToggleFilterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OutlinedButton.icon(
-      onPressed: onPressed,
+      onPressed: () {
+        HapticFeedback.lightImpact();
+        onPressed();
+      },
       style: OutlinedButton.styleFrom(
         side: BorderSide(
           color: isActive ? AppColors.brandOrange : AppColors.dividerGrey,

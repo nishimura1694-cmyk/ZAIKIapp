@@ -702,7 +702,7 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
           future: _combinedFuture,
           builder: (context, snapshot) {
             if (snapshot.connectionState != ConnectionState.done) {
-              return const LoadingView();
+              return const SkeletonList();
             }
             if (snapshot.hasError) {
               return ErrorRetryView(

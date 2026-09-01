@@ -636,7 +636,7 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
         future: _localJobsFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState != ConnectionState.done) {
-            return const LoadingView();
+            return const SkeletonList();
           }
           if (snapshot.hasError) {
             return ErrorRetryView(

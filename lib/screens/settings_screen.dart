@@ -38,6 +38,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   Future<void> _handleToggle(bool value) async {
+    HapticFeedback.selectionClick();
     setState(() => _isSaving = true);
     await BookingNotificationService.instance.setEnabled(value);
     if (!mounted) return;

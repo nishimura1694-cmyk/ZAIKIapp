@@ -506,8 +506,11 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
             child: const Text('キャンセル'),
           ),
           TextButton(
-            onPressed: () => Navigator.pop(ctx, true),
-            child: const Text('削除', style: TextStyle(color: Colors.red)),
+            onPressed: () {
+              HapticFeedback.mediumImpact();
+              Navigator.pop(ctx, true);
+            },
+            child: const Text('削除', style: TextStyle(color: AppColors.danger)),
           ),
         ],
       ),

@@ -562,6 +562,7 @@ class _BookingListScreenState extends State<BookingListScreen>
                                       visualDensity: VisualDensity.compact,
                                       onChanged: (value) {
                                         if (value == null) return;
+                                        HapticFeedback.selectionClick();
                                         _setRetrospectiveChecked(
                                           bookingId: booking.id,
                                           nextValue: value,
