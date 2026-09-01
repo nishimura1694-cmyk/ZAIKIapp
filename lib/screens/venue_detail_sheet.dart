@@ -176,6 +176,7 @@ class _VenueDetailSheetState extends State<VenueDetailSheet> {
                       style: TextStyle(fontSize: 16, color: Colors.grey[600]),
                     ),
                     const SizedBox(height: 32),
+                    _detailRow(Icons.place_outlined, '住所', data['address']),
                     _detailRow(Icons.grid_view, 'エリア', data['block']),
                     _detailRow(Icons.category, 'カテゴリ', data['category']),
                     _detailRow(Icons.power, '電源仕様', data['power']),

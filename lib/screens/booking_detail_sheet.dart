@@ -19,6 +19,16 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
     widget.data,
   );
   bool _isEditingPhoto = false;
+  Future<String?>? _venueAddressFuture;
+
+  Future<String?> _fetchVenueAddress(String venueId) {
+    return _venueAddressFuture ??= FirebaseFirestore.instance
+        .collection('venues')
+        .doc(venueId)
+        .get()
+        .then((snap) => (snap.data()?['address'] ?? '').toString().trim())
+        .then((address) => address.isEmpty ? null : address);
+  }
 
   void _showImageGallery(BuildContext context, List urls, int startIndex) {
     final controller = PageController(initialPage: startIndex);
@@ -679,10 +689,12 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
                     ),
                     Builder(
                       builder: (context) {
-                        final hasVenueId = (data['venueId'] ?? '')
+                        final venueId = (data['venueId'] ?? '')
                             .toString()
-                            .trim()
-                            .isNotEmpty;
+                            .trim();
+                        final hasVenueId = venueId.isNotEmpty;
+                        final venueName = (data['venueName'] ?? '')
+                            .toString();
                         return InkWell(
                           onTap: hasVenueId
                               ? () => _openVenueDetail(context)
@@ -690,10 +702,83 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
                           borderRadius: BorderRadius.circular(8),
                           child: Stack(
                             children: [
-                              _detailRow(
-                                Icons.location_on_outlined,
-                                '会場 ${hasVenueId ? '(タップで詳細)' : ''}',
-                                data['venueName'],
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 20),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(8),
+                                      decoration: BoxDecoration(
+                                        color: AppColors.subtleFill,
+                                        borderRadius: BorderRadius.circular(
+                                          8,
+                                        ),
+                                      ),
+                                      child: const Icon(
+                                        Icons.location_on_outlined,
+                                        size: 20,
+                                        color: AppColors.textSecondary,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 16),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            '会場 ${hasVenueId ? '(タップで詳細)' : ''}',
+                                            style: const TextStyle(
+                                              fontSize: 12,
+                                              color: AppColors.textSecondary,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          const SizedBox(height: 4),
+                                          Text(
+                                            venueName.isEmpty
+                                                ? '-'
+                                                : venueName,
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              color: AppColors.textPrimary,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                          if (hasVenueId)
+                                            FutureBuilder<String?>(
+                                              future: _fetchVenueAddress(
+                                                venueId,
+                                              ),
+                                              builder: (context, snapshot) {
+                                                final address =
+                                                    snapshot.data;
+                                                if (address == null ||
+                                                    address.isEmpty) {
+                                                  return const SizedBox.shrink();
+                                                }
+                                                return Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                        top: 2,
+                                                      ),
+                                                  child: Text(
+                                                    address,
+                                                    style: TextStyle(
+                                                      fontSize: 13,
+                                                      color: AppColors
+                                                          .textSecondary,
+                                                    ),
+                                                  ),
+                                                );
+                                              },
+                                            ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                               if (hasVenueId)
                                 const Positioned(
