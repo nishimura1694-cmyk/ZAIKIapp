@@ -332,120 +332,134 @@ class _VenueListScreenState extends State<VenueListScreen>
                         data,
                       ).isNotEmpty;
                       return SectionCard(
-                        child: ListTile(
-                          title: Row(
+                        onTap: () => showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          backgroundColor: AppColors.surface,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(20),
+                            ),
+                          ),
+                          builder: (_) => VenueDetailSheet(
+                            data: data,
+                            docId: docs[index].id,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 12,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              if (hasAttention) ...[
-                                const Tooltip(
-                                  message: '要注意項目あり',
-                                  child: Icon(
-                                    Icons.warning_amber_rounded,
-                                    color: AppColors.danger,
-                                    size: 20,
+                              Row(
+                                children: [
+                                  if (hasAttention) ...[
+                                    const Tooltip(
+                                      message: '要注意項目あり',
+                                      child: Icon(
+                                        Icons.warning_amber_rounded,
+                                        color: AppColors.danger,
+                                        size: 20,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 6),
+                                  ],
+                                  if (hasExtraCharge) ...[
+                                    const Tooltip(
+                                      message: '追加料金発生あり',
+                                      child: Icon(
+                                        Icons.currency_yen_rounded,
+                                        color: Colors.deepOrange,
+                                        size: 20,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 6),
+                                  ],
+                                  Expanded(
+                                    child: Text(
+                                      data['name'] ?? '',
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(width: 6),
-                              ],
-                              if (hasExtraCharge) ...[
-                                const Tooltip(
-                                  message: '追加料金発生あり',
-                                  child: Icon(
-                                    Icons.currency_yen_rounded,
-                                    color: Colors.deepOrange,
-                                    size: 20,
-                                  ),
-                                ),
-                                const SizedBox(width: 6),
-                              ],
-                              Expanded(
-                                child: Text(
-                                  data['name'] ?? '',
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
+                                ],
                               ),
-                            ],
-                          ),
-                          subtitle: Text(
-                            "エリア: ${data['block'] ?? '-'} / ${data['shopAndRoom'] ?? '-'}",
-                          ),
-                          trailing: SizedBox(
-                            width: 88,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                hasAddress
-                                    ? IconButton(
-                                        icon: const Icon(Icons.location_on),
-                                        color: AppColors.brandOrange,
-                                        tooltip: '地図アプリで開く',
-                                        onPressed: () async {
-                                          final address = data['address'] ?? '';
-                                          final String uri =
-                                              'https://maps.google.com/?q=${Uri.encodeComponent(address)}';
-                                          try {
-                                            if (await canLaunchUrl(
-                                              Uri.parse(uri),
-                                            )) {
-                                              await launchUrl(
+                              const SizedBox(height: 4),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      "エリア: ${data['block'] ?? '-'} / ${data['shopAndRoom'] ?? '-'}",
+                                      style: TextStyle(
+                                        color: AppColors.textSecondary,
+                                        fontSize: 13,
+                                      ),
+                                    ),
+                                  ),
+                                  hasAddress
+                                      ? IconButton(
+                                          icon: const Icon(Icons.location_on),
+                                          color: AppColors.brandOrange,
+                                          tooltip: '地図アプリで開く',
+                                          visualDensity: VisualDensity.compact,
+                                          onPressed: () async {
+                                            final address =
+                                                data['address'] ?? '';
+                                            final String uri =
+                                                'https://maps.google.com/?q=${Uri.encodeComponent(address)}';
+                                            try {
+                                              if (await canLaunchUrl(
                                                 Uri.parse(uri),
-                                                mode: LaunchMode
-                                                    .externalApplication,
-                                              );
-                                            } else {
+                                              )) {
+                                                await launchUrl(
+                                                  Uri.parse(uri),
+                                                  mode: LaunchMode
+                                                      .externalApplication,
+                                                );
+                                              } else {
+                                                if (context.mounted) {
+                                                  ScaffoldMessenger.of(
+                                                    context,
+                                                  ).showSnackBar(
+                                                    const SnackBar(
+                                                      content: Text(
+                                                        '地図アプリを開けませんでした',
+                                                      ),
+                                                    ),
+                                                  );
+                                                }
+                                              }
+                                            } catch (e) {
                                               if (context.mounted) {
                                                 ScaffoldMessenger.of(
                                                   context,
                                                 ).showSnackBar(
-                                                  const SnackBar(
-                                                    content: Text(
-                                                      '地図アプリを開けませんでした',
-                                                    ),
+                                                  SnackBar(
+                                                    content: Text('エラー: $e'),
                                                   ),
                                                 );
                                               }
                                             }
-                                          } catch (e) {
-                                            if (context.mounted) {
-                                              ScaffoldMessenger.of(
-                                                context,
-                                              ).showSnackBar(
-                                                SnackBar(
-                                                  content: Text('エラー: $e'),
-                                                ),
-                                              );
-                                            }
-                                          }
-                                        },
-                                      )
-                                    : SizedBox(
-                                        width: 48,
-                                        height: 48,
-                                        child: Center(
-                                          child: Icon(
-                                            Icons.location_on,
-                                            color: Colors.grey[400],
-                                            size: 22,
+                                          },
+                                        )
+                                      : SizedBox(
+                                          width: 40,
+                                          height: 40,
+                                          child: Center(
+                                            child: Icon(
+                                              Icons.location_on,
+                                              color: Colors.grey[400],
+                                              size: 20,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                              ],
-                            ),
-                          ),
-                          onTap: () => showModalBottomSheet(
-                            context: context,
-                            isScrollControlled: true,
-                            backgroundColor: AppColors.surface,
-                            shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.vertical(
-                                top: Radius.circular(20),
+                                ],
                               ),
-                            ),
-                            builder: (_) => VenueDetailSheet(
-                              data: data,
-                              docId: docs[index].id,
-                            ),
+                            ],
                           ),
                         ),
                       );

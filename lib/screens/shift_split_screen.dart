@@ -14,6 +14,7 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
   _combinedFuture;
   String? _selectedSourceFilter;
   static const List<String> _sourceFilters = ['【ZAIKI】', '【OSAKA】'];
+  bool _showZaikiPanel = false;
 
   final List<ScrollController> _rowControllers = [];
   bool _syncingScroll = false;
@@ -663,26 +664,34 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
             padding: const EdgeInsets.fromLTRB(12, 4, 12, 8),
             child: Row(
               children: [
-                ChoiceChip(
-                  label: const Text('すべて'),
-                  selected: _selectedSourceFilter == null,
-                  onSelected: (_) =>
-                      setState(() => _selectedSourceFilter = null),
+                FilterChip(
+                  label: const Text('ZAIKI/OSAKA機材を表示'),
+                  selected: _showZaikiPanel,
+                  onSelected: (value) =>
+                      setState(() => _showZaikiPanel = value),
                 ),
-                ..._sourceFilters.map(
-                  (filter) => Padding(
-                    padding: const EdgeInsets.only(left: 8),
-                    child: ChoiceChip(
-                      label: Text(filter),
-                      selected: _selectedSourceFilter == filter,
-                      onSelected: (_) => setState(() {
-                        _selectedSourceFilter = _selectedSourceFilter == filter
-                            ? null
-                            : filter;
-                      }),
+                if (_showZaikiPanel) ...[
+                  const SizedBox(width: 8),
+                  ChoiceChip(
+                    label: const Text('すべて'),
+                    selected: _selectedSourceFilter == null,
+                    onSelected: (_) =>
+                        setState(() => _selectedSourceFilter = null),
+                  ),
+                  ..._sourceFilters.map(
+                    (filter) => Padding(
+                      padding: const EdgeInsets.only(left: 8),
+                      child: ChoiceChip(
+                        label: Text(filter),
+                        selected: _selectedSourceFilter == filter,
+                        onSelected: (_) => setState(() {
+                          _selectedSourceFilter =
+                              _selectedSourceFilter == filter ? null : filter;
+                        }),
+                      ),
                     ),
                   ),
-                ),
+                ],
               ],
             ),
           ),
@@ -1000,33 +1009,37 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
                       children: [
                         // シフト(左) + ZAIKI(右)を横並び。
                         // ZAIKI側はカードを縦に積み、シフトが長い場合は縦スクロール。
-                        IntrinsicHeight(
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Expanded(child: shiftPanel),
-                              const SizedBox(
-                                width: 16,
-                                child: Center(
-                                  child: VerticalDivider(
-                                    thickness: 1,
-                                    color: Color(0xFFFFE0CC),
+                        // ZAIKI/OSAKA機材パネルは基本非表示。トグルONの時だけ表示する。
+                        if (!_showZaikiPanel)
+                          shiftPanel
+                        else
+                          IntrinsicHeight(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Expanded(child: shiftPanel),
+                                const SizedBox(
+                                  width: 16,
+                                  child: Center(
+                                    child: VerticalDivider(
+                                      thickness: 1,
+                                      color: Color(0xFFFFE0CC),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Expanded(
-                                child: SingleChildScrollView(
-                                  physics: const ClampingScrollPhysics(),
-                                  child: _buildZaikiDayPanel(
-                                    zaikiDay,
-                                    isToday,
-                                    isTomorrow,
+                                Expanded(
+                                  child: SingleChildScrollView(
+                                    physics: const ClampingScrollPhysics(),
+                                    child: _buildZaikiDayPanel(
+                                      zaikiDay,
+                                      isToday,
+                                      isTomorrow,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
                       ],
                     ),
                   );
