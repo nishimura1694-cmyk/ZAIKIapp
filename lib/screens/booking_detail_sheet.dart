@@ -30,6 +30,26 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
         .then((address) => address.isEmpty ? null : address);
   }
 
+  Future<void> _openMapForAddress(BuildContext context, String address) async {
+    final String uri =
+        'https://maps.google.com/?q=${Uri.encodeComponent(address)}';
+    try {
+      if (await canLaunchUrl(Uri.parse(uri))) {
+        await launchUrl(Uri.parse(uri), mode: LaunchMode.externalApplication);
+      } else if (context.mounted) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('地図アプリを開けませんでした')));
+      }
+    } catch (e) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('エラー: $e')));
+      }
+    }
+  }
+
   void _showImageGallery(BuildContext context, List urls, int startIndex) {
     final controller = PageController(initialPage: startIndex);
     showDialog(
@@ -526,10 +546,7 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
     final restoreData = Map<String, dynamic>.from(_currentData);
     final docId = widget.docId;
 
-    await FirebaseFirestore.instance
-        .collection('bookings')
-        .doc(docId)
-        .delete();
+    await FirebaseFirestore.instance.collection('bookings').doc(docId).delete();
     _invalidateSearchQueryCache(namespace: 'bookings');
     if (context.mounted) Navigator.pop(context);
 
@@ -693,8 +710,7 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
                             .toString()
                             .trim();
                         final hasVenueId = venueId.isNotEmpty;
-                        final venueName = (data['venueName'] ?? '')
-                            .toString();
+                        final venueName = (data['venueName'] ?? '').toString();
                         return InkWell(
                           onTap: hasVenueId
                               ? () => _openVenueDetail(context)
@@ -711,9 +727,7 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
                                       padding: const EdgeInsets.all(8),
                                       decoration: BoxDecoration(
                                         color: AppColors.subtleFill,
-                                        borderRadius: BorderRadius.circular(
-                                          8,
-                                        ),
+                                        borderRadius: BorderRadius.circular(8),
                                       ),
                                       child: const Icon(
                                         Icons.location_on_outlined,
@@ -737,9 +751,7 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
                                           ),
                                           const SizedBox(height: 4),
                                           Text(
-                                            venueName.isEmpty
-                                                ? '-'
-                                                : venueName,
+                                            venueName.isEmpty ? '-' : venueName,
                                             style: const TextStyle(
                                               fontSize: 16,
                                               color: AppColors.textPrimary,
@@ -752,8 +764,7 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
                                                 venueId,
                                               ),
                                               builder: (context, snapshot) {
-                                                final address =
-                                                    snapshot.data;
+                                                final address = snapshot.data;
                                                 if (address == null ||
                                                     address.isEmpty) {
                                                   return const SizedBox.shrink();
@@ -763,13 +774,46 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
                                                       const EdgeInsets.only(
                                                         top: 2,
                                                       ),
-                                                  child: Text(
-                                                    address,
-                                                    style: TextStyle(
-                                                      fontSize: 13,
-                                                      color: AppColors
-                                                          .textSecondary,
-                                                    ),
+                                                  child: Row(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Expanded(
+                                                        child: Text(
+                                                          address,
+                                                          style: TextStyle(
+                                                            fontSize: 13,
+                                                            color: AppColors
+                                                                .textSecondary,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      SizedBox(
+                                                        width: 28,
+                                                        height: 28,
+                                                        child: IconButton(
+                                                          icon: const Icon(
+                                                            Icons.location_on,
+                                                          ),
+                                                          iconSize: 18,
+                                                          padding:
+                                                              EdgeInsets.zero,
+                                                          splashRadius: 16,
+                                                          visualDensity:
+                                                              VisualDensity
+                                                                  .compact,
+                                                          color: AppColors
+                                                              .brandOrange,
+                                                          tooltip: '地図アプリで開く',
+                                                          onPressed: () =>
+                                                              _openMapForAddress(
+                                                                context,
+                                                                address,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
                                                 );
                                               },
