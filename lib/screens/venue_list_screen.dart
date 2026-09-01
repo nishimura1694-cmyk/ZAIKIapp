@@ -393,7 +393,7 @@ class _VenueListScreenState extends State<VenueListScreen>
                                 children: [
                                   Expanded(
                                     child: Text(
-                                      "エリア: ${data['block'] ?? '-'} / ${data['shopAndRoom'] ?? '-'}",
+                                      (data['shopAndRoom'] ?? '-').toString(),
                                       style: TextStyle(
                                         color: AppColors.textSecondary,
                                         fontSize: 13,
