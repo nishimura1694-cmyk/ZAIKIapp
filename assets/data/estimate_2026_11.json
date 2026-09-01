@@ -519,9 +519,9 @@
       ]
     },
     {
-      "folder": "1108吉田さま(ヒルトン大阪)（ヒルトン大阪）",
+      "folder": "1108吉田さま(ヒルトン大阪)（ヒルトン大阪　4階　金の間）",
       "clientName": "吉田　千恵",
-      "deliveryAddress": "ヒルトン大阪",
+      "deliveryAddress": "ヒルトン大阪　4階　金の間",
       "deliveryAddressDetail": "〒530-0001 大阪府大阪市北区梅田１丁目８−８",
       "deliveryDate": "2026-11-08",
       "time": "15:00",
@@ -538,12 +538,19 @@
           "category": "スピーカー類",
           "name": "モニタースピーカー",
           "memo": "パワーアンプ込み",
-          "qty": 3,
+          "qty": 4,
           "duration": "12h"
         },
         {
           "category": "スピーカー類",
           "name": "その他マイク・DI一式",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "電子ピアノ",
+          "memo": "NORD PIANO 2 HA88",
           "qty": 1,
           "duration": "12h"
         },
@@ -665,6 +672,45 @@
           "category": "運搬サービス",
           "name": "トランスポート＿エリア1",
           "memo": "オペレーター併用プラン",
+          "qty": 1,
+          "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "1111木村様（アヴァンセリアン大阪）（アヴァンセリアン大阪）",
+      "clientName": " 木村 朱音",
+      "deliveryAddress": "アヴァンセリアン大阪",
+      "deliveryAddressDetail": "〒554-0024 大阪府大阪市此花区島屋６丁目２−２５",
+      "deliveryDate": "2026-11-11",
+      "time": "未定",
+      "returnTime": "未定",
+      "items": [
+        {
+          "category": "カラオケ・簡易ステージ",
+          "name": "カラオケ",
+          "memo": "本体：CyberDAM-HD　G100X\nデンモク×2\nワイヤレスマイク：2本\nケーブル一式",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "カラオケ・簡易ステージ",
+          "name": "ディスプレイ",
+          "memo": "27インチ 4K液晶ディスプレイ\nIODATA KH2750V",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "パワードスピーカー",
+          "memo": "EV ZLX-12P(スタンド付属)",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
           "qty": 1,
           "duration": "12h"
         }
@@ -805,6 +851,8 @@
       "deliveryAddress": "ホテルロイヤルクラシック大阪",
       "deliveryAddressDetail": "〒542-0076 大阪府大阪市中央区難波４丁目３−３",
       "deliveryDate": "2026-11-14",
+      "time": "09:30",
+      "returnTime": "16:30",
       "items": [
         {
           "category": "セットプラン",
@@ -852,6 +900,20 @@
           "category": "ベースアンプ系",
           "name": "ベースアンプ",
           "memo": "Hartke HA3500 + Hartke vx410",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "アンプ台数分サービス",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギタースタンド",
+          "memo": "サービス",
           "qty": 1,
           "duration": "12h"
         },
@@ -1512,11 +1574,11 @@
       ]
     },
     {
-      "folder": "1122なかつかささま（久宝寺緑地　修景広場）",
+      "folder": "1123なかつかささま（久宝寺緑地　修景広場）",
       "clientName": "なかつかさ　ひろみち",
       "deliveryAddress": "久宝寺緑地　修景広場",
       "deliveryAddressDetail": "〒581-0077 大阪府八尾市西久宝寺３２３",
-      "deliveryDate": "2026-11-22",
+      "deliveryDate": "2026-11-23",
       "time": "08:15",
       "returnTime": "16:00",
       "items": [
@@ -1524,13 +1586,6 @@
           "category": "ドラムset",
           "name": "ドラムセット",
           "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "ギターアンプ系",
-          "name": "ギターアンプ",
-          "memo": "Roland JC-120",
           "qty": 1,
           "duration": "12h"
         },

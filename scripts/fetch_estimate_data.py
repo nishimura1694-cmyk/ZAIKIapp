@@ -24,6 +24,7 @@ import sys
 import tempfile
 import urllib.error
 import urllib.request
+from datetime import date
 from pathlib import Path
 
 try:
@@ -136,6 +137,18 @@ def _resolve_entries(token, root_path):
 
 
 MONTH_RE = re.compile(r"(\d{4})年(\d{1,2})月")
+FILENAME_MONTH_RE = re.compile(r"estimate_(\d{4})_(\d{2})\.json")
+
+
+def _month_window(months_ahead, today=None):
+    """今月を含めて months_ahead か月先までの (year, month) の集合を返す。"""
+    today = today or date.today()
+    window = set()
+    y, m = today.year, today.month
+    for i in range(months_ahead + 1):
+        total = (y * 12 + (m - 1)) + i
+        window.add((total // 12, total % 12 + 1))
+    return window
 
 
 def _is_blank(row):
@@ -352,10 +365,18 @@ def main():
         default=str(Path(__file__).resolve().parent.parent / "assets" / "data"),
         help="出力先ディレクトリ（デフォルト: ../assets/data）",
     )
+    parser.add_argument(
+        "--months-ahead",
+        type=int,
+        default=3,
+        help="今月を含めて何か月先まで対象にするか（デフォルト: 3＝今月+3か月先の計4か月分）",
+    )
     args = parser.parse_args()
 
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
+
+    window = _month_window(args.months_ahead)
 
     if args.local_root:
         print(f"ローカル同期フォルダを検索中: {args.local_root}")
@@ -367,9 +388,14 @@ def main():
             return 1
         files = _fetch_dropbox_api(token, args.root)
 
+    skipped = [f for f in files if (f[0], f[1]) not in window]
+    for year, month, name, _path, _label in skipped:
+        print(f"対象期間外のためスキップ: {year:04d}年{month:02d}月 ({name})")
+    files = [f for f in files if (f[0], f[1]) in window]
+
     generated = _write_outputs(files, out_dir)
 
-    # index.json を更新（既存の月は残しつつ、今回生成した分を反映）
+    # index.json を対象期間（今月+--months-ahead か月先）の月だけに絞り込む
     index_path = out_dir / "index.json"
     existing = []
     if index_path.exists():
@@ -377,7 +403,14 @@ def main():
             existing = json.loads(index_path.read_text(encoding="utf-8")).get("files", [])
         except Exception:
             existing = []
-    all_files = sorted(set(existing) | set(generated))
+
+    def _in_window(filename):
+        m = FILENAME_MONTH_RE.match(filename)
+        return bool(m) and (int(m.group(1)), int(m.group(2))) in window
+
+    all_files = sorted(
+        f for f in (set(existing) | set(generated)) if _in_window(f)
+    )
     index_path.write_text(
         json.dumps({"files": all_files}, ensure_ascii=False, indent=2),
         encoding="utf-8",

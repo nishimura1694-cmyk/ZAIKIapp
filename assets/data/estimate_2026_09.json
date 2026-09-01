@@ -125,159 +125,6 @@
       ]
     },
     {
-      "folder": "0905-06いけはら様(りんくう公園)（泉南りんくう公園（泉南ロングパーク）",
-      "clientName": "いけはら",
-      "deliveryAddress": "泉南りんくう公園（泉南ロングパーク",
-      "deliveryDate": "2026-09-05",
-      "note": "協力金: -20,000円",
-      "items": [
-        {
-          "category": "音響",
-          "name": "スピーカー",
-          "memo": "MARTIN AUDIO X15B",
-          "qty": 2,
-          "duration": "1.5日"
-        },
-        {
-          "category": "音響",
-          "name": "サブウーハー",
-          "memo": "Martin AUDIO X118",
-          "qty": 2,
-          "duration": "1.5日"
-        },
-        {
-          "category": "音響",
-          "name": "デジタルミキサー",
-          "memo": "MIDAS M32R",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "音響",
-          "name": "パワーアンプ〔4ch〕",
-          "memo": "QSC PLD4.5",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "音響",
-          "name": "モニタースピーカー",
-          "memo": "12インチスピーカー",
-          "qty": 2,
-          "duration": "1.5日"
-        },
-        {
-          "category": "音響",
-          "name": "ディレイスピーカー",
-          "memo": "12\"インチスピーカー",
-          "qty": 2,
-          "duration": "1.5日"
-        },
-        {
-          "category": "音響",
-          "name": "パワーアンプ〔4ch〕",
-          "memo": "QSC PLD4.5",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "音響",
-          "name": "マイクDI一式",
-          "memo": "サービス",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "音響",
-          "name": "線材費",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "音響",
-          "name": "必要スタンド",
-          "memo": "サービス",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "照明",
-          "name": "LEDパーライト",
-          "memo": "SilverStar CAM3/EMZ",
-          "qty": 2,
-          "duration": "1.5日"
-        },
-        {
-          "category": "照明",
-          "name": "LEDパーライト〔6IN1〕",
-          "memo": "E-LITE ELF-PAR46HEX",
-          "qty": 2,
-          "duration": "1.5日"
-        },
-        {
-          "category": "照明",
-          "name": "LEDパーライト",
-          "memo": "AMERICAN DJ PAR Z100 3K",
-          "qty": 4,
-          "duration": "1.5日"
-        },
-        {
-          "category": "照明",
-          "name": "照明スタンド",
-          "memo": "MARUMO SK2-K2",
-          "qty": 4,
-          "duration": "1.5日"
-        },
-        {
-          "category": "照明",
-          "name": "照明スタンド",
-          "memo": "オプションバー　MARUMO AMT2",
-          "qty": 4,
-          "duration": "1.5日"
-        },
-        {
-          "category": "照明",
-          "name": "DMX照明コントローラー",
-          "memo": "ELATION SCENESETTER",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "運搬、人件費",
-          "name": "オペレーター人員",
-          "memo": "1P",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "運搬、人件費",
-          "name": "アシスタント人員A",
-          "memo": "1P_A",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "運搬、人件費",
-          "name": "前日仕込み特別料金",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "運搬、人件費",
-          "name": "トランスポート＿エリア4",
-          "memo": "運搬・設営・撤収_4",
-          "qty": 2,
-          "duration": "1.5日"
-        },
-        {
-          "category": "運搬、人件費",
-          "name": "搬入出追加人員",
-          "qty": 2,
-          "duration": 1
-        }
-      ]
-    },
-    {
       "folder": "0905積水化学京都研究所（積水化学工業 京都研究所）",
       "clientName": "積水化学工業株式会社",
       "deliveryAddress": "積水化学工業 京都研究所",
@@ -960,6 +807,52 @@
       ]
     },
     {
+      "folder": "0915-16荒木さま（摂津市立第四中学校）",
+      "clientName": "荒木　智雄",
+      "deliveryAddress": "摂津市立第四中学校",
+      "deliveryAddressDetail": "〒566-0042 大阪府摂津市東別府４丁目６−１",
+      "deliveryDate": "2026-09-15",
+      "time": "16:00",
+      "returnTime": "夕方ごろ",
+      "items": [
+        {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SHURE SM58\n[付属：マイクホルダー、マイクケーブル10ｍ]",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "マイク",
+          "name": "ダイナミックマイク",
+          "memo": "SHURE SM57\n[付属：マイクホルダー、マイクケーブル10ｍ]（ピアノ用）",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "スタンド類",
+          "name": "マイクスタンド",
+          "memo": "ロングブーム<210>",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "1日"
+        }
+      ]
+    },
+    {
       "folder": "0918-19尾西さま(追手門学院大手前中高等学校)（追手門学院大手前中・高等学校）",
       "clientName": "追手門学院大手前中・高等学校",
       "deliveryAddress": "追手門学院大手前中・高等学校",
@@ -979,11 +872,11 @@
       ]
     },
     {
-      "folder": "0918服部さま(吹田市)（N高等学校　江坂キャンパス）",
+      "folder": "0918-19服部さま(吹田市)（N高等学校　江坂キャンパス）",
       "clientName": "服部　加奈",
       "deliveryAddress": "N高等学校　江坂キャンパス",
       "deliveryDate": "2026-09-18",
-      "time": "08:30",
+      "time": "13:00",
       "returnTime": "16:30",
       "items": [
         {

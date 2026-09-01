@@ -13,146 +13,188 @@
       "returnTime": "22:30",
       "items": [
         {
-          "category": "スピーカー類",
+          "category": "音響",
           "name": "スピーカー",
           "memo": "MARTIN AUDIO X15B",
           "qty": 2,
           "duration": "12h"
         },
         {
-          "category": "スピーカー類",
+          "category": "音響",
           "name": "サブウーハー",
           "memo": "Martin AUDIO X118",
           "qty": 2,
           "duration": "12h"
         },
         {
-          "category": "パワーアンプ・プロセッサー",
+          "category": "音響",
           "name": "パワーアンプ〔4ch〕",
           "memo": "QSC PLD4.5",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "パワーアンプ・プロセッサー",
+          "category": "音響",
           "name": "チャンネルディバイダー",
           "memo": "dbx 223xs",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "ミキサー",
+          "category": "音響",
           "name": "デジタルミキサー",
           "memo": "MIDAS M32R",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "ミキサー",
+          "category": "音響",
           "name": "ステージボックス",
           "memo": "MIDAS DL32",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "スピーカー類",
+          "category": "音響",
           "name": "モニタースピーカー【Foot】",
           "memo": "12インチ",
           "qty": 4,
           "duration": "12h"
         },
         {
-          "category": "パワーアンプ・プロセッサー",
+          "category": "音響",
           "name": "パワーアンプ〔4ch〕",
           "memo": "QSC PLD4.5",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "パワーアンプ・プロセッサー",
+          "category": "音響",
           "name": "基本マイク・DIセット",
           "memo": "有線マイク",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "パワーアンプ・プロセッサー",
+          "category": "音響",
           "name": "ケーブル一式",
           "memo": "サービス",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "パワーアンプ・プロセッサー",
+          "category": "音響",
           "name": "スタンド一式",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "ドラムset",
+          "category": "楽器",
           "name": "ドラムセット",
           "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "ベースアンプ系",
+          "category": "楽器",
           "name": "ベースアンプコンボ",
           "memo": "MARKBASS MB58R CMD102PUR",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "ギターアンプ系",
+          "category": "楽器",
           "name": "ギターアンプ",
           "memo": "Roland JC-120",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "ギターアンプ系",
+          "category": "楽器",
           "name": "ギターアンプ",
           "memo": "Marshall DSL100H + 1960A",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "キーボード関連",
+          "category": "楽器",
           "name": "電子ピアノ",
           "memo": "YAMAHA CP-40",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "キーボード関連",
+          "category": "楽器",
           "name": "キーボードスタンド",
           "memo": "X型",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "運搬サービス",
+          "category": "照明",
+          "name": "LEDパーライト",
+          "memo": "SilverStar CAM3/EMZ",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "照明",
+          "name": "LEDパーライト",
+          "memo": "e-lite 64J-RGBW V2",
+          "qty": 4,
+          "duration": "12h"
+        },
+        {
+          "category": "照明",
+          "name": "照明スタンド",
+          "memo": "MARUMO SK2-K2",
+          "qty": 4,
+          "duration": "12h"
+        },
+        {
+          "category": "照明",
+          "name": "照明スタンド",
+          "memo": "オプションバー　MARUMO AMT2",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "照明",
+          "name": "DMX照明コントローラー",
+          "memo": "ELATION SCENESETTER",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "照明",
           "name": "トランスポート＿エリア1",
           "memo": "オペレーター併用プラン",
           "qty": 2,
           "duration": "12h"
         },
         {
-          "category": "オペレート",
-          "name": "オペレーター人員",
+          "category": "照明",
+          "name": "音響オペレーター人員",
           "memo": "1P",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "オペレート",
+          "category": "照明",
+          "name": "照明オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "照明",
           "name": "アシスタント人員A",
           "memo": "1P_A",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "オペレート",
+          "category": "照明",
           "name": "アシスタント人員B",
           "memo": "1P_B",
           "qty": 1,
