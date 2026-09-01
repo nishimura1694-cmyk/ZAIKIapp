@@ -385,12 +385,52 @@ class _VenueListScreenState extends State<VenueListScreen>
                               Row(
                                 children: [
                                   Expanded(
-                                    child: Text(
-                                      (data['shopAndRoom'] ?? '-').toString(),
-                                      style: TextStyle(
-                                        color: AppColors.textSecondary,
-                                        fontSize: 13,
-                                      ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          (data['shopAndRoom'] ?? '-')
+                                              .toString(),
+                                          style: TextStyle(
+                                            color: AppColors.textSecondary,
+                                            fontSize: 13,
+                                          ),
+                                        ),
+                                        if (hasAddress)
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                              top: 2,
+                                            ),
+                                            child: Row(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Icon(
+                                                  Icons.place_outlined,
+                                                  size: 13,
+                                                  color:
+                                                      AppColors.textSecondary,
+                                                ),
+                                                const SizedBox(width: 2),
+                                                Expanded(
+                                                  child: Text(
+                                                    (data['address'] ?? '')
+                                                        .toString(),
+                                                    maxLines: 1,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    style: TextStyle(
+                                                      color: AppColors
+                                                          .textSecondary,
+                                                      fontSize: 12,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                      ],
                                     ),
                                   ),
                                   hasAddress
