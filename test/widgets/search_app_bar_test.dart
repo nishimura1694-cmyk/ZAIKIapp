@@ -59,4 +59,31 @@ void main() {
 
     expect(find.text('すべて'), findsOneWidget);
   });
+
+  testWidgets('scales up slightly when the field gains focus', (
+    tester,
+  ) async {
+    final controller = TextEditingController();
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          appBar: SearchAppBar(
+            title: '会場一覧',
+            controller: controller,
+            hintText: '検索...',
+          ),
+        ),
+      ),
+    );
+
+    AnimatedScale scaleWidget() =>
+        tester.widget<AnimatedScale>(find.byType(AnimatedScale));
+
+    expect(scaleWidget().scale, 1.0);
+
+    await tester.tap(find.byType(TextField));
+    await tester.pumpAndSettle();
+
+    expect(scaleWidget().scale, greaterThan(1.0));
+  });
 }

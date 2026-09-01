@@ -281,15 +281,8 @@ class _VenueDetailSheetState extends State<VenueDetailSheet> {
                               );
                               return InkWell(
                                 onTap: () {
-                                  showModalBottomSheet(
+                                  showAppBottomSheet(
                                     context: context,
-                                    isScrollControlled: true,
-                                    backgroundColor: AppColors.surface,
-                                    shape: const RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.vertical(
-                                        top: Radius.circular(20),
-                                      ),
-                                    ),
                                     builder: (_) => BookingDetailSheet(
                                       data: b,
                                       docId: docs[i].id,

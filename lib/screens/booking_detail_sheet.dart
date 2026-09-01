@@ -473,13 +473,8 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
         return;
       }
       if (context.mounted) {
-        showModalBottomSheet(
+        showAppBottomSheet(
           context: context,
-          isScrollControlled: true,
-          backgroundColor: AppColors.surface,
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-          ),
           builder: (_) => VenueDetailSheet(data: snap.data()!, docId: snap.id),
         );
       }

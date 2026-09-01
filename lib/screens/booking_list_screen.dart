@@ -459,15 +459,8 @@ class _BookingListScreenState extends State<BookingListScreen>
                       final List urls = data['imageUrls'] ?? [];
 
                       return SectionCard(
-                        onTap: () => showModalBottomSheet(
+                        onTap: () => showAppBottomSheet(
                           context: context,
-                          isScrollControlled: true,
-                          backgroundColor: AppColors.surface,
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.vertical(
-                              top: Radius.circular(20),
-                            ),
-                          ),
                           builder: (_) => BookingDetailSheet(
                             data: data,
                             docId: booking.id,

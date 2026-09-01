@@ -332,15 +332,8 @@ class _VenueListScreenState extends State<VenueListScreen>
                         data,
                       ).isNotEmpty;
                       return SectionCard(
-                        onTap: () => showModalBottomSheet(
+                        onTap: () => showAppBottomSheet(
                           context: context,
-                          isScrollControlled: true,
-                          backgroundColor: AppColors.surface,
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.vertical(
-                              top: Radius.circular(20),
-                            ),
-                          ),
                           builder: (_) => VenueDetailSheet(
                             data: data,
                             docId: docs[index].id,
