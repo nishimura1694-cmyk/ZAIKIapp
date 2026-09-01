@@ -75,50 +75,6 @@ class _BookingListScreenState extends State<BookingListScreen>
     });
   }
 
-  Widget _buildBookingAddressText(Map<String, dynamic> data) {
-    final directAddress = (data['venueAddress'] ?? data['address'] ?? '')
-        .toString()
-        .trim();
-    if (directAddress.isNotEmpty) {
-      return _addressText(directAddress);
-    }
-
-    final venueId = (data['venueId'] ?? '').toString().trim();
-    if (venueId.isEmpty) return const SizedBox.shrink();
-
-    return FutureBuilder<String?>(
-      future: _fetchVenueAddress(venueId),
-      builder: (context, snapshot) {
-        final address = snapshot.data;
-        if (address == null || address.isEmpty) {
-          return const SizedBox.shrink();
-        }
-        return _addressText(address);
-      },
-    );
-  }
-
-  Widget _addressText(String address) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 2),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(Icons.place_outlined, size: 13, color: AppColors.textSecondary),
-          const SizedBox(width: 2),
-          Expanded(
-            child: Text(
-              address,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(color: AppColors.textSecondary, fontSize: 12),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   Widget _buildBookingLocationButton(Map<String, dynamic> data) {
     final directAddress = (data['venueAddress'] ?? data['address'] ?? '')
         .toString()
@@ -574,7 +530,6 @@ class _BookingListScreenState extends State<BookingListScreen>
                                             fontSize: 13,
                                           ),
                                         ),
-                                        _buildBookingAddressText(data),
                                       ],
                                     ),
                                   ),
