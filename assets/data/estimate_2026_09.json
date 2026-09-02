@@ -83,40 +83,114 @@
       ]
     },
     {
-      "folder": "0904阿部さま(サイバーメディアTV)（-）",
+      "folder": "0904阿部さま(サイバーメディアTV)（エル・シエロ）",
       "clientName": "株式会社サイバーメディアTV",
+      "deliveryAddress": "エル・シエロ",
+      "deliveryAddressDetail": "〒550-0005 大阪府大阪市西区西本町２丁目３−１０\n西本町インテス 18F",
       "deliveryDate": "2026-09-04",
+      "time": "13:00",
+      "returnTime": "20:00",
       "items": [
         {
-          "category": "セットプラン",
+          "category": "会議室",
           "name": "楽々PAセット",
           "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "スピーカー類",
+          "category": "会議室",
           "name": "追加スピーカー",
           "memo": "EV SX300",
           "qty": 2,
           "duration": "12h"
         },
         {
-          "category": "オペレート",
+          "category": "会議室",
+          "name": "ワイヤレスヘッドセット〔B帯〕",
+          "memo": "SHENNHEISER ME3 Headset",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "会議室",
+          "name": "ワイヤレスハンドマイク〔B帯〕",
+          "memo": "SHENNHEISER EW500 G4-935-JB",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "会議室",
+          "name": "指向性アンテナ",
+          "memo": "SENNHEISER　ADP-UHF",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "会議室",
+          "name": "漫才マイク",
+          "memo": "SONY C-38B",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "会議室",
+          "name": "マイクスタンド",
+          "memo": "K&M 26085",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "レストラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "レストラン",
+          "name": "追加スピーカー",
+          "memo": "EV SX300",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "レストラン",
+          "name": "ワイヤレスハンドマイク〔B帯〕",
+          "memo": "SHENNHEISER EW500 G4-935-JB",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "レストラン",
+          "name": "指向性アンテナ",
+          "memo": "SENNHEISER　ADP-UHF",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "レストラン",
           "name": "オペレーター人員",
           "memo": "1P",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "オペレート",
+          "category": "レストラン",
           "name": "アシスタント人員A",
           "memo": "1P_A",
           "qty": 1,
           "duration": "12h"
         },
         {
-          "category": "運搬サービス",
+          "category": "レストラン",
+          "name": "搬入出追加人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "レストラン",
           "name": "トランスポート＿エリア1",
           "memo": "運搬・設営・撤収",
           "qty": 1,
@@ -814,6 +888,7 @@
       "deliveryDate": "2026-09-15",
       "time": "16:00",
       "returnTime": "夕方ごろ",
+      "note": "20260916見積書(16日のみ).xlsm: 35,200円（旧版/別プラン）",
       "items": [
         {
           "category": "セットプラン",
@@ -2147,6 +2222,7 @@
       "folder": "0926田嶋さま（和泉市弥生町）",
       "clientName": "田嶋　清太郎",
       "deliveryAddress": "和泉市弥生町",
+      "deliveryAddressDetail": "〒594-0061 大阪府和泉市弥生町2丁目2-37",
       "deliveryDate": "2026-09-26",
       "time": "10:00",
       "returnTime": "18:00",

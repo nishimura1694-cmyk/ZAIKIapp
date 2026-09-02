@@ -241,78 +241,7 @@
       ]
     },
     {
-      "folder": "1211山澤さま(株ミュージアルデザイン)（THE HIGASHIYAMA CLUB by HAPPO-EN）",
-      "clientName": " 株式会社MUSIAL DESIGN",
-      "deliveryAddress": "THE HIGASHIYAMA CLUB by HAPPO-EN",
-      "deliveryAddressDetail": "〒605-0827京都府京都市東山区八坂上町385-8",
-      "deliveryDate": "2026-12-11",
-      "time": "17:30",
-      "returnTime": "21:30",
-      "items": [
-        {
-          "category": "竿もの",
-          "name": "エレキギター",
-          "memo": "BACCHUS BST-60'S\n[付属：シールド5ｍ、カポ、チューナー、ピック]",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "ギターアンプ系",
-          "name": "ギターアンプ",
-          "memo": "Marshall DSL100H + 1960A",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "ドラムset",
-          "name": "ドラムセット小口径",
-          "memo": "CANOPUS NV60-M1EX\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "DJ",
-          "name": "DJテーブル",
-          "memo": "SEELETON SDJT \nサイズ：高さ96cm 幅149cm 奥行き50cm",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "DJ",
-          "name": "DJミキサー",
-          "memo": "Pioneer DJM-900nxs2",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "DJ",
-          "name": "DJプレイヤー",
-          "memo": "Pioneer CDJ-2000nxs",
-          "qty": 2,
-          "duration": "12h"
-        },
-        {
-          "category": "キーボード関連",
-          "name": "電子ピアノ",
-          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "運搬サービス",
-          "name": "トランスポート＿エリア4",
-          "memo": "運搬・設営・撤収_4",
-          "qty": 1,
-          "duration": "12h"
-        }
-      ]
-    },
-    {
       "folder": "1212原池さま（ホテルロイヤルクラシック大阪\n　宴会場 壽・麗）",
-      "clientName": "原池　未来",
-      "deliveryAddress": "ホテルロイヤルクラシック大阪\n　宴会場 壽・麗",
-      "deliveryAddressDetail": "〒542-0076 大阪府大阪市中央区難波４丁目３−３",
-      "deliveryDate": "2026-12-12",
       "items": [
         {
           "category": "音響",
@@ -450,12 +379,10 @@
     },
     {
       "folder": "1216荒川さま(佛教大学フォークソング部)（京都市北文化会館）",
-      "clientName": "佛教大学フォークソング部",
-      "deliveryAddress": "京都市北文化会館",
-      "deliveryAddressDetail": "〒603-8142 京都府京都市北区小山北上総町４９−２",
-      "deliveryDate": "2026-12-16",
-      "time": "09:00",
-      "returnTime": "21:00",
+      "clientName": "原池　未来",
+      "deliveryAddress": "ホテルロイヤルクラシック大阪\n　宴会場 壽・麗",
+      "deliveryAddressDetail": "〒542-0076 大阪府大阪市中央区難波４丁目３−３",
+      "deliveryDate": "2026-12-12",
       "items": [
         {
           "category": "スピーカー類",
@@ -641,12 +568,12 @@
     },
     {
       "folder": "1219吉原さま（瀬楽ホール）",
-      "clientName": "吉原　弘美",
-      "deliveryAddress": "瀬楽ホール",
-      "deliveryAddressDetail": "大阪市西成区津守2-1-28",
-      "deliveryDate": "2026-12-19",
-      "time": "09:30",
-      "returnTime": "18:00",
+      "clientName": "佛教大学フォークソング部",
+      "deliveryAddress": "京都市北文化会館",
+      "deliveryAddressDetail": "〒603-8142 京都府京都市北区小山北上総町４９−２",
+      "deliveryDate": "2026-12-16",
+      "time": "09:00",
+      "returnTime": "21:00",
       "items": [
         {
           "category": "スピーカー類",

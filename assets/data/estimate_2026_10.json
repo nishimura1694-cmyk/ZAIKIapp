@@ -1471,6 +1471,13 @@
           "duration": "12h"
         },
         {
+          "category": "ケーブル類",
+          "name": "Yケーブル",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
           "category": "照明",
           "name": "LEDパーライト",
           "memo": "e-lite 64J-RGBW V2",
@@ -1512,7 +1519,7 @@
         {
           "category": "スピーカー類",
           "name": "追加サブウーハー",
-          "memo": "EV sb122",
+          "memo": "Martin AUDIO X118",
           "qty": 2,
           "duration": "12h"
         },
@@ -2046,107 +2053,6 @@
       ]
     },
     {
-      "folder": "1017-18瀬島さまウォンバット（五月山動物園）（池田市五月山体育館）",
-      "clientName": "一般財団法人　池田みどりスポーツ財団",
-      "deliveryAddress": "池田市五月山体育館",
-      "deliveryAddressDetail": "〒563-0051 大阪府池田市綾羽２丁目７−１",
-      "deliveryDate": "2026-10-17",
-      "time": "14：30(仮）",
-      "returnTime": "15：00(仮)",
-      "items": [
-        {
-          "category": "セットプラン",
-          "name": "スタンダードPAセット〔S〕",
-          "memo": "・デジタルミキサー16ch\n・パワーアンプ2ch分\n・EV sx300*2\n・マイク*4\n必要スタンド、ケーブル付属",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "スピーカー類",
-          "name": "追加スピーカー",
-          "memo": "EV SX300(スタンド付属)",
-          "qty": 4,
-          "duration": "1日"
-        },
-        {
-          "category": "パワーアンプ・プロセッサー",
-          "name": "パワーアンプ",
-          "memo": "YAMAHA P5000s",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "ミキサー",
-          "name": "ミニミキサー",
-          "memo": "YAMAHA MG10XU",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "その他",
-          "name": "CDプレーヤー ",
-          "memo": "TASCAM CD-500B",
-          "qty": 2,
-          "duration": "1日"
-        },
-        {
-          "category": "ワイヤレス",
-          "name": "ワイヤレスマイク〔B帯〕",
-          "memo": "SHENNHEISER EW500 G4-935-JB",
-          "qty": 5,
-          "duration": "1日"
-        },
-        {
-          "category": "DJ・カラオケ・簡易ステージ",
-          "name": "簡易ステージ",
-          "memo": "INTELLI STAGE\nサイズ：幅100cm×長さ100cm\nライザー：高さ20cm",
-          "qty": 24,
-          "duration": "1日"
-        },
-        {
-          "category": "オペレート",
-          "name": "オペレーター人員",
-          "memo": "1P",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "オペレート",
-          "name": "アシスタント人員A",
-          "memo": "1P_",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "オペレート",
-          "name": "設営撤収スタッフ",
-          "qty": 2,
-          "duration": "1日"
-        },
-        {
-          "category": "オペレート",
-          "name": "前日仕込み料金",
-          "memo": "特別価格",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "運搬サービス",
-          "name": "トランスポート＿エリア2",
-          "memo": "空白2",
-          "qty": 2,
-          "duration": "1日"
-        },
-        {
-          "category": "運搬サービス",
-          "name": "映像関連一式",
-          "memo": "機材・人件費含む",
-          "qty": 1,
-          "duration": "1日"
-        }
-      ]
-    },
-    {
       "folder": "1017ちゃいれっく(与力町公園)（与力町公園）",
       "clientName": "株式会社プロケア\nちゃいれっく東天満保育園",
       "deliveryAddress": "与力町公園",
@@ -2208,6 +2114,20 @@
       "deliveryDate": "2026-10-17",
       "items": [
         {
+          "category": "セットプラン",
+          "name": "楽々PAセット",
+          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
+          "qty": 1,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
           "category": "ドラムset",
           "name": "ドラムセット小口径",
           "memo": "DW Collector's Maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
@@ -2225,13 +2145,6 @@
           "category": "キーボード関連",
           "name": "電子ピアノ",
           "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "キーボード関連",
-          "name": "キーボードモニター",
-          "memo": "Roland KC-350",
           "qty": 1,
           "duration": "12h"
         },

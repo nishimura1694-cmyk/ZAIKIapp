@@ -288,6 +288,7 @@ def _fetch_local(local_root):
         for p in root.rglob("*")
         if p.is_file()
         and "見積データ抽出" in p.name
+        and not p.name.startswith("~$")
         and p.suffix.lower() in (".xlsx", ".xlsm")
     ]
     print(f"対象ファイル数: {len(candidates)}")
