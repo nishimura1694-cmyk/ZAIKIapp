@@ -15,6 +15,90 @@ class _VenueDetailSheetState extends State<VenueDetailSheet> {
     widget.data,
   );
 
+  Future<void> _openMapForAddress(BuildContext context, String address) async {
+    final String uri =
+        'https://maps.google.com/?q=${Uri.encodeComponent(address)}';
+    try {
+      if (await canLaunchUrl(Uri.parse(uri))) {
+        await launchUrl(Uri.parse(uri), mode: LaunchMode.externalApplication);
+      } else if (context.mounted) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('地図アプリを開けませんでした')));
+      }
+    } catch (e) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('エラー: $e')));
+      }
+    }
+  }
+
+  Widget _buildAddressRow(String? address) {
+    final trimmed = (address ?? '').trim();
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: AppColors.subtleFill,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: const Icon(
+              Icons.place_outlined,
+              size: 20,
+              color: AppColors.textSecondary,
+            ),
+          ),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  '住所',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: AppColors.textSecondary,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  trimmed.isEmpty ? '-' : trimmed,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: AppColors.textPrimary,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          if (trimmed.isNotEmpty)
+            SizedBox(
+              width: 28,
+              height: 28,
+              child: IconButton(
+                icon: const Icon(Icons.location_on),
+                iconSize: 18,
+                padding: EdgeInsets.zero,
+                splashRadius: 16,
+                visualDensity: VisualDensity.compact,
+                color: AppColors.brandOrange,
+                tooltip: '地図アプリで開く',
+                onPressed: () => _openMapForAddress(context, trimmed),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
   Future<void> _launchVenueUrl(BuildContext context, String url) async {
     final raw = url.trim();
     if (raw.isEmpty) return;
@@ -92,9 +176,7 @@ class _VenueDetailSheetState extends State<VenueDetailSheet> {
                 .doc(docId)
                 .set(restoreData);
             _invalidateSearchQueryCache(namespace: 'venues');
-            messenger.showSnackBar(
-              const SnackBar(content: Text('会場を元に戻しました')),
-            );
+            messenger.showSnackBar(const SnackBar(content: Text('会場を元に戻しました')));
           },
         ),
       ),
@@ -176,7 +258,7 @@ class _VenueDetailSheetState extends State<VenueDetailSheet> {
                       style: TextStyle(fontSize: 16, color: Colors.grey[600]),
                     ),
                     const SizedBox(height: 32),
-                    _detailRow(Icons.place_outlined, '住所', data['address']),
+                    _buildAddressRow(data['address']),
                     _detailRow(Icons.grid_view, 'エリア', data['block']),
                     _detailRow(Icons.category, 'カテゴリ', data['category']),
                     _detailRow(Icons.power, '電源仕様', data['power']),
