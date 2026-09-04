@@ -331,7 +331,6 @@
       "deliveryDate": "2026-10-09",
       "time": "午後",
       "returnTime": "16:00",
-      "note": "261010-11見積書_Martin_Ver0820.xlsm: 368,049円（旧版/別プラン）",
       "items": [
         {
           "category": "音響",
@@ -525,7 +524,7 @@
       "clientName": "木村　尚矢",
       "deliveryAddress": "金沢　赤羽ホール",
       "deliveryAddressDetail": "〒920-0919 石川県金沢市南町２−１",
-      "note": "協力金: -30,000円",
+      "deliveryDate": "2026-10-10",
       "items": [
         {
           "category": "スピーカー類",
@@ -831,7 +830,6 @@
       "deliveryDate": "2026-10-10",
       "time": "09:00",
       "returnTime": "15:00",
-      "note": "261010見積書.xlsm: 30,360円（旧版/別プラン）",
       "items": [
         {
           "category": "セットプラン",
@@ -1463,7 +1461,6 @@
       "deliveryDate": "2026-10-10",
       "time": "09:00",
       "returnTime": "16:30以降or翌日",
-      "note": "261012見積書スタンダードPA.xlsm: 186,560円（旧版/別プラン）",
       "items": [
         {
           "category": "セットプラン",
@@ -1687,7 +1684,7 @@
       "clientName": "ノックアウトモンキー",
       "deliveryAddress": "神戸サンボーホール",
       "deliveryAddressDetail": "〒651-0083 神戸市中央区浜辺通 5-1-32",
-      "note": "協力金: -200,000円",
+      "deliveryDate": "2026-10-16",
       "items": [
         {
           "category": "メインステージ音響",
@@ -2241,7 +2238,6 @@
       "deliveryDate": "2026-10-21",
       "time": "07:00",
       "returnTime": "12:00",
-      "note": "261017見積書.xlsm: 46,200円（旧版/別プラン）",
       "items": [
         {
           "category": "セットプラン",
@@ -2648,6 +2644,7 @@
     {
       "folder": "1024和田部長　城野音案件（大阪城野外音楽堂）",
       "deliveryAddress": "大阪城野外音楽堂",
+      "deliveryDate": "2026-10-24",
       "items": [
         {
           "category": "サブステージ音響",
@@ -3008,6 +3005,7 @@
     {
       "folder": "1025岸本さま（吹田万博記念公園）",
       "clientName": "有限会社HEADLINE",
+      "deliveryDate": "2026-10-25",
       "items": [
         {
           "category": "ミキサー",
@@ -3280,7 +3278,6 @@
       "deliveryDate": "2025-11-02",
       "time": "15:00",
       "returnTime": "20:30",
-      "note": "261025見積書.xlsm: 38,720円（旧版/別プラン）",
       "items": [
         {
           "category": "ドラムset",
@@ -3367,73 +3364,6 @@
           "memo": "1P_A",
           "qty": 2,
           "duration": "1.5日"
-        }
-      ]
-    },
-    {
-      "folder": "1031-1102伊部さま(近畿大学)（近畿大学 東大阪キャンパス 記念会館）",
-      "clientName": "近畿大学文化祭実行委員会",
-      "deliveryAddress": "近畿大学 東大阪キャンパス 記念会館",
-      "deliveryDate": "2026-10-31",
-      "time": "09:00",
-      "returnTime": "21:00",
-      "items": [
-        {
-          "category": "カラオケ・簡易ステージ",
-          "name": "カラオケ",
-          "memo": "本体：CyberDAM-HD　G100X\nデンモク×2\nワイヤレスマイク：2本\nケーブル一式",
-          "qty": 1,
-          "duration": "3日"
-        },
-        {
-          "category": "カラオケ・簡易ステージ",
-          "name": "ディスプレイ",
-          "memo": "28インチ 液晶ディスプレイ\nフィリップス 288P6LJEB1/11",
-          "qty": 1,
-          "duration": "3日"
-        },
-        {
-          "category": "運搬サービス",
-          "name": "トランスポート＿エリア2",
-          "memo": "運搬・設営・撤収_2",
-          "qty": 1,
-          "duration": "3日"
-        }
-      ]
-    },
-    {
-      "folder": "1031-1103岩永さま（摂南大学）（摂南大学寝屋川キャンパス\n13号館3階多目的ホール）",
-      "clientName": "摂南大学軽音楽部",
-      "deliveryAddress": "摂南大学寝屋川キャンパス\n13号館3階多目的ホール",
-      "deliveryDate": "2026-10-31",
-      "note": "協力金: -30,000円",
-      "items": [
-        {
-          "category": "スピーカー類",
-          "name": "モニタースピーカー",
-          "memo": "パワーアンプ込み",
-          "qty": 1,
-          "duration": "4日"
-        },
-        {
-          "category": "運搬サービス",
-          "name": "トランスポート＿エリア2",
-          "memo": "運搬・設営・撤収_2",
-          "qty": 1,
-          "duration": "4日"
-        },
-        {
-          "category": "オペレート",
-          "name": "PAエンジニア派遣",
-          "qty": 1,
-          "duration": 4
-        },
-        {
-          "category": "オペレート",
-          "name": "移動費・延長費",
-          "memo": "サービス",
-          "qty": 1,
-          "duration": "4日"
         }
       ]
     },

@@ -11,7 +11,6 @@
       "deliveryDate": "2026-09-02",
       "time": "15:30",
       "returnTime": "終演後",
-      "note": "協力金: -15,000円",
       "items": [
         {
           "category": "セットプラン",
@@ -54,139 +53,6 @@
           "memo": "1P",
           "qty": 1,
           "duration": "12h"
-        }
-      ]
-    },
-    {
-      "folder": "0904-05吉村様（大阪府立生野高校）(キャン)（大阪府立生野高等学校　体育館）",
-      "clientName": "大阪府立生野高等学校 　吉村 健",
-      "deliveryAddress": "大阪府立生野高等学校　体育館",
-      "deliveryDate": "2026-09-04",
-      "note": "0904-05見積書②.xlsm: 274,395円（旧版/別プラン）；協力金: -10,000円",
-      "items": [
-        {
-          "category": "音響",
-          "name": "楽々PAセット",
-          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "音響",
-          "name": "モニタースピーカー",
-          "memo": "[Side Fill]EV SX300",
-          "qty": 2,
-          "duration": "1日"
-        },
-        {
-          "category": "音響",
-          "name": "追加パワーアンプ",
-          "memo": "YAMAHA P5000s",
-          "qty": 1,
-          "duration": "1日"
-        },
-        {
-          "category": "音響",
-          "name": "ダイナミックマイク",
-          "memo": "SHURE SM58\n[付属：マイクホルダー、マイクケーブル10ｍ]",
-          "qty": 2,
-          "duration": "1日"
-        },
-        {
-          "category": "音響",
-          "name": "CDプレーヤー ",
-          "memo": "TASCAM CD-500B",
-          "qty": 2,
-          "duration": "1日"
-        },
-        {
-          "category": "楽器",
-          "name": "ドラムセット",
-          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
-          "duration": "1日"
-        },
-        {
-          "category": "楽器",
-          "name": "ベースアンプコンボ",
-          "memo": "MARKBASS MB58R CMD102PUR",
-          "duration": "1日"
-        },
-        {
-          "category": "楽器",
-          "name": "ギターアンプ",
-          "memo": "Roland JC-120",
-          "duration": "1日"
-        },
-        {
-          "category": "楽器",
-          "name": "ギターアンプ",
-          "memo": "Marshall DSL100H",
-          "duration": "1日"
-        },
-        {
-          "category": "楽器",
-          "name": "ギターアンプキャビネット",
-          "memo": "Marshall 1960A",
-          "duration": "1日"
-        },
-        {
-          "category": "楽器",
-          "name": "ギタースタンド",
-          "memo": "TAMA 839",
-          "duration": "1日"
-        },
-        {
-          "category": "楽器",
-          "name": "電子ピアノ",
-          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
-          "duration": "1日"
-        },
-        {
-          "category": "楽器",
-          "name": "スローン",
-          "memo": "キーボード用椅子",
-          "duration": "1日"
-        },
-        {
-          "category": "人件費・運搬費・諸経費",
-          "name": "オペレーター人員",
-          "memo": "1P",
-          "qty": 1,
-          "duration": 2
-        },
-        {
-          "category": "人件費・運搬費・諸経費",
-          "name": "設営・撤収アシスタント",
-          "qty": 1,
-          "duration": 2
-        },
-        {
-          "category": "人件費・運搬費・諸経費",
-          "name": "トランスポート＿エリア1",
-          "memo": "オペレーター併用プラン",
-          "qty": 2,
-          "duration": 2
-        }
-      ]
-    },
-    {
-      "folder": "0904-0906山田さま(キャン)（-）",
-      "clientName": "山田　将史",
-      "deliveryDate": "2026-09-04",
-      "items": [
-        {
-          "category": "カラオケ・簡易ステージ",
-          "name": "カラオケ",
-          "memo": "本体：CyberDAM-HD　G100X\nデンモク×2\nワイヤレスマイク：2本\nケーブル一式",
-          "qty": 1,
-          "duration": "2日"
-        },
-        {
-          "category": "運搬サービス",
-          "name": "トランスポート＿エリア1",
-          "memo": "運搬・設営・撤収",
-          "qty": 1,
-          "duration": "2日"
         }
       ]
     },
@@ -307,6 +173,7 @@
       "folder": "0905-06エアコン（緑地野音（服部緑地野音）",
       "clientName": "DIPinc.",
       "deliveryAddress": "服部緑地野音",
+      "deliveryDate": "2026-09-05",
       "items": [
         {
           "category": "音響",
@@ -1302,7 +1169,6 @@
       "deliveryDate": "2026-09-15",
       "time": "16:00",
       "returnTime": "夕方ごろ",
-      "note": "20260915-16見積書.xlsm: 35,200円（旧版/別プラン）",
       "items": [
         {
           "category": "セットプラン",
@@ -1439,79 +1305,6 @@
           "name": "前日仕込み特別料金",
           "qty": 1,
           "duration": "24h"
-        }
-      ]
-    },
-    {
-      "folder": "0918-19服部さま(吹田市)（N高等学校　江坂キャンパス）",
-      "clientName": "服部　加奈",
-      "deliveryAddress": "N高等学校　江坂キャンパス",
-      "deliveryDate": "2026-09-18",
-      "time": "13:00",
-      "returnTime": "16:30",
-      "items": [
-        {
-          "category": "ベースアンプ系",
-          "name": "ベースアンプコンボ",
-          "memo": "Ampeg BA115-V2",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "ギターアンプ系",
-          "name": "ギターアンプ",
-          "memo": "Roland JC-120",
-          "qty": 3,
-          "duration": "1.5日"
-        },
-        {
-          "category": "ギターアンプ系",
-          "name": "ギタースタンド",
-          "memo": "アンプ台数分サービス",
-          "qty": 4,
-          "duration": "1.5日"
-        },
-        {
-          "category": "ミキサー",
-          "name": "ミニミキサー",
-          "memo": "YAMAHA MG10XU",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "ケーブル類",
-          "name": "マイクケーブル",
-          "memo": "5m",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "ケーブル類",
-          "name": "シールド",
-          "memo": "・5m×8本\n・10m×1本",
-          "qty": 9,
-          "duration": "1.5日"
-        },
-        {
-          "category": "カラオケ・簡易ステージ",
-          "name": "簡易ステージ",
-          "memo": "INTELLI STAGE\nサイズ：幅100cm×長さ100cm\nライザー：高さ20cm",
-          "qty": 18,
-          "duration": "1.5日"
-        },
-        {
-          "category": "前面スカート付属",
-          "name": "トランスポート＿エリア2",
-          "memo": "運搬・設営・撤収_2",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "前面スカート付属",
-          "name": "搬入出追加人員",
-          "memo": "作業費含む",
-          "qty": 1,
-          "duration": "1.5日"
         }
       ]
     },
@@ -1915,6 +1708,7 @@
     },
     {
       "folder": "0920服部さま",
+      "deliveryDate": "2026-09-20",
       "items": [
         {
           "name": "2026年9月20日(土)",
@@ -2174,7 +1968,6 @@
       "deliveryDate": "2026-09-21",
       "time": "10:00",
       "returnTime": "19:00",
-      "note": "260921受注書.xlsm: 47,520円（旧版/別プラン）",
       "items": [
         {
           "category": "ギターアンプ系",
@@ -2380,7 +2173,6 @@
       "deliveryDate": "2026-09-22",
       "time": "未定",
       "returnTime": "終演後",
-      "note": "協力金: -50,000円",
       "items": [
         {
           "category": "音響",
@@ -2766,7 +2558,6 @@
       "deliveryDate": "2026-09-25",
       "time": "20:00",
       "returnTime": "15:00",
-      "note": "20260925-26見積書.xlsm: 73,700円（旧版/別プラン）",
       "items": [
         {
           "category": "セットプラン",
@@ -2979,7 +2770,6 @@
       "deliveryDate": "下記4日程",
       "time": "08:00",
       "returnTime": "15:00",
-      "note": "260926見積書.xlsm: 68,860円（旧版/別プラン）",
       "items": [
         {
           "name": "①2026年09月26日(土)",

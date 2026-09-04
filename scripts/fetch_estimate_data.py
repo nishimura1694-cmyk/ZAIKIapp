@@ -138,6 +138,7 @@ def _resolve_entries(token, root_path):
 
 MONTH_RE = re.compile(r"(\d{4})年(\d{1,2})月")
 FILENAME_MONTH_RE = re.compile(r"estimate_(\d{4})_(\d{2})\.json")
+FOLDER_DATE_RE = re.compile(r"^(\d{2})(\d{2})")
 
 
 def _month_window(months_ahead, today=None):
@@ -160,7 +161,40 @@ def _is_discount_row(kind, name):
     return ("割引" in text) or ("値引" in text) or ("協力金" in text)
 
 
-def parse_estimate_workbook(xlsx_path):
+def _is_cancelled(folder):
+    text = folder or ""
+    return "キャン" in text
+
+
+def _fallback_date_from_folder(folder, year):
+    """サマリーシートの日付欄が空の場合に、案件名の先頭「MMDD」表記から日付を推測する。"""
+    m = FOLDER_DATE_RE.match(folder or "")
+    if not m:
+        return None
+    month, day = int(m.group(1)), int(m.group(2))
+    if not (1 <= month <= 12):
+        return None
+    try:
+        return date(year, month, day)
+    except ValueError:
+        return None
+
+
+def _filter_note(note):
+    """サマリーシートの備考欄から「協力金」「旧版/別プラン」に関する断片
+    （金額情報を含む）を除去する。全て除去されて空になった場合はNoneを返す。"""
+    if not note:
+        return None
+    parts = re.split(r"[；;]\s*", str(note))
+    kept = [
+        p
+        for p in parts
+        if p.strip() and "協力金" not in p and "旧版/別プラン" not in p
+    ]
+    return "；".join(kept) if kept else None
+
+
+def parse_estimate_workbook(xlsx_path, year):
     """見積データ抽出.xlsx（見積シート＋サマリーシート）を金額を除いて構造化する。"""
     wb = openpyxl.load_workbook(xlsx_path, data_only=True)
     ws = wb["見積"]
@@ -209,6 +243,8 @@ def parse_estimate_workbook(xlsx_path):
 
     result = []
     for j, s in zip(jobs, summary_rows):
+        if _is_cancelled(j["folder"]):
+            continue
         (
             _,
             folder_sum,
@@ -228,7 +264,7 @@ def parse_estimate_workbook(xlsx_path):
             s[6],
             s[7],
         )
-        note = s[12] if len(s) > 12 else None
+        note = _filter_note(s[12] if len(s) > 12 else None)
         entry = {"folder": j["folder"]}
         if oname:
             entry["clientName"] = oname
@@ -236,6 +272,8 @@ def parse_estimate_workbook(xlsx_path):
             entry["deliveryAddress"] = address
         if address_detail and address_detail != "-":
             entry["deliveryAddressDetail"] = address_detail
+        if not ship_date:
+            ship_date = _fallback_date_from_folder(j["folder"], year)
         if ship_date:
             entry["deliveryDate"] = str(ship_date)
         if ship_time and ship_time != "-":
@@ -256,7 +294,7 @@ def _write_outputs(files, out_dir):
     for year, month, name, xlsx_path, source_label in files:
         month_key = f"{year:04d}_{month:02d}"
         try:
-            jobs = parse_estimate_workbook(xlsx_path)
+            jobs = parse_estimate_workbook(xlsx_path, year)
         except Exception as e:
             print(f"解析に失敗しました({source_label}): {e}", file=sys.stderr)
             continue

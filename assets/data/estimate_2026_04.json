@@ -7,7 +7,6 @@
       "folder": "0401-04KY大西案件（同志社大学）",
       "clientName": "同志社大学",
       "deliveryAddressDetail": "〒531-0061大阪市北区長柄西2-10-9 246ZAIKI",
-      "note": "0401-0404見積書_音響照明Ver0321.xlsm: 179,000円（旧版/別プラン）；同志社 新歓テンプレ？2026.xlsm: 790,075円（旧版/別プラン）",
       "items": [
         {
           "category": "音響",
@@ -505,7 +504,6 @@
       "folder": "0410-11よーいどんフェス（オリックス劇場）",
       "clientName": "関西テレビ放送株式会社",
       "deliveryAddress": "オリックス劇場",
-      "note": "協力金: -300,000円",
       "items": [
         {
           "category": "スピーカー類",
@@ -977,7 +975,6 @@
       "folder": "0417-18東元さま（滋賀県米原）（滋賀県立文化産業会館）",
       "clientName": "東元",
       "deliveryAddress": "滋賀県立文化産業会館",
-      "note": "協力金: -50,000円",
       "items": [
         {
           "category": "ミキサー",
@@ -1159,7 +1156,6 @@
       "deliveryAddress": "資生堂大阪工場（大阪市東淀川）",
       "deliveryAddressDetail": "大阪府大阪市東淀川区小松2丁目16",
       "time": "未定",
-      "note": "260418見積書_舞台.xlsm: 334,950円（旧版/別プラン）",
       "items": [
         {
           "category": "音響",
@@ -1396,7 +1392,6 @@
       "deliveryDate": "2026-04-17",
       "time": "15:00",
       "returnTime": "20:00",
-      "note": "260417見積書.xlsm: 116,182円（旧版/別プラン）",
       "items": [
         {
           "category": "セットプラン",
@@ -1661,7 +1656,6 @@
       "deliveryDate": "2026-04-19",
       "time": "08:00",
       "returnTime": "19:00",
-      "note": "0419見積書.xlsm: 48,620円（旧版/別プラン）",
       "items": [
         {
           "category": "ギターアンプ系",

@@ -10,7 +10,6 @@
       "deliveryDate": "2026-03-02",
       "time": "18：00予定　仮",
       "returnTime": "3/4　17：00　仮",
-      "note": "20260302-04見積書.xlsm: 817,333円（旧版/別プラン）",
       "items": [
         {
           "category": "ミキサー",
@@ -129,7 +128,6 @@
       "deliveryDate": "2026-03-07",
       "time": "08:00",
       "returnTime": "13:50",
-      "note": "0307見積書.xlsm: 52,014円（旧版/別プラン）",
       "items": [
         {
           "category": "セットプラン",
@@ -1925,7 +1923,6 @@
       "deliveryAddressDetail": "〒531-0061 大阪市北区長柄西2丁目10-9",
       "deliveryDate": "2026-03-27",
       "time": "17:00",
-      "note": "0327-28見積書ver3.xlsm: 17,050円（旧版/別プラン）；0327-28見積書ver1.xlsm: 45,100円（旧版/別プラン）",
       "items": [
         {
           "category": "ベースアンプ系",
@@ -2011,7 +2008,6 @@
       "deliveryDate": "2026-03-27",
       "time": "16:00",
       "returnTime": "20:00",
-      "note": "0327見積書.xlsm: 36,080円（旧版/別プラン）",
       "items": [
         {
           "category": "ギターアンプ系",
@@ -2036,7 +2032,6 @@
       "deliveryDate": "2026-03-28",
       "time": "08:00",
       "returnTime": "完全撤収21：00",
-      "note": "協力金: -30,000円",
       "items": [
         {
           "category": "音響",

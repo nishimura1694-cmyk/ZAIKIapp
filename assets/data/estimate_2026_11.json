@@ -10,7 +10,6 @@
       "deliveryDate": "2026-11-01",
       "time": "朝",
       "returnTime": "15:00",
-      "note": "261101-03見積書.xlsm: 354,085円（旧版/別プラン）",
       "items": [
         {
           "category": "音響",
@@ -342,45 +341,6 @@
           "category": "運搬サービス",
           "name": "トランスポート＿エリア3",
           "memo": "運搬・設営・撤収_3",
-          "qty": 1,
-          "duration": "12h"
-        }
-      ]
-    },
-    {
-      "folder": "1101島田様（大阪大学 豊中キャンパス）",
-      "clientName": "島田 尚",
-      "deliveryAddress": "大阪大学 豊中キャンパス",
-      "deliveryAddressDetail": "〒560-0043 大阪府豊中市待兼山町１",
-      "deliveryDate": "2026-11-01",
-      "time": "未定",
-      "returnTime": "未定",
-      "items": [
-        {
-          "category": "セットプラン",
-          "name": "楽々PAセット",
-          "memo": "・ミキサー×1\n・スピーカー×2\n・スピーカースタンド×2\n・有線マイク最大4本まで\n・マイクスタンド最大4本まで\n・スピーカーケーブル20ｍ×2\n・マイクケーブル10ｍ×4",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "スピーカー類",
-          "name": "追加スピーカー",
-          "memo": "EV SX300",
-          "qty": 2,
-          "duration": "12h"
-        },
-        {
-          "category": "ワイヤレス",
-          "name": "ワイヤレスマイク〔B帯〕",
-          "memo": "SHENNHEISER EW500 G4-935-JB",
-          "qty": 2,
-          "duration": "12h"
-        },
-        {
-          "category": "運搬サービス",
-          "name": "トランスポート＿エリア2",
-          "memo": "運搬・設営・撤収_2",
           "qty": 1,
           "duration": "12h"
         }
@@ -847,94 +807,12 @@
       ]
     },
     {
-      "folder": "1113-14木村さん案件（神戸女子大）（神戸女子大学                                   ポートアイランドキャンパス）",
-      "clientName": "木村 尚矢",
-      "deliveryAddress": "神戸女子大学                                   ポートアイランドキャンパス",
-      "deliveryAddressDetail": "〒650-0046 兵庫県神戸市中央区港島中町４丁目７−２",
-      "deliveryDate": "2026-11-13",
-      "time": "未定",
-      "returnTime": "未定",
-      "items": [
-        {
-          "category": "ドラムset",
-          "name": "ドラムセット",
-          "memo": "DW Collector's Maple standard\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "ベースアンプ系",
-          "name": "ベースアンプコンボ",
-          "memo": "MARKBASS MB58R CMD102PUR",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "ギターアンプ系",
-          "name": "ギターアンプ",
-          "memo": "Roland JC-120",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "ギターアンプ系",
-          "name": "ギターアンプ",
-          "memo": "Marshall JCM2000",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "ギターアンプ系",
-          "name": "ギターアンプキャビネット",
-          "memo": "Marshall 1960A",
-          "qty": 1,
-          "duration": "1.5日"
-        },
-        {
-          "category": "ギターアンプ系",
-          "name": "ギタースタンド",
-          "memo": "アンプ台数分サービス",
-          "qty": 3,
-          "duration": "1.5日"
-        },
-        {
-          "category": "スピーカー類",
-          "name": "パワードスピーカー",
-          "memo": "EV ZLX-12P(スタンド付属)",
-          "qty": 2,
-          "duration": "1.5日"
-        },
-        {
-          "category": "マイク",
-          "name": "ダイナミックマイク",
-          "memo": "SHURE SM58\n[付属：マイクホルダー、マイクケーブル10ｍ]",
-          "qty": 2,
-          "duration": "1.5日"
-        },
-        {
-          "category": "マイクスタンド",
-          "name": "マイクスタンド",
-          "memo": "ロングブーム<210>",
-          "qty": 2,
-          "duration": "1.5日"
-        },
-        {
-          "category": "マイクスタンド",
-          "name": "トランスポート＿エリア3",
-          "memo": "運搬・設営・撤収_3",
-          "qty": 1,
-          "duration": "1.5日"
-        }
-      ]
-    },
-    {
       "folder": "1113-15浅岡さま（和歌山片男波）（和歌山県　片男波海水浴場）",
       "clientName": "浅岡　寛之",
       "deliveryAddress": "和歌山県　片男波海水浴場",
       "deliveryDate": "2026-11-14",
       "time": "未定",
       "returnTime": "未定",
-      "note": "261113-15見積書L-aco13日仕込み.xlsm: 562,056円（旧版/別プラン）；261114-15見積書d&b13日仕込み.xlsm: 807,224円（旧版/別プラン）；261114-15見積書d&b14日仕込み.xlsm: 526,680円（旧版/別プラン）",
       "items": [
         {
           "category": "音響",
@@ -1133,7 +1011,6 @@
       "deliveryAddress": "あべのHoop\n1F 円形ステージ「オープンエアプラザ」",
       "deliveryAddressDetail": "〒545-0052 大阪府大阪市阿倍野区阿倍野筋１丁目２−３０",
       "deliveryDate": "2026-11-14",
-      "note": "261114見積書_オペレーター有.xlsm: 83,380円（旧版/別プラン）",
       "items": [
         {
           "category": "セットプラン",
@@ -1718,7 +1595,6 @@
       "deliveryDate": "2026-11-20",
       "time": "19:00",
       "returnTime": "13:30-15:00",
-      "note": "261121見積書_12h.xlsm: 66,660円（旧版/別プラン）",
       "items": [
         {
           "category": "セットプラン",
@@ -1929,7 +1805,7 @@
       "folder": "1125-28同志社大学EVE祭（同志社大学 寒梅館）",
       "clientName": "同志社大学",
       "deliveryAddress": "同志社大学 寒梅館",
-      "note": "協力金: -50,000円",
+      "deliveryDate": "2026-11-25",
       "items": [
         {
           "category": "音響",
