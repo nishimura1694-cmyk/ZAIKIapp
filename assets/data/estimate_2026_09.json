@@ -282,20 +282,6 @@
         },
         {
           "category": "レストラン",
-          "name": "ワイヤレスハンドマイク〔B帯〕",
-          "memo": "SHENNHEISER EW500 G4-935-JB",
-          "qty": 2,
-          "duration": "12h"
-        },
-        {
-          "category": "レストラン",
-          "name": "指向性アンテナ",
-          "memo": "SENNHEISER　ADP-UHF",
-          "qty": 2,
-          "duration": "12h"
-        },
-        {
-          "category": "レストラン",
           "name": "オペレーター人員",
           "memo": "1P",
           "qty": 1,
@@ -1363,12 +1349,94 @@
       "deliveryDate": "2026-09-18",
       "time": "お昼ごろ",
       "returnTime": "15:30",
-      "note": "0918-19お見積書.xlsm: 119,020円（旧版/別プラン）",
       "items": [
         {
-          "category": "キーボード関連",
-          "name": "シンセサイザー",
-          "memo": "Roland JUNO-DS\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "category": "セットプラン",
+          "name": "楽々PAセット〔LL〕",
+          "memo": "・DYNACORD PowerMate1000\n（電源ケーブル付属）\n・Martin AUDIO X15B×2\n・SPケーブル20m×2\n・スピーカースタンド×2\n・SM58×4\n・マイクケーブル10m×4\n・マイクスタンド×4",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "モニタースピーカー",
+          "memo": "パワーアンプ込み",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ドラムモニター",
+          "memo": "Roland cube street EX",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "その他",
+          "name": "CDプレーヤー ",
+          "memo": "TASCAM CD-500B",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "ドラムset",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "ベースアンプ系",
+          "name": "ベースアンプ",
+          "memo": "Ampeg SVT-3pro + SVT-410HE",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "ギターアンプ系",
+          "name": "ギターアンプ",
+          "memo": "Marshall DSL100H + 1960A",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "その他",
+          "name": "電源コードリール",
+          "memo": "空白",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "その他",
+          "name": "DI/電源タップ/ケーブル類",
+          "memo": "サービス",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "オペレート",
+          "name": "オペレーター人員",
+          "memo": "1P",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア1",
+          "memo": "運搬・設営・撤収",
+          "qty": 1,
+          "duration": "24h"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "前日仕込み特別料金",
           "qty": 1,
           "duration": "24h"
         }
@@ -2302,6 +2370,240 @@
           "memo": "1P",
           "qty": 1,
           "duration": "12h"
+        }
+      ]
+    },
+    {
+      "folder": "0922岸本さま（大阪城野音）（大阪城野外音楽堂）",
+      "clientName": "有限会社HEADLINE",
+      "deliveryAddress": "大阪城野外音楽堂",
+      "deliveryDate": "2026-09-22",
+      "time": "未定",
+      "returnTime": "終演後",
+      "note": "協力金: -50,000円",
+      "items": [
+        {
+          "category": "音響",
+          "name": "デジタルミキサー",
+          "memo": "YAMAHA CL5",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "ステージボックス",
+          "memo": "YAMAHA Rio3224-D2",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "スピーカー",
+          "memo": "d&b KSL8",
+          "qty": 8,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "サブウーハー",
+          "memo": "d&b KSL-GSUB",
+          "qty": 4,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ〔4ch〕",
+          "memo": "d&b D40",
+          "qty": 4,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "追加スピーカー",
+          "memo": "MARTIN AUDIO X15B",
+          "qty": 4,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ〔4ch〕",
+          "memo": "QSC PLD4.5",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "デジタルミキサー",
+          "memo": "YAMAHA CL3",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "ステージボックス",
+          "memo": "YAMAHA Rio3224-D2",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "モニタースピーカー",
+          "memo": "d&b M4",
+          "qty": 8,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "パワーアンプ〔4ch〕",
+          "memo": "d&b D40",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "CDプレーヤー ",
+          "memo": "TASCAM CD-500B",
+          "qty": 2,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "マイク・DI",
+          "memo": "基本セット（有線）",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "スタンド",
+          "memo": "一式",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "音響",
+          "name": "線材費",
+          "memo": "電源/スピーカー/マイク\n上記ケーブルを含む",
+          "qty": 1,
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ドラムセット",
+          "memo": "PEARL masters custom maple\n◆付属物\n【スネア】【ペダル】【マット】\n【シンバル一式】\n・HH*2、Crush*2、Ride*1\n【ハードウェア一式】\n・上記シンバル用スタンド\n・ドラム椅子含む",
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ティンバレス",
+          "memo": "LP　LP812-BN",
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ベースアンプ",
+          "memo": "Aguilar DB751",
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ベースアンプキャビネット",
+          "memo": "Aguilar DB410",
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ギターアンプ",
+          "memo": "Roland JC-120",
+          "duration": "1日"
+        },
+        {
+          "category": "楽器",
+          "name": "ギタースタンド",
+          "memo": "TAMA 839",
+          "duration": "1日"
+        },
+        {
+          "category": "その他",
+          "name": "DJプレイヤー",
+          "memo": "Pioneer CDJ-2000nxs",
+          "duration": "1日"
+        },
+        {
+          "category": "その他",
+          "name": "DJミキサー",
+          "memo": "Pioneer DJM-900nxs2",
+          "duration": "1日"
+        },
+        {
+          "category": "その他",
+          "name": "ターンテーブル",
+          "memo": "Technics SL-1200MK7",
+          "duration": "1日"
+        },
+        {
+          "category": "その他",
+          "name": "DJミキサー",
+          "memo": "Pioneer DJM-250MK2",
+          "duration": "1日"
+        },
+        {
+          "category": "その他",
+          "name": "カートリッジ",
+          "memo": "ORTOFON Concorde Mk2",
+          "duration": "1日"
+        },
+        {
+          "category": "その他",
+          "name": "ラップトップPCスタンド",
+          "duration": "1日"
+        },
+        {
+          "category": "その他",
+          "name": "ワイヤレスマイク〔B帯〕",
+          "memo": "SHENNHEISER EW500 G4-935-JB",
+          "duration": "1日"
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "FOH管理",
+          "memo": "1P",
+          "qty": 1,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "FBオペレーター",
+          "memo": "1P",
+          "qty": 1,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "ステージチーフ",
+          "memo": "1P",
+          "qty": 1,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "アシスタント人員A",
+          "memo": "1P_A",
+          "qty": 2,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "運搬費",
+          "memo": "3ｔトラック",
+          "qty": 1,
+          "duration": 1
+        },
+        {
+          "category": "人件費・運搬費・諸経費",
+          "name": "バン",
+          "qty": 1,
+          "duration": 1
         }
       ]
     },
