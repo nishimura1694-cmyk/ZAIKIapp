@@ -604,7 +604,11 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
                 children: [
                   _buildVenueSection(),
                   const SizedBox(height: 20),
-                  _buildTextField(_customerController, '顧客名（案件名）'),
+                  _buildTextField(
+                    _customerController,
+                    '顧客名（案件名）',
+                    hintText: '例: 20260905エアコン',
+                  ),
                   if (widget.docId != null) _buildCustomerTagSelector(),
                   _buildTextField(_staffController, '担当者', maxLines: 3),
                   _buildDatePicker(),
@@ -754,6 +758,7 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
     String label, {
     int maxLines = 1,
     bool isUrgent = false,
+    String? hintText,
   }) {
     final isSingleLine = maxLines <= 1;
     return Padding(
@@ -770,6 +775,7 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
             : TextInputAction.newline,
         decoration: InputDecoration(
           labelText: label,
+          hintText: hintText,
           labelStyle: isUrgent
               ? const TextStyle(color: AppColors.danger)
               : null,
