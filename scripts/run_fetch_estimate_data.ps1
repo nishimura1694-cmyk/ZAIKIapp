@@ -15,4 +15,16 @@ $logFile = Join-Path $logDir ("fetch_estimate_data_{0:yyyyMMdd_HHmmss}.log" -f (
 Set-Location $repoRoot
 
 python "scripts\fetch_estimate_data.py" *>&1 | Tee-Object -FilePath $logFile
-exit $LASTEXITCODE
+$fetchExitCode = $LASTEXITCODE
+
+$changed = git status --porcelain -- assets/data
+if ($changed) {
+    "assets/data changed, committing locally" | Tee-Object -FilePath $logFile -Append
+    git add assets/data | Out-Null
+    $commitMessage = "Auto-update estimate data ({0:yyyy-MM-dd})" -f (Get-Date)
+    git commit -m $commitMessage *>&1 | Tee-Object -FilePath $logFile -Append | Out-Null
+} else {
+    "assets/data unchanged, skipping commit" | Tee-Object -FilePath $logFile -Append
+}
+
+exit $fetchExitCode
