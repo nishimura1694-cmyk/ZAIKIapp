@@ -138,7 +138,8 @@ def _resolve_entries(token, root_path):
 
 MONTH_RE = re.compile(r"(\d{4})年(\d{1,2})月")
 FILENAME_MONTH_RE = re.compile(r"estimate_(\d{4})_(\d{2})\.json")
-FOLDER_DATE_RE = re.compile(r"^(\d{2})(\d{2})")
+FOLDER_DATE_FULL_RE = re.compile(r"^(\d{4})(\d{2})(\d{2})")  # 例: 20260905エアコン
+FOLDER_DATE_RE = re.compile(r"^(\d{2})(\d{2})")  # 例: 0905エアコン（旧形式・後方互換）
 
 
 def _month_window(months_ahead, today=None):
@@ -167,8 +168,20 @@ def _is_cancelled(folder):
 
 
 def _fallback_date_from_folder(folder, year):
-    """サマリーシートの日付欄が空の場合に、案件名の先頭「MMDD」表記から日付を推測する。"""
-    m = FOLDER_DATE_RE.match(folder or "")
+    """サマリーシートの日付欄が空の場合に、案件名先頭の日付表記から日付を推測する。
+    「20260905エアコン」のようなYYYYMMDD形式を優先し、見つからなければ
+    従来の「0905エアコン」形式（MMDD、ファイルの年を使用）にフォールバックする。"""
+    text = folder or ""
+    m_full = FOLDER_DATE_FULL_RE.match(text)
+    if m_full:
+        y, month, day = int(m_full.group(1)), int(m_full.group(2)), int(m_full.group(3))
+        if 1 <= month <= 12:
+            try:
+                return date(y, month, day)
+            except ValueError:
+                pass
+
+    m = FOLDER_DATE_RE.match(text)
     if not m:
         return None
     month, day = int(m.group(1)), int(m.group(2))
