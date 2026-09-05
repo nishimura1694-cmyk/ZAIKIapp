@@ -479,6 +479,37 @@
       ]
     },
     {
+      "folder": "1104-06戸田さま（お引渡し：KYOTO MUSE\nご返却：MUSIC CLUB JANUS）",
+      "clientName": "戸田　創太",
+      "deliveryAddress": "お引渡し：KYOTO MUSE\nご返却：MUSIC CLUB JANUS",
+      "deliveryDate": "2026-11-04",
+      "time": "12:00",
+      "returnTime": "12:00",
+      "items": [
+        {
+          "category": "竿もの",
+          "name": "エレアコ",
+          "memo": "Taylor 214CE\n[付属：シールド5ｍ、カポ、チューナー、ピック]",
+          "qty": 1,
+          "duration": "3日"
+        },
+        {
+          "category": "竿もの",
+          "name": "エレキギター",
+          "memo": "BACCHUS BST-60'S\n[付属：シールド5ｍ、カポ、チューナー、ピック]",
+          "qty": 1,
+          "duration": "3日"
+        },
+        {
+          "category": "運搬サービス",
+          "name": "トランスポート＿エリア4",
+          "memo": "車上渡しプラン_4",
+          "qty": 2,
+          "duration": "3日"
+        }
+      ]
+    },
+    {
       "folder": "1108吉田さま(ヒルトン大阪)（ヒルトン大阪　4階　金の間）",
       "clientName": "吉田　千恵",
       "deliveryAddress": "ヒルトン大阪　4階　金の間",

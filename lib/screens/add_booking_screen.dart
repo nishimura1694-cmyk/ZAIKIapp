@@ -471,9 +471,10 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
     }
 
     final customerTags = <String>[if (_isTra) 'トラ', if (_isOpe) 'オペ'];
+    final customerName = _customerController.text.trim();
 
     final data = {
-      'customerName': _customerController.text.trim(),
+      'customerName': customerName,
       'customerTags': customerTags,
       'isTra': _isTra,
       'isOpe': _isOpe,
@@ -489,7 +490,7 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
       'venueId': _selectedVenueId,
       'venueName': venueName,
       ..._buildBookingSearchIndex(
-        customerName: _customerController.text.trim(),
+        customerName: customerName,
         venueName: venueName,
       ),
       'imageUrls': [..._existingUrls, ...newUrls],

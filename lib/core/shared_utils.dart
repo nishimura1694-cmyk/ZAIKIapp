@@ -371,7 +371,10 @@ Future<List<_WeeklySourceDayData>> _fetchWeeklyRowsFromSourceCsv() async {
   final today = DateTime.now();
   final todayDate = DateTime(today.year, today.month, today.day);
   final startDate = todayDate;
-  final endDateExclusive = startDate.add(const Duration(days: 14));
+  // シフトタブの表示範囲（今日から2か月先まで）に合わせる。
+  final maxDate = DateTime(startDate.year, startDate.month + 2, startDate.day);
+  final endDateExclusive = maxDate.add(const Duration(days: 1));
+  final totalDays = endDateExclusive.difference(startDate).inDays;
   final zaikiRows = records
       .where((record) => !record.isOsakaSource)
       .map((record) => record.row)
@@ -387,7 +390,7 @@ Future<List<_WeeklySourceDayData>> _fetchWeeklyRowsFromSourceCsv() async {
   final valuesByDateAndColumn = <String, Map<String, List<String>>>{};
   final seenByDateAndColumn = <String, Map<String, Set<String>>>{};
 
-  for (var i = 0; i < 14; i++) {
+  for (var i = 0; i < totalDays; i++) {
     final date = startDate.add(Duration(days: i));
     final key = DateFormat('yyyy-MM-dd').format(date);
     dateByKey[key] = date;
@@ -652,6 +655,8 @@ List<String> _splitCellValues(String input) {
 }
 
 Future<List<_ExtractedDateRow>> _fetchDateRowsFromCsv() async {
+  // 見積一覧確認CSVは本体CSVと並行して取得し、直列往復による遅延を避ける。
+  final bookingRowsFuture = _fetchCsvBookingRows();
   final response = await http.get(Uri.parse(_dateExtractCsvUrl));
   if (response.statusCode != 200) {
     throw Exception('日付CSVの取得に失敗しました (status: ${response.statusCode})');
@@ -813,7 +818,7 @@ Future<List<_ExtractedDateRow>> _fetchDateRowsFromCsv() async {
   }
 
   try {
-    final bookingRows = await _fetchCsvBookingRows();
+    final bookingRows = await bookingRowsFuture;
     final bookingValuesByDateKey = <String, List<String>>{};
 
     for (final bookingRow in bookingRows) {
@@ -874,7 +879,9 @@ Future<List<_ExtractedDateRow>> _fetchDateRowsFromCsv() async {
         ..sort((a, b) => a.date.compareTo(b.date));
   final today = DateTime.now();
   final startDate = DateTime(today.year, today.month, today.day);
-  final endDateExclusive = startDate.add(const Duration(days: 14));
+  // シフトタブの表示範囲（今日から2か月先まで）に合わせる。
+  final maxDate = DateTime(startDate.year, startDate.month + 2, startDate.day);
+  final endDateExclusive = maxDate.add(const Duration(days: 1));
 
   return rows
       .where((row) {
@@ -1556,13 +1563,7 @@ bool _isFuzzyTermMatchConfigurable(
   required bool enableEditDistance,
   List<String>? preSplitWords,
 }) {
-  if (target.startsWith(term)) return true;
-
-  final words = preSplitWords ?? target.split(_searchWordSplitPattern);
-  for (final word in words) {
-    if (word.isEmpty) continue;
-    if (word.startsWith(term)) return true;
-  }
+  if (target.contains(term)) return true;
 
   if (term.length <= 2) return false;
 
@@ -1614,11 +1615,13 @@ bool Function(String target) _createFuzzyMatcher(
   return (target) {
     final normalizedTarget = _normalizeSearchTextCached(target);
     if (normalizedTarget.contains(normalizedQuery)) return true;
-    if (!allowFuzzyMatch) return false;
+    // 単語が1つだけの場合は上のcontainsチェックと同じ結果になるため、
+    // 複数語のクエリ(語順や項目をまたぐ入力)の場合のみ、語ごとのAND一致を試みる。
+    if (terms.length <= 1) return false;
     final targetWords = useEditDistance
         ? normalizedTarget.split(_searchWordSplitPattern)
         : null;
-    final matchedByNormalized = terms.every(
+    return terms.every(
       (term) => _isFuzzyTermMatchConfigurable(
         normalizedTarget,
         term,
@@ -1627,7 +1630,6 @@ bool Function(String target) _createFuzzyMatcher(
         preSplitWords: targetWords,
       ),
     );
-    return matchedByNormalized;
   };
 }
 

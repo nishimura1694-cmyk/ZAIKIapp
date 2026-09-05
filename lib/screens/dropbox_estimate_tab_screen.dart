@@ -198,7 +198,7 @@ Future<EstimateBookingCreationResult> _createBookingFromEstimateJob(
         );
 
   final bookingDate = DateFormat('yyyy/MM/dd').format(date);
-  final customerName = (job.clientName ?? '').trim();
+  final customerName = job.folder.trim();
 
   await bookingsRef.add({
     'customerName': customerName,
@@ -470,14 +470,28 @@ class _MonthlyEstimateJobTileState extends State<_MonthlyEstimateJobTile> {
       childrenPadding: const EdgeInsets.only(bottom: 8),
       title: Text(
         job.folder,
-        style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13),
+        style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
       ),
-      subtitle: subtitleParts.isEmpty
-          ? null
-          : Text(
-              subtitleParts.join(' / '),
-              style: TextStyle(fontSize: 12, color: Colors.grey[700]),
+      subtitle: Padding(
+        padding: const EdgeInsets.only(top: 4),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            if (subtitleParts.isNotEmpty)
+              Text(
+                subtitleParts.join(' / '),
+                style: const TextStyle(fontSize: 17),
+              ),
+            Padding(
+              padding: const EdgeInsets.only(top: 6),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: _buildActionButton(),
+              ),
             ),
+          ],
+        ),
+      ),
       children: [
         if ((job.time != null && job.time!.isNotEmpty) ||
             (job.returnTime != null && job.returnTime!.isNotEmpty))
@@ -522,13 +536,6 @@ class _MonthlyEstimateJobTileState extends State<_MonthlyEstimateJobTile> {
               style: TextStyle(fontSize: 11.5, color: Colors.grey[600]),
             ),
           ),
-        Padding(
-          padding: const EdgeInsets.only(top: 10),
-          child: Align(
-            alignment: Alignment.centerRight,
-            child: _buildActionButton(),
-          ),
-        ),
       ],
     );
   }
@@ -539,6 +546,7 @@ class DropboxEstimateTabScreen extends StatefulWidget {
     super.key,
     this.initialSearchQuery,
     this.initialDeliveryDate,
+    this.initialEstimateJobId,
   });
 
   final String? initialSearchQuery;
@@ -547,6 +555,12 @@ class DropboxEstimateTabScreen extends StatefulWidget {
   /// 検索語（顧客名）に加えてこの日付が一致する見積のみに絞り込むために使う。
   /// ユーザーが検索語を編集した時点で解除する。
   final String? initialDeliveryDate;
+
+  /// 予約履歴から遷移した場合、その予約が見積から作成されたものであれば
+  /// 元になった見積案件を一意に示すID（`_estimateJobId`参照）。
+  /// これが一致する案件が見つかれば、顧客名・日付の曖昧一致に頼らず
+  /// その案件だけを確実に表示する。ユーザーが検索語を編集した時点で解除する。
+  final String? initialEstimateJobId;
 
   @override
   State<DropboxEstimateTabScreen> createState() =>
@@ -561,8 +575,10 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
   late Future<List<_MonthlyEstimateJob>> _localJobsFuture;
   bool _showPast = false;
   late final TextEditingController _searchController;
+  final ScrollController _listScrollController = ScrollController();
   String _searchQuery = '';
   DateTime? _strictDeliveryDate;
+  String? _strictEstimateJobId;
 
   @override
   bool get wantKeepAlive => true;
@@ -573,14 +589,17 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
     _localJobsFuture = _loadBundledEstimateJobsFromIndex();
     _searchQuery = widget.initialSearchQuery?.trim() ?? '';
     _strictDeliveryDate = _parseBookingDate(widget.initialDeliveryDate);
+    final estimateJobId = widget.initialEstimateJobId?.trim() ?? '';
+    _strictEstimateJobId = estimateJobId.isEmpty ? null : estimateJobId;
     _searchController = TextEditingController(text: _searchQuery);
     _searchController.addListener(() {
       final value = _searchController.text;
       if (_searchQuery == value) return;
       setState(() {
         _searchQuery = value;
-        // 検索語をユーザーが編集したら、予約日による絞り込みは解除する。
+        // 検索語をユーザーが編集したら、予約日・案件IDによる絞り込みは解除する。
         _strictDeliveryDate = null;
+        _strictEstimateJobId = null;
       });
     });
   }
@@ -602,6 +621,7 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
   @override
   void dispose() {
     _searchController.dispose();
+    _listScrollController.dispose();
     super.dispose();
   }
 
@@ -609,6 +629,21 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
     setState(() {
       _localJobsFuture = _loadBundledEstimateJobsFromIndex();
     });
+  }
+
+  /// タブを再選択した際に一覧を初期表示状態に戻す。
+  void resetToInitialState() {
+    _searchController.clear();
+    if (!mounted) return;
+    setState(() {
+      _searchQuery = '';
+      _strictDeliveryDate = null;
+      _strictEstimateJobId = null;
+      _showPast = false;
+    });
+    if (_listScrollController.hasClients) {
+      _listScrollController.jumpTo(0);
+    }
   }
 
   @override
@@ -645,28 +680,38 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
             );
           }
           final allJobs = snapshot.data ?? const <_MonthlyEstimateJob>[];
+          final strictJobId = _strictEstimateJobId;
+          final exactJobMatch = strictJobId == null
+              ? null
+              : allJobs
+                    .where((job) => _estimateJobId(job) == strictJobId)
+                    .toList();
           final jobs = isSearching
-              ? (() {
-                  final matchesQuery = _createFuzzyMatcher(
-                    searchQuery,
-                    enableSubsequence: false,
-                    enableEditDistance: false,
-                  );
-                  final strictDate = _strictDeliveryDate;
-                  return allJobs
-                      .where(
-                        (job) => matchesQuery(
-                          '${job.clientName ?? ''} ${job.deliveryAddress ?? ''} ${job.folder}',
-                        ),
-                      )
-                      .where((job) {
-                        if (strictDate == null) return true;
-                        final deliveryDate = job.parsedDeliveryDate;
-                        return deliveryDate != null &&
-                            _isSameDate(deliveryDate, strictDate);
-                      })
-                      .toList();
-                })()
+              ? (exactJobMatch != null && exactJobMatch.isNotEmpty)
+                    // 見積から作成された予約履歴なら estimateJobId で一意に紐付いた
+                    // 案件が必ず存在するため、顧客名・日付の曖昧一致より優先して使う。
+                    ? exactJobMatch
+                    : (() {
+                        final matchesQuery = _createFuzzyMatcher(
+                          searchQuery,
+                          enableSubsequence: false,
+                          enableEditDistance: false,
+                        );
+                        final strictDate = _strictDeliveryDate;
+                        return allJobs
+                            .where(
+                              (job) => matchesQuery(
+                                '${job.clientName ?? ''} ${job.deliveryAddress ?? ''} ${job.folder}',
+                              ),
+                            )
+                            .where((job) {
+                              if (strictDate == null) return true;
+                              final deliveryDate = job.parsedDeliveryDate;
+                              return deliveryDate != null &&
+                                  _isSameDate(deliveryDate, strictDate);
+                            })
+                            .toList();
+                      })()
               : _filterJobsWithinDisplayRange(
                   allJobs,
                   now,
@@ -714,6 +759,7 @@ class _DropboxEstimateTabScreenState extends State<DropboxEstimateTabScreen>
               ),
               Expanded(
                 child: ListView.separated(
+                  controller: _listScrollController,
                   physics: const AlwaysScrollableScrollPhysics(),
                   padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
                   itemCount: jobs.length,

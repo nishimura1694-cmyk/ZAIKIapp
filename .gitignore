@@ -47,3 +47,5 @@ app.*.map.json
 # 秘密情報（Dropbox/Google連携用の認証情報）はコミットしない
 scripts/credentials.json
 scripts/token.json
+# Widget Preview related
+.widget_preview/

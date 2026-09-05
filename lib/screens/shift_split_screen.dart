@@ -15,9 +15,11 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
   String? _selectedSourceFilter;
   static const List<String> _sourceFilters = ['【ZAIKI】', '【OSAKA】'];
   bool _showZaikiPanel = false;
+  bool _showKariOnly = false;
 
   final List<ScrollController> _rowControllers = [];
   bool _syncingScroll = false;
+  final ScrollController _verticalScrollController = ScrollController();
 
   static const double _shiftColumnWidth = 300;
   static const double _compactShiftColumnWidth = 150;
@@ -45,7 +47,25 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
     for (final c in _rowControllers) {
       c.dispose();
     }
+    _verticalScrollController.dispose();
     super.dispose();
+  }
+
+  /// タブを再選択した際に一覧を初期表示状態に戻す。
+  void resetToInitialState() {
+    setState(() {
+      _selectedSourceFilter = null;
+      _showZaikiPanel = false;
+      _showKariOnly = false;
+    });
+    if (_verticalScrollController.hasClients) {
+      _verticalScrollController.jumpTo(0);
+    }
+    for (final controller in _rowControllers) {
+      if (controller.hasClients) {
+        controller.jumpTo(0);
+      }
+    }
   }
 
   Future<(List<_ExtractedDateRow>, List<_WeeklySourceDayData>)>
@@ -419,6 +439,7 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
               final line = lines[li];
               final trimmed = line.trim();
               final hasCancel = line.contains('キャン');
+              final hasKari = _showKariOnly && line.contains('仮');
               final isContinuation = continuationPattern.hasMatch(trimmed);
               if (section.isBookingCard) {
                 if (trimmed.isEmpty) {
@@ -439,6 +460,8 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
                     decoration: isCanceled
                         ? TextDecoration.lineThrough
                         : TextDecoration.none,
+                    fontWeight: hasKari ? FontWeight.bold : null,
+                    color: hasKari ? Colors.red : null,
                   ),
                 ),
               );
@@ -475,6 +498,34 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
       ),
       child: content,
     );
+  }
+
+  /// シフト行の中に「仮」を含む値（仮予約・仮確定など）があるかどうか。
+  bool _rowContainsKari(_ExtractedDateRow row) {
+    bool listHasKari(List<String> values) =>
+        values.any((v) => v.contains('仮'));
+    if (listHasKari(row.kValues)) return true;
+    for (final values in row.mToTValuesByKey.values) {
+      if (listHasKari(values)) return true;
+    }
+    return false;
+  }
+
+  /// 各セクションの値を「仮」を含むものだけに絞り込む。
+  List<_DateColumnSection> _filterSectionsToKariOnly(
+    List<_DateColumnSection> sections,
+  ) {
+    return sections
+        .map(
+          (s) => _DateColumnSection(
+            label: s.label,
+            values: s.values
+                .where((v) => v.contains('仮'))
+                .toList(growable: false),
+            isBookingCard: s.isBookingCard,
+          ),
+        )
+        .toList(growable: false);
   }
 
   // ---- ZAIKI panel for a single day ----
@@ -665,6 +716,13 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
             child: Row(
               children: [
                 FilterChip(
+                  label: const Text('仮のみ表示'),
+                  selected: _showKariOnly,
+                  onSelected: (value) =>
+                      setState(() => _showKariOnly = value),
+                ),
+                const SizedBox(width: 8),
+                FilterChip(
                   label: const Text('ZAIKI/OSAKA機材を表示'),
                   selected: _showZaikiPanel,
                   onSelected: (value) =>
@@ -717,28 +775,47 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
 
             final now = DateTime.now();
             final threshold = DateTime(now.year, now.month, now.day);
+            final maxDate = DateTime(now.year, now.month + 2, now.day);
 
-            // Collect all upcoming dates from both sources
+            // Collect all upcoming dates from both sources (今日から2か月先まで)
             final shiftByDate = <String, _ExtractedDateRow>{};
             for (final row in shiftRows) {
-              if (!row.date.isBefore(threshold)) {
+              if (!row.date.isBefore(threshold) && !row.date.isAfter(maxDate)) {
                 final key = DateFormat('yyyyMMdd').format(row.date);
                 shiftByDate[key] = row;
               }
             }
             final zaikiByDate = <String, _WeeklySourceDayData>{};
             for (final day in zaikiRows) {
-              if (!day.date.isBefore(threshold)) {
+              if (!day.date.isBefore(threshold) && !day.date.isAfter(maxDate)) {
                 final key = DateFormat('yyyyMMdd').format(day.date);
                 zaikiByDate[key] = day;
               }
             }
 
             // Union of all dates, sorted
-            final allDateKeys = ({
+            var allDateKeys = ({
               ...shiftByDate.keys,
               ...zaikiByDate.keys,
             }).toList()..sort();
+
+            if (_showKariOnly) {
+              // 仮抽出は「今日から1か月先の週末（日曜）まで」に絞り込む。
+              final oneMonthLater = DateTime(
+                now.year,
+                now.month + 1,
+                now.day,
+              );
+              final daysUntilSunday = (7 - oneMonthLater.weekday) % 7;
+              final kariMaxDate = oneMonthLater.add(
+                Duration(days: daysUntilSunday),
+              );
+              allDateKeys = allDateKeys.where((key) {
+                final row = shiftByDate[key];
+                if (row == null || !_rowContainsKari(row)) return false;
+                return !row.date.isAfter(kariMaxDate);
+              }).toList();
+            }
 
             if (allDateKeys.isEmpty) {
               return RefreshIndicator(
@@ -756,6 +833,7 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
             return RefreshIndicator(
               onRefresh: _reload,
               child: ListView.separated(
+                controller: _verticalScrollController,
                 physics: const AlwaysScrollableScrollPhysics(),
                 padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
                 itemCount: allDateKeys.length,
@@ -787,7 +865,11 @@ class _ShiftSplitScreenState extends State<ShiftSplitScreen>
                       style: TextStyle(color: Colors.grey[500], fontSize: 12),
                     );
                   } else {
-                    final sections = _buildColumnSections(shiftRow);
+                    final sections = _showKariOnly
+                        ? _filterSectionsToKariOnly(
+                            _buildColumnSections(shiftRow),
+                          )
+                        : _buildColumnSections(shiftRow);
                     final bookingSection = sections
                         .where((s) => s.isBookingCard)
                         .cast<_DateColumnSection?>()

@@ -148,8 +148,10 @@
       ]
     },
     {
-      "folder": "1007南さま（-）",
+      "folder": "1007南さま（中之島クロス　8F　O-Nexus）",
       "clientName": "CIC Japan合同会社　O-NEXUS",
+      "deliveryAddress": "中之島クロス　8F　O-Nexus",
+      "deliveryAddressDetail": "大阪市北区中之島4丁目3-51　 中之島クロス8F",
       "deliveryDate": "2026-10-07",
       "items": [
         {
@@ -163,6 +165,13 @@
           "category": "DJ",
           "name": "DJプレイヤー",
           "memo": "Pioneer CDJ-2000nxs",
+          "qty": 2,
+          "duration": "12h"
+        },
+        {
+          "category": "スピーカー類",
+          "name": "パワードスピーカー",
+          "memo": "EV ZLX-12P(スタンド付属)",
           "qty": 2,
           "duration": "12h"
         },
@@ -2866,13 +2875,6 @@
         {
           "category": "ギターアンプ系",
           "name": "ギターアンプ",
-          "memo": "Roland JC-40",
-          "qty": 1,
-          "duration": "12h"
-        },
-        {
-          "category": "ギターアンプ系",
-          "name": "ギターアンプ",
           "memo": "Roland JC-120",
           "qty": 1,
           "duration": "12h"
@@ -2882,6 +2884,13 @@
           "name": "ギタースタンド",
           "memo": "アンプ台数分サービス",
           "qty": 3,
+          "duration": "12h"
+        },
+        {
+          "category": "キーボード関連",
+          "name": "電子ピアノ",
+          "memo": "YAMAHA CP-40\n◆付属物\n・ダンパーペダル×1\n・専用電源ケーブル×1\n・Xスタンド×1\n・シールド5ｍ×2",
+          "qty": 1,
           "duration": "12h"
         },
         {

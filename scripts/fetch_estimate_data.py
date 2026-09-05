@@ -421,7 +421,8 @@ def main():
         "--months-ahead",
         type=int,
         default=3,
-        help="今月を含めて何か月先まで対象にするか（デフォルト: 3＝今月+3か月先の計4か月分）",
+        help="今月を含めて何か月先までのxlsxを新規取得・再生成の対象にするか"
+        "（デフォルト: 3＝今月+3か月先の計4か月分。過去に生成済みのJSONはこの範囲外でもindex.jsonから除外されない）",
     )
     args = parser.parse_args()
 
@@ -447,7 +448,8 @@ def main():
 
     generated = _write_outputs(files, out_dir)
 
-    # index.json を対象期間（今月+--months-ahead か月先）の月だけに絞り込む
+    # index.json には、実体ファイルが残っている月をすべて含める（過去分の検索・閲覧を可能にするため、
+    # --months-ahead による対象期間の絞り込みは新規取得するxlsxの範囲にのみ適用し、index.jsonからは除外しない）。
     index_path = out_dir / "index.json"
     existing = []
     if index_path.exists():
@@ -456,12 +458,12 @@ def main():
         except Exception:
             existing = []
 
-    def _in_window(filename):
+    def _file_exists(filename):
         m = FILENAME_MONTH_RE.match(filename)
-        return bool(m) and (int(m.group(1)), int(m.group(2))) in window
+        return bool(m) and (out_dir / filename).exists()
 
     all_files = sorted(
-        f for f in (set(existing) | set(generated)) if _in_window(f)
+        f for f in (set(existing) | set(generated)) if _file_exists(f)
     )
     index_path.write_text(
         json.dumps({"files": all_files}, ensure_ascii=False, indent=2),

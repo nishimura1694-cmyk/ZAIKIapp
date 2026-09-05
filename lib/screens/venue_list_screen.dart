@@ -10,6 +10,7 @@ class VenueListScreen extends StatefulWidget {
 class _VenueListScreenState extends State<VenueListScreen>
     with AutomaticKeepAliveClientMixin {
   final TextEditingController _searchController = TextEditingController();
+  final ScrollController _listScrollController = ScrollController();
   String _searchQuery = "";
   String _selectedBlock = "すべて";
   int _venueFetchLimit = 9999;
@@ -25,6 +26,7 @@ class _VenueListScreenState extends State<VenueListScreen>
   @override
   void dispose() {
     _searchController.dispose();
+    _listScrollController.dispose();
     super.dispose();
   }
 
@@ -43,6 +45,18 @@ class _VenueListScreenState extends State<VenueListScreen>
 
   void _loadMoreVenues() {
     setState(() => _venueFetchLimit += _venuePageSize);
+  }
+
+  /// タブを再選択した際に一覧を初期表示状態に戻す。
+  void resetToInitialState() {
+    clearSearch();
+    if (!mounted) return;
+    setState(() {
+      _selectedBlock = "すべて";
+    });
+    if (_listScrollController.hasClients) {
+      _listScrollController.jumpTo(0);
+    }
   }
 
   Future<void> _loadAreaData() async {
@@ -188,6 +202,12 @@ class _VenueListScreenState extends State<VenueListScreen>
         controller: _searchController,
         hintText: '会場名・部屋名で検索...',
         onChanged: (_) => _onSearchChanged(),
+        suffixIcon: isSearching
+            ? IconButton(
+                icon: const Icon(Icons.clear),
+                onPressed: clearSearch,
+              )
+            : null,
         filterRow: ListView(
           scrollDirection: Axis.horizontal,
           padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -299,6 +319,7 @@ class _VenueListScreenState extends State<VenueListScreen>
                   onRefresh: _refreshVenues,
                   triggerMode: RefreshIndicatorTriggerMode.anywhere,
                   child: ListView.separated(
+                    controller: _listScrollController,
                     physics: const AlwaysScrollableScrollPhysics(),
                     padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
                     itemCount: docs.length + (canLoadMore ? 1 : 0),
@@ -376,6 +397,7 @@ class _VenueListScreenState extends State<VenueListScreen>
                                       data['name'] ?? '',
                                       style: const TextStyle(
                                         fontWeight: FontWeight.bold,
+                                        fontSize: 17,
                                       ),
                                     ),
                                   ),
@@ -392,9 +414,8 @@ class _VenueListScreenState extends State<VenueListScreen>
                                         Text(
                                           (data['shopAndRoom'] ?? '-')
                                               .toString(),
-                                          style: TextStyle(
-                                            color: AppColors.textSecondary,
-                                            fontSize: 13,
+                                          style: const TextStyle(
+                                            fontSize: 17,
                                           ),
                                         ),
                                       ],

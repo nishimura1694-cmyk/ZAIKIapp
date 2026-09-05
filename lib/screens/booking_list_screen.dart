@@ -10,6 +10,7 @@ class BookingListScreen extends StatefulWidget {
 class _BookingListScreenState extends State<BookingListScreen>
     with AutomaticKeepAliveClientMixin {
   final TextEditingController _searchController = TextEditingController();
+  final ScrollController _listScrollController = ScrollController();
   String _searchQuery = "";
   String? _selectedMonthKey;
   final Map<String, Future<String?>> _venueAddressFutureCache = {};
@@ -21,6 +22,7 @@ class _BookingListScreenState extends State<BookingListScreen>
   @override
   void dispose() {
     _searchController.dispose();
+    _listScrollController.dispose();
     super.dispose();
   }
 
@@ -41,6 +43,20 @@ class _BookingListScreenState extends State<BookingListScreen>
     setState(() {
       _bookingFetchLimit += _bookingPageSize;
     });
+  }
+
+  /// タブを再選択した際に一覧を初期表示状態に戻す。
+  void resetToInitialState() {
+    clearSearch();
+    if (!mounted) return;
+    setState(() {
+      _selectedMonthKey = null;
+      _showHiddenReservations = false;
+      _bookingFetchLimit = _bookingPageSize;
+    });
+    if (_listScrollController.hasClients) {
+      _listScrollController.jumpTo(0);
+    }
   }
 
   Future<void> _openMapForAddress(String address) async {
@@ -137,6 +153,7 @@ class _BookingListScreenState extends State<BookingListScreen>
     final venueName = (data['venueName'] ?? '').toString().trim();
     final query = customerName.isNotEmpty ? customerName : venueName;
     final bookingDate = (data['bookingDate'] ?? '').toString().trim();
+    final estimateJobId = (data['estimateJobId'] ?? '').toString().trim();
     return IconButton(
       icon: const Icon(Icons.description_outlined),
       iconSize: 20,
@@ -152,6 +169,7 @@ class _BookingListScreenState extends State<BookingListScreen>
           builder: (_) => DropboxEstimateTabScreen(
             initialSearchQuery: query.isEmpty ? null : query,
             initialDeliveryDate: bookingDate.isEmpty ? null : bookingDate,
+            initialEstimateJobId: estimateJobId.isEmpty ? null : estimateJobId,
           ),
         ),
       ),
@@ -245,6 +263,12 @@ class _BookingListScreenState extends State<BookingListScreen>
         controller: _searchController,
         hintText: '顧客・会場名で検索...',
         onChanged: (_) => _onSearchChanged(),
+        suffixIcon: isSearching
+            ? IconButton(
+                icon: const Icon(Icons.clear),
+                onPressed: clearSearch,
+              )
+            : null,
         actions: [
           IconButton(
             icon: const Icon(Icons.settings_outlined),
@@ -426,6 +450,7 @@ class _BookingListScreenState extends State<BookingListScreen>
                   onRefresh: _refreshBookings,
                   triggerMode: RefreshIndicatorTriggerMode.anywhere,
                   child: ListView.separated(
+                    controller: _listScrollController,
                     physics: const AlwaysScrollableScrollPhysics(),
                     padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
                     itemCount: docs.length + (canLoadMore ? 1 : 0),
@@ -474,66 +499,71 @@ class _BookingListScreenState extends State<BookingListScreen>
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  urls.isNotEmpty
-                                      ? ClipRRect(
-                                          borderRadius: BorderRadius.circular(
-                                            6,
-                                          ),
-                                          child: Image.network(
-                                            urls[0],
-                                            width: 40,
-                                            height: 40,
-                                            fit: BoxFit.cover,
-                                            cacheWidth: 96,
-                                            cacheHeight: 96,
-                                            filterQuality: FilterQuality.medium,
-                                          ),
-                                        )
-                                      : Container(
-                                          width: 40,
-                                          height: 40,
-                                          decoration: BoxDecoration(
-                                            color: AppColors.subtleFill,
-                                            borderRadius:
-                                                BorderRadius.circular(6),
-                                          ),
-                                          child: const Icon(
-                                            Icons.image_outlined,
-                                            color: Colors.grey,
-                                            size: 18,
-                                          ),
-                                        ),
-                                  const SizedBox(width: 12),
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          data['customerName'] ?? '',
-                                          style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                          maxLines: 2,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                        const SizedBox(height: 2),
-                                        Text(
-                                          "${data['bookingDate']} / ${data['venueName']}",
-                                          maxLines: 2,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(
-                                            color: AppColors.textSecondary,
-                                            fontSize: 13,
-                                          ),
-                                        ),
-                                      ],
+                              IntrinsicHeight(
+                                child: Row(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: [
+                                    AspectRatio(
+                                      aspectRatio: 1,
+                                      child: urls.isNotEmpty
+                                          ? ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
+                                              child: Image.network(
+                                                urls[0],
+                                                fit: BoxFit.cover,
+                                                cacheWidth: 128,
+                                                cacheHeight: 128,
+                                                filterQuality:
+                                                    FilterQuality.medium,
+                                              ),
+                                            )
+                                          : Container(
+                                              decoration: BoxDecoration(
+                                                color: AppColors.subtleFill,
+                                                borderRadius:
+                                                    BorderRadius.circular(8),
+                                              ),
+                                              child: const Icon(
+                                                Icons.image_outlined,
+                                                color: Colors.grey,
+                                                size: 22,
+                                              ),
+                                            ),
                                     ),
-                                  ),
-                                ],
+                                    const SizedBox(width: 12),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Text(
+                                            data['customerName'] ?? '',
+                                            style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 17,
+                                            ),
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                          const SizedBox(height: 2),
+                                          Text(
+                                            "${data['bookingDate']} / ${data['venueName']}",
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: const TextStyle(
+                                              fontSize: 17,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                               const SizedBox(height: 6),
                               Row(

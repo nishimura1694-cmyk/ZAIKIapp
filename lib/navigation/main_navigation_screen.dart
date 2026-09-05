@@ -16,6 +16,10 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       GlobalKey<_VenueListScreenState>();
   final GlobalKey<_BookingListScreenState> _bookingListKey =
       GlobalKey<_BookingListScreenState>();
+  final GlobalKey<_ShiftSplitScreenState> _shiftSplitKey =
+      GlobalKey<_ShiftSplitScreenState>();
+  final GlobalKey<_DropboxEstimateTabScreenState> _estimateTabKey =
+      GlobalKey<_DropboxEstimateTabScreenState>();
   final GlobalKey<NavigatorState> _bookingNavKey = GlobalKey<NavigatorState>();
   final GlobalKey<NavigatorState> _shiftNavKey = GlobalKey<NavigatorState>();
   final GlobalKey<NavigatorState> _venueNavKey = GlobalKey<NavigatorState>();
@@ -35,7 +39,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   );
   late final Widget _shiftPage = _wrapInNavigator(
     _shiftNavKey,
-    const ShiftSplitScreen(),
+    ShiftSplitScreen(key: _shiftSplitKey),
   );
   late final Widget _venuePage = _wrapInNavigator(
     _venueNavKey,
@@ -43,7 +47,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   );
   late final Widget _estimatePage = _wrapInNavigator(
     _estimateNavKey,
-    const DropboxEstimateTabScreen(),
+    DropboxEstimateTabScreen(key: _estimateTabKey),
   );
 
   List<GlobalKey<NavigatorState>> get _navKeys => [
@@ -60,12 +64,40 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   }
 
   void _handleTabChange(int index) {
-    if (_tabIndex == index) return;
+    if (_tabIndex == index) {
+      _resetTabToInitialState(index);
+      return;
+    }
 
     setState(() {
       _tabIndex = index;
       _markTabAsOpened(index);
     });
+  }
+
+  /// 選択中のタブをもう一度押した際の挙動。
+  /// サブページを開いている場合はルートに戻るだけに留め、
+  /// 既にルート表示中の場合のみ検索・絞り込み・スクロール位置を初期化する。
+  void _resetTabToInitialState(int index) {
+    final navState = _navKeys[index].currentState;
+    if (navState?.canPop() ?? false) {
+      navState?.popUntil((route) => route.isFirst);
+      return;
+    }
+    switch (index) {
+      case 0:
+        _bookingListKey.currentState?.resetToInitialState();
+        break;
+      case 1:
+        _estimateTabKey.currentState?.resetToInitialState();
+        break;
+      case 2:
+        _shiftSplitKey.currentState?.resetToInitialState();
+        break;
+      case 3:
+        _venueListKey.currentState?.resetToInitialState();
+        break;
+    }
   }
 
   @override

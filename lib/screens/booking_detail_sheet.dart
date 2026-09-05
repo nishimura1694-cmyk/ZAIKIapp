@@ -633,6 +633,11 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
     final data = _currentData;
     final List urls = data['imageUrls'] ?? [];
     final List pdfUrls = data['pdfUrls'] ?? [];
+    final hasRetrospective =
+        (data['retrospectiveResult'] ?? '').toString().trim().isNotEmpty ||
+        (data['retrospectiveIssue'] ?? '').toString().trim().isNotEmpty ||
+        (data['retrospectiveSolution'] ?? '').toString().trim().isNotEmpty ||
+        (data['retrospectiveNext'] ?? '').toString().trim().isNotEmpty;
     return DraggableScrollableSheet(
       initialChildSize: 0.8,
       minChildSize: 0.5,
@@ -954,35 +959,37 @@ class _BookingDetailSheetState extends State<BookingDetailSheet> {
                       '引継ぎ事項',
                       (data['handover'] ?? 'なし').toString(),
                     ),
-                    const SizedBox(height: 24),
-                    const Text(
-                      '振り返り',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
-                        color: Colors.grey,
+                    if (hasRetrospective) ...[
+                      const SizedBox(height: 24),
+                      const Text(
+                        '振り返り',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          color: Colors.grey,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 8),
-                    _buildRetrospectiveBox(
-                      '成果',
-                      (data['retrospectiveResult'] ?? '').toString(),
-                    ),
-                    const SizedBox(height: 10),
-                    _buildRetrospectiveBox(
-                      '課題',
-                      (data['retrospectiveIssue'] ?? '').toString(),
-                    ),
-                    const SizedBox(height: 10),
-                    _buildRetrospectiveBox(
-                      '解決策',
-                      (data['retrospectiveSolution'] ?? '').toString(),
-                    ),
-                    const SizedBox(height: 10),
-                    _buildRetrospectiveBox(
-                      '次回へ',
-                      (data['retrospectiveNext'] ?? '').toString(),
-                    ),
+                      const SizedBox(height: 8),
+                      _buildRetrospectiveBox(
+                        '成果',
+                        (data['retrospectiveResult'] ?? '').toString(),
+                      ),
+                      const SizedBox(height: 10),
+                      _buildRetrospectiveBox(
+                        '課題',
+                        (data['retrospectiveIssue'] ?? '').toString(),
+                      ),
+                      const SizedBox(height: 10),
+                      _buildRetrospectiveBox(
+                        '解決策',
+                        (data['retrospectiveSolution'] ?? '').toString(),
+                      ),
+                      const SizedBox(height: 10),
+                      _buildRetrospectiveBox(
+                        '次回へ',
+                        (data['retrospectiveNext'] ?? '').toString(),
+                      ),
+                    ],
                     const SizedBox(height: 40),
                   ],
                 ),
